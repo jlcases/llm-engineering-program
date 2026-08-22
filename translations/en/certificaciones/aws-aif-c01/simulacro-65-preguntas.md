@@ -493,6 +493,5 @@
 - E) Disabling CloudTrail to reduce costs
 
 ---
----
 
 > The reasoned answer key is kept outside the open repository and integrated only into the published simulator.

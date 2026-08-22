@@ -1,7 +1,7 @@
 {
   "version": 1,
   "model": "qwen3.6:35b-a3b-coding-nvfp4",
-  "generatedAt": "2026-08-22T00:09:56.005Z",
+  "generatedAt": "2026-08-22T00:28:52.823Z",
   "files": {
     "modulo-01-fundamentos-llm/README.md": {
       "sourceHash": "8c2018885548e3cba24f899f6cb293f3e20025bd9f42f1db45437423e4b205fc",
@@ -100,12 +100,12 @@
       "translatedAt": "2026-08-22T00:09:48.664Z"
     },
     "certificaciones/aws-aif-c01/simulacro-65-preguntas.md": {
-      "sourceHash": "08cd99d8057ab68287023c67f30da6138cdd614513cf85d57f53d7fc1623c992",
-      "translationHash": "4e07206e0cac88e02c735c0764466f77c1d4b34f70157ecafb04672f94ce0100",
+      "sourceHash": "20b4f6eaceb574568a941e31d35568bdb1196f8d24296b49b4f287706aa2d006",
+      "translationHash": "0a1ebd5aef7900a75f94c39970e5c7f661ebb79786cf06da2af557bf224eaeba",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:48.719Z"
+      "translatedAt": "2026-08-22T00:28:52.822Z"
     },
     "certificaciones/nvidia-nca-genl/README.md": {
       "sourceHash": "0e534838aa3fc50c52e8a52665988e22d1ceca5e85a47b123dcf997f3bb85054",

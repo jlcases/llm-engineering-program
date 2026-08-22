@@ -493,6 +493,5 @@
 - E) Desactivar CloudTrail para reducir costes
 
 ---
----
 
 > La clave razonada se mantiene fuera del repositorio abierto y se integra únicamente en el simulador publicado.
