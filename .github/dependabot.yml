@@ -13,3 +13,7 @@ updates:
       interval: weekly
     open-pull-requests-limit: 5
     labels: [dependencies, python]
+    ignore:
+      # RAGAS 0.4.3 imports modules removed by langchain-community 0.4.x.
+      - dependency-name: langchain-community
+        update-types: [version-update:semver-major]
