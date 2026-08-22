@@ -1,0 +1,32 @@
+# Entorno
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.python-version
+
+# Datos y artefactos locales
+*.db
+*.sqlite
+chroma_db/
+lancedb/
+.cache/
+.pytest_cache/
+.ruff_cache/
+outputs/
+*.log
+translations/en/**/*.tmp
+translations/en/**/*.checked
+translations/en/.translation-manifest.lock/
+translations/en/.translation-manifest.json.*.tmp
+
+# IDE / SO
+.DS_Store
+.idea/
+.vscode/
+.ipynb_checkpoints/
+
+# Node (frontend del módulo 3)
+node_modules/
+.next/

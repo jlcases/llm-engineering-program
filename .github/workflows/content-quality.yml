@@ -1,0 +1,65 @@
+name: Content quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  public-content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Prevent solution leakage
+        run: node scripts/validate-public-content.mjs
+      - name: Validate course contracts
+        run: node scripts/validate-course-contracts.mjs
+      - name: Enforce current model and SDK defaults
+        run: node scripts/validate-current-stack.mjs
+      - name: Enforce current certification blueprints
+        run: node scripts/validate-certification-currency.mjs
+      - name: Require complete and structurally safe English translations
+        run: node scripts/validate-translations.mjs --complete
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v10
+        with:
+          enable-cache: true
+      - name: Install the locked offline-test toolchain
+        run: uv sync --locked --extra dev
+      - name: Lint every Python lab
+        run: uv run ruff check .
+      - name: Compile every Spanish and English lab
+        run: uv run python -m compileall -q modulo-* setup translations/en
+      - name: Run the offline reference-project tests
+        run: uv run pytest -q
+
+  notify-private-web:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: public-content
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request an exact web rebuild
+        env:
+          DISPATCH_TOKEN: ${{ secrets.PRIVATE_WEB_DISPATCH_TOKEN }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          if [ -z "${DISPATCH_TOKEN:-}" ]; then
+            echo "::notice::No dispatch token configured; the private web's daily reconciliation will publish this SHA."
+            exit 0
+          fi
+          payload=$(jq -nc --arg sha "$SOURCE_SHA" '{event_type:"course_published",client_payload:{source_sha:$sha}}')
+          curl --fail-with-body --silent --show-error \
+            --request POST \
+            --header "Accept: application/vnd.github+json" \
+            --header "Authorization: Bearer $DISPATCH_TOKEN" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            --data "$payload" \
+            https://api.github.com/repos/jlcases/llmengineerclub-web/dispatches

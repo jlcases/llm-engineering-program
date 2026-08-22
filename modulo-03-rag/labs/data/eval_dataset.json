@@ -1,0 +1,242 @@
+[
+  {
+    "id": "rag-001",
+    "question": "¿Cuál es el horario ordinario de soporte?",
+    "reference": "De lunes a viernes de 08:00 a 18:00 Europe/Madrid, excepto festivos nacionales de España.",
+    "relevant_doc_ids": ["handbook"],
+    "tags": ["support", "single_hop"],
+    "answerable": true
+  },
+  {
+    "id": "rag-002",
+    "question": "¿Qué objetivo de primera respuesta tiene un P1 Enterprise?",
+    "reference": "15 minutos y cobertura 24/7.",
+    "relevant_doc_ids": ["handbook", "producto"],
+    "tags": ["sla", "single_hop"],
+    "answerable": true
+  },
+  {
+    "id": "rag-003",
+    "question": "¿Cuándo se avisa a la persona secundaria de guardia?",
+    "reference": "Si la persona primaria no reconoce una alerta P1 en cinco minutos.",
+    "relevant_doc_ids": ["handbook", "runbook-incidentes"],
+    "tags": ["incident", "single_hop"],
+    "answerable": true
+  },
+  {
+    "id": "rag-004",
+    "question": "¿Cuánto se conservan los adjuntos de soporte?",
+    "reference": "90 días, salvo que estén vinculados a una investigación de seguridad abierta.",
+    "relevant_doc_ids": ["handbook"],
+    "tags": ["privacy", "exception"],
+    "answerable": true
+  },
+  {
+    "id": "rag-005",
+    "question": "¿Cuántos eventos diarios incluye Scale?",
+    "reference": "Cinco millones de eventos al día.",
+    "relevant_doc_ids": ["producto"],
+    "tags": ["plans", "single_hop"],
+    "answerable": true
+  },
+  {
+    "id": "rag-006",
+    "question": "¿Los eventos que superan la cuota diaria se guardan para el día siguiente?",
+    "reference": "No. Se rechazan con HTTP 429 y no se ponen en cola para el día siguiente.",
+    "relevant_doc_ids": ["producto"],
+    "tags": ["limits", "negation"],
+    "answerable": true
+  },
+  {
+    "id": "rag-007",
+    "question": "¿Qué plan incluye SSO SAML?",
+    "reference": "Scale y Enterprise incluyen SSO SAML; Starter no.",
+    "relevant_doc_ids": ["producto", "seguridad-cuentas"],
+    "tags": ["plans", "multi_source"],
+    "answerable": true
+  },
+  {
+    "id": "rag-008",
+    "question": "¿Puede un tenant cambiar de región con autoservicio?",
+    "reference": "No. Cambiar de región requiere un proyecto de migración.",
+    "relevant_doc_ids": ["producto"],
+    "tags": ["regions", "negation"],
+    "answerable": true
+  },
+  {
+    "id": "rag-009",
+    "question": "¿Cuánto dura un enlace de una exportación asíncrona?",
+    "reference": "24 horas; si caduca hay que repetir el job.",
+    "relevant_doc_ids": ["producto", "faq"],
+    "tags": ["exports", "single_hop"],
+    "answerable": true
+  },
+  {
+    "id": "rag-010",
+    "question": "¿Qué garantía de entrega tienen los webhooks y cómo se deduplican?",
+    "reference": "Se entregan al menos una vez y el receptor debe deduplicar por event_id.",
+    "relevant_doc_ids": ["producto", "faq"],
+    "tags": ["webhooks", "multi_source"],
+    "answerable": true
+  },
+  {
+    "id": "rag-011",
+    "question": "¿En cuánto tiempo debe asignarse Incident Commander a un P1?",
+    "reference": "En un máximo de diez minutos desde la alerta.",
+    "relevant_doc_ids": ["runbook-incidentes"],
+    "tags": ["incident", "single_hop"],
+    "answerable": true
+  },
+  {
+    "id": "rag-012",
+    "question": "¿Cada cuánto se actualiza externamente un P1?",
+    "reference": "La página de estado se actualiza al menos cada 30 minutos.",
+    "relevant_doc_ids": ["runbook-incidentes"],
+    "tags": ["incident", "single_hop"],
+    "answerable": true
+  },
+  {
+    "id": "rag-013",
+    "question": "¿Cuándo requiere postmortem un P2?",
+    "reference": "Si duró más de dos horas, se repitió o el Incident Commander lo solicita.",
+    "relevant_doc_ids": ["runbook-incidentes"],
+    "tags": ["incident", "exception"],
+    "answerable": true
+  },
+  {
+    "id": "rag-014",
+    "question": "He perdido MFA y soy el único administrador. ¿Qué procedimiento aplica?",
+    "reference": "Recuperación reforzada con verificación del dominio corporativo y dos evidencias contractuales.",
+    "relevant_doc_ids": ["seguridad-cuentas"],
+    "tags": ["security", "procedure"],
+    "answerable": true
+  },
+  {
+    "id": "rag-015",
+    "question": "¿Cuánto dura un enlace de recuperación de contraseña?",
+    "reference": "30 minutos, es de un solo uso y pedir uno nuevo invalida los anteriores.",
+    "relevant_doc_ids": ["seguridad-cuentas"],
+    "tags": ["security", "single_hop"],
+    "answerable": true
+  },
+  {
+    "id": "rag-016",
+    "question": "¿Qué hay que hacer primero si se filtra una clave API?",
+    "reference": "Revocar la clave expuesta; después crear otra con scopes mínimos y revisar el audit log.",
+    "relevant_doc_ids": ["seguridad-cuentas"],
+    "tags": ["security", "ordering"],
+    "answerable": true
+  },
+  {
+    "id": "rag-017",
+    "question": "¿Cuánto audit log conserva el plan Scale?",
+    "reference": "180 días.",
+    "relevant_doc_ids": ["seguridad-cuentas", "faq"],
+    "tags": ["security", "plans"],
+    "answerable": true
+  },
+  {
+    "id": "rag-018",
+    "question": "¿Se puede editar una factura ya emitida?",
+    "reference": "No. La corrección se hace con un abono y una nueva factura.",
+    "relevant_doc_ids": ["facturacion"],
+    "tags": ["billing", "negation"],
+    "answerable": true
+  },
+  {
+    "id": "rag-019",
+    "question": "¿En qué días se reintenta una tarjeta fallida?",
+    "reference": "En los días 1, 3 y 7 desde el vencimiento.",
+    "relevant_doc_ids": ["facturacion"],
+    "tags": ["billing", "single_hop"],
+    "answerable": true
+  },
+  {
+    "id": "rag-020",
+    "question": "¿Cuándo puede pedirse reembolso de una renovación Starter o Scale?",
+    "reference": "Dentro de 14 días si no hubo uso material posterior; Enterprise se rige por contrato.",
+    "relevant_doc_ids": ["facturacion"],
+    "tags": ["billing", "exception"],
+    "answerable": true
+  },
+  {
+    "id": "rag-021",
+    "question": "¿Añadir un destinatario de facturas le da acceso al tenant?",
+    "reference": "No. Solo recibe nuevas facturas por email y no obtiene acceso ni histórico.",
+    "relevant_doc_ids": ["facturacion"],
+    "tags": ["billing", "negation"],
+    "answerable": true
+  },
+  {
+    "id": "rag-022",
+    "question": "¿Cuánto dura la prueba y qué ocurre al terminar?",
+    "reference": "Dura 14 días; después queda siete días en solo lectura y se elimina si no se contrata.",
+    "relevant_doc_ids": ["faq"],
+    "tags": ["trial", "multi_fact"],
+    "answerable": true
+  },
+  {
+    "id": "rag-023",
+    "question": "¿Los límites diarios usan la zona horaria que elige el usuario?",
+    "reference": "No. Se reinician a las 00:00 UTC aunque la visualización use otra zona.",
+    "relevant_doc_ids": ["producto", "faq"],
+    "tags": ["limits", "negation"],
+    "answerable": true
+  },
+  {
+    "id": "rag-024",
+    "question": "¿Existe una aplicación móvil nativa?",
+    "reference": "No; la interfaz web es responsive y no se anuncia fecha para una app móvil.",
+    "relevant_doc_ids": ["faq"],
+    "tags": ["product", "negative"],
+    "answerable": true
+  },
+  {
+    "id": "rag-025",
+    "question": "¿Qué precio exacto por usuario tiene Enterprise?",
+    "reference": "La documentación no lo especifica; capacidad y precio se acuerdan por contrato.",
+    "relevant_doc_ids": ["producto"],
+    "tags": ["unanswerable", "pricing"],
+    "answerable": false
+  },
+  {
+    "id": "rag-026",
+    "question": "¿En qué fecha lanzará NebulaOps su aplicación móvil?",
+    "reference": "No hay una fecha anunciada en la documentación.",
+    "relevant_doc_ids": ["faq"],
+    "tags": ["unanswerable", "future"],
+    "answerable": false
+  },
+  {
+    "id": "rag-027",
+    "question": "¿Cuál es el teléfono de soporte Enterprise?",
+    "reference": "La documentación indica que aparece en el contrato, pero no proporciona el número.",
+    "relevant_doc_ids": ["handbook"],
+    "tags": ["unanswerable", "contract"],
+    "answerable": false
+  },
+  {
+    "id": "rag-028",
+    "question": "¿Qué región de Asia-Pacífico ofrece NebulaOps?",
+    "reference": "La documentación no promete ninguna región de Asia-Pacífico.",
+    "relevant_doc_ids": ["producto"],
+    "tags": ["unanswerable", "false_premise"],
+    "answerable": false
+  },
+  {
+    "id": "rag-029",
+    "question": "¿Qué banco procesa los reembolsos?",
+    "reference": "La documentación no identifica un banco procesador.",
+    "relevant_doc_ids": ["facturacion"],
+    "tags": ["unanswerable", "billing"],
+    "answerable": false
+  },
+  {
+    "id": "rag-030",
+    "question": "¿Quién redacta las comunicaciones durante un P1?",
+    "reference": "El Communications Lead; el Incident Commander coordina y no redacta actualizaciones.",
+    "relevant_doc_ids": ["runbook-incidentes"],
+    "tags": ["incident", "role"],
+    "answerable": true
+  }
+]

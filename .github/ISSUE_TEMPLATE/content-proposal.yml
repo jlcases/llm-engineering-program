@@ -1,0 +1,40 @@
+name: Proponer contenido / Propose content
+description: Propón una unidad, lab, ejemplo o actualización basada en evidencia.
+title: "[Contenido] "
+labels: [content-proposal]
+body:
+  - type: textarea
+    id: gap
+    attributes:
+      label: Problema educativo
+      description: Qué debe aprender la persona y qué carencia concreta existe hoy.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Resultado verificable
+      description: Qué podrá construir, explicar o medir al terminar.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Fuentes primarias
+      description: Documentación oficial, paper o estándar, con enlaces directos.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Alcance propuesto
+      description: Rutas que añadirías o modificarías y cómo se evaluaría el aprendizaje.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public-boundary
+    attributes:
+      label: Límite público
+      options:
+        - label: La propuesta no publicará soluciones completas ni datos, prompts o credenciales privadas.
+          required: true

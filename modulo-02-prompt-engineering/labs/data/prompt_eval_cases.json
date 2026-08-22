@@ -1,0 +1,170 @@
+[
+  {
+    "id": "ticket-001",
+    "text": "Me habéis cobrado dos veces la factura FAC-2026-0184 y necesito que reviséis el duplicado.",
+    "category": "facturacion",
+    "priority": 2,
+    "segment": "explicit"
+  },
+  {
+    "id": "ticket-002",
+    "text": "Desde la actualización, la API devuelve 503 a todos nuestros clientes de producción.",
+    "category": "tecnico",
+    "priority": 3,
+    "segment": "critical"
+  },
+  {
+    "id": "ticket-003",
+    "text": "Quiero añadir veinte licencias y conocer el precio del plan Enterprise.",
+    "category": "ventas",
+    "priority": 1,
+    "segment": "explicit"
+  },
+  {
+    "id": "ticket-004",
+    "text": "He perdido el móvil con el autenticador y no puedo entrar en mi cuenta.",
+    "category": "cuenta",
+    "priority": 2,
+    "segment": "access"
+  },
+  {
+    "id": "ticket-005",
+    "text": "El panel tarda algo más de lo normal, pero acaba cargando tras unos quince segundos.",
+    "category": "tecnico",
+    "priority": 1,
+    "segment": "ambiguous_priority"
+  },
+  {
+    "id": "ticket-006",
+    "text": "Necesito cambiar la razón social que aparece en las próximas facturas.",
+    "category": "facturacion",
+    "priority": 1,
+    "segment": "billing_profile"
+  },
+  {
+    "id": "ticket-007",
+    "text": "Estamos evaluando proveedores. ¿Ofrecéis SSO SAML y contrato anual?",
+    "category": "ventas",
+    "priority": 1,
+    "segment": "pre_sales"
+  },
+  {
+    "id": "ticket-008",
+    "text": "Alguien ha cambiado el email administrador y vemos accesos que no reconocemos.",
+    "category": "cuenta",
+    "priority": 3,
+    "segment": "critical"
+  },
+  {
+    "id": "ticket-009",
+    "text": "Los webhooks llegan duplicados desde ayer; no hay pérdida de datos, pero procesamos cada evento dos veces.",
+    "category": "tecnico",
+    "priority": 2,
+    "segment": "technical_detail"
+  },
+  {
+    "id": "ticket-010",
+    "text": "No encuentro dónde descargar las facturas del trimestre pasado.",
+    "category": "facturacion",
+    "priority": 1,
+    "segment": "how_to"
+  },
+  {
+    "id": "ticket-011",
+    "text": "¿Podéis preparar una demo para el equipo de compras el jueves? Somos unas 80 personas.",
+    "category": "ventas",
+    "priority": 1,
+    "segment": "pre_sales"
+  },
+  {
+    "id": "ticket-012",
+    "text": "Mi usuario aparece desactivado después de cambiar de departamento.",
+    "category": "cuenta",
+    "priority": 2,
+    "segment": "access"
+  },
+  {
+    "id": "ticket-013",
+    "text": "La exportación CSV omite todas las filas creadas hoy y cierra nuestro cierre contable en dos horas.",
+    "category": "tecnico",
+    "priority": 3,
+    "segment": "critical"
+  },
+  {
+    "id": "ticket-014",
+    "text": "El IVA de la última factura figura al 21 %, pero nuestra entidad está exenta y ya enviamos el certificado.",
+    "category": "facturacion",
+    "priority": 2,
+    "segment": "billing_rule"
+  },
+  {
+    "id": "ticket-015",
+    "text": "Queremos pasar del plan mensual al anual si existe descuento por volumen.",
+    "category": "ventas",
+    "priority": 1,
+    "segment": "upgrade"
+  },
+  {
+    "id": "ticket-016",
+    "text": "Necesito eliminar definitivamente mi usuario y recibir confirmación del borrado.",
+    "category": "cuenta",
+    "priority": 2,
+    "segment": "privacy"
+  },
+  {
+    "id": "ticket-017",
+    "text": "La aplicación muestra una pantalla blanca solo en Safari 18; Chrome funciona correctamente.",
+    "category": "tecnico",
+    "priority": 2,
+    "segment": "browser"
+  },
+  {
+    "id": "ticket-018",
+    "text": "No reconozco el cargo de 499 euros de hoy y la tarjeta sigue asociada a la cuenta.",
+    "category": "facturacion",
+    "priority": 3,
+    "segment": "critical"
+  },
+  {
+    "id": "ticket-019",
+    "text": "¿Tenéis residencia de datos en la UE? Es un requisito para contratar.",
+    "category": "ventas",
+    "priority": 1,
+    "segment": "compliance_sales"
+  },
+  {
+    "id": "ticket-020",
+    "text": "El enlace de recuperación de contraseña expira inmediatamente cada vez que lo solicito.",
+    "category": "cuenta",
+    "priority": 2,
+    "segment": "access"
+  },
+  {
+    "id": "ticket-021",
+    "text": "El sistema ha enviado notificaciones con datos de otro cliente. Hemos detenido la integración.",
+    "category": "tecnico",
+    "priority": 3,
+    "segment": "critical"
+  },
+  {
+    "id": "ticket-022",
+    "text": "Quisiera que las facturas se enviasen también a contabilidad@ejemplo.es.",
+    "category": "facturacion",
+    "priority": 1,
+    "segment": "billing_profile"
+  },
+  {
+    "id": "ticket-023",
+    "text": "Bloquead mi cuenta ahora: acabo de introducir la contraseña en una página que imitaba vuestro login.",
+    "category": "cuenta",
+    "priority": 3,
+    "segment": "critical"
+  },
+  {
+    "id": "ticket-024",
+    "text": "Somos una ONG pequeña y queremos saber si existe un programa de precios específico.",
+    "category": "ventas",
+    "priority": 1,
+    "segment": "pre_sales"
+  }
+]

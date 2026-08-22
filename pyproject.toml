@@ -1,0 +1,53 @@
+[project]
+name = "llm-engineering-program"
+version = "0.1.0"
+description = "Programa de experto en LLM Engineering e IA Agéntica — labs y ejercicios"
+requires-python = ">=3.12"
+dependencies = [
+    # Base (módulos 1-2)
+    "openai>=3.3,<4",
+    "anthropic>=1.0,<2",
+    "boto3>=1.34",
+    "tiktoken>=0.14,<1",
+    "pydantic>=2.13,<3",
+    "python-dotenv>=1.2,<2",
+    "rich>=15,<16",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+rag = [
+    # Módulo 3
+    "chromadb>=1.5,<2",
+    "qdrant-client>=1.19,<2",
+    "sentence-transformers>=6,<7",
+    "cohere>=7,<8",
+    "fastapi>=0.141,<1",
+    "uvicorn>=0.52,<1",
+    "pypdf>=6.16,<7",
+    "numpy>=2,<3",
+]
+agents = [
+    # Módulo 4
+    "langgraph>=1.2,<2",
+    "langsmith>=0.11,<1",
+    "mcp[cli]>=2,<3",
+]
+ops = [
+    # Módulo 5
+    "prometheus-client>=0.26,<1",
+    "locust>=2.46,<3",
+]
+dev = [
+    "fastapi>=0.141,<1",
+    "pytest>=9,<10",
+    "ruff>=0.16,<1",
+]
+all = ["llm-engineering-program[rag,agents,ops]"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["modulo-03-rag/proyecto/backend/tests"]
+pythonpath = ["modulo-03-rag/proyecto/backend"]

@@ -1,0 +1,224 @@
+{
+  "$schema": "./course.schema.json",
+  "schemaVersion": 1,
+  "id": "llm-engineering-professional",
+  "title": "Programa de Experto en LLM Engineering e IA Agéntica",
+  "shortTitle": "LLM Engineer",
+  "language": "es",
+  "availableLanguages": ["es", "en"],
+  "translationSource": "course.en.json",
+  "description": "Ruta aplicada para diseñar, construir, evaluar y operar sistemas LLM de producción, demostrar la competencia con un capstone y preparar certificaciones profesionales.",
+  "sourceRepository": "jlcases/llm-engineering-program",
+  "canonicalSite": "https://llmengineerclub.com",
+  "reviewedAt": "2026-08-21",
+  "durationHours": {
+    "min": 250,
+    "max": 300
+  },
+  "ects": 10,
+  "outcomes": [
+    "Integrar modelos de OpenAI, Anthropic y Amazon Bedrock detrás de contratos propios y observables.",
+    "Diseñar prompts, herramientas y salidas estructuradas evaluadas con datasets reproducibles.",
+    "Construir y medir sistemas RAG con retrieval, reranking, grounding y evaluación continua.",
+    "Orquestar agentes fiables con LangGraph, MCP, memoria, trazas y límites de seguridad.",
+    "Operar aplicaciones LLM con observabilidad, control de costes, despliegue y gobierno.",
+    "Defender un capstone de nivel producción mediante evidencias, métricas y decisiones de arquitectura.",
+    "Preparar AWS Certified AI Practitioner y NVIDIA-Certified Associate Generative AI LLMs."
+  ],
+  "competencies": [
+    {
+      "id": "foundations",
+      "label": "Fundamentos y modelos",
+      "description": "Explicar transformers, tokenización, inferencia y selección de modelos con sus trade-offs.",
+      "evidence": "Comparativa ejecutable y decisión de modelo sustentada por una evaluación."
+    },
+    {
+      "id": "prompt-systems",
+      "label": "Prompt systems",
+      "description": "Tratar prompts, esquemas y tools como contratos versionados y evaluables.",
+      "evidence": "Dataset de regresión y pipeline A/B con criterios explícitos."
+    },
+    {
+      "id": "retrieval",
+      "label": "RAG y retrieval",
+      "description": "Diseñar ingesta, chunking, búsqueda, reranking, grounding y evaluación de RAG.",
+      "evidence": "RAG medido con casos respondibles y no respondibles, citas y métricas de retrieval."
+    },
+    {
+      "id": "agents",
+      "label": "Agentes y MCP",
+      "description": "Construir grafos, herramientas, memoria y recuperación de errores sin perder control.",
+      "evidence": "Agente con tres herramientas, trazas, idempotencia y casos negativos."
+    },
+    {
+      "id": "evaluation",
+      "label": "Evaluación",
+      "description": "Separar calidad de modelo, retrieval y aplicación mediante evals reproducibles.",
+      "evidence": "Suite de regresión con baseline, rúbrica, muestras fallidas y criterio de aceptación."
+    },
+    {
+      "id": "operations",
+      "label": "LLMOps",
+      "description": "Observar latencia, coste, calidad, seguridad y cambios de distribución en producción.",
+      "evidence": "Dashboard operativo, alertas y runbook de incidente."
+    },
+    {
+      "id": "security",
+      "label": "Safety y governance",
+      "description": "Modelar amenazas, limitar herramientas y aplicar privacidad, guardrails y auditoría.",
+      "evidence": "Threat model, prueba de prompt injection y controles verificables."
+    },
+    {
+      "id": "architecture",
+      "label": "Arquitectura de producto",
+      "description": "Tomar decisiones de build vs buy, coste, fiabilidad y experiencia de usuario.",
+      "evidence": "ADRs, análisis de costes y defensa técnica del capstone."
+    }
+  ],
+  "modules": [
+    {
+      "id": "module-01",
+      "number": 1,
+      "slug": "fundamentos-llm",
+      "path": "modulo-01-fundamentos-llm",
+      "title": "Fundamentos de LLMs y APIs",
+      "shortTitle": "Fundamentos",
+      "description": "Transformer, tokenización, generación, modelos actuales y clientes multi-proveedor.",
+      "durationHours": { "min": 15, "max": 18 },
+      "ects": 0.5,
+      "prerequisites": [],
+      "competencies": ["foundations", "architecture"],
+      "milestone": "Cliente multi-proveedor con tokens, latencia, errores y metadatos observables."
+    },
+    {
+      "id": "module-02",
+      "number": 2,
+      "slug": "prompt-engineering",
+      "path": "modulo-02-prompt-engineering",
+      "title": "Prompt engineering avanzado",
+      "shortTitle": "Prompt systems",
+      "description": "Prompts como software: tools, structured outputs, evaluación, versionado y mitigación.",
+      "durationHours": { "min": 38, "max": 45 },
+      "ects": 1.5,
+      "prerequisites": ["module-01"],
+      "competencies": ["prompt-systems", "evaluation", "security"],
+      "milestone": "Pipeline de evaluación de prompts con dataset, A/B y regresión en CI."
+    },
+    {
+      "id": "module-03",
+      "number": 3,
+      "slug": "rag",
+      "path": "modulo-03-rag",
+      "title": "RAG systems y evaluación",
+      "shortTitle": "RAG",
+      "description": "Ingesta, embeddings, vector stores, chunking, reranking, grounding y RAGAS.",
+      "durationHours": { "min": 50, "max": 60 },
+      "ects": 2,
+      "prerequisites": ["module-01", "module-02"],
+      "competencies": ["retrieval", "evaluation", "architecture"],
+      "milestone": "Aplicación RAG con citas, abstención y evaluación automatizada."
+    },
+    {
+      "id": "module-04",
+      "number": 4,
+      "slug": "agentes",
+      "path": "modulo-04-agentes",
+      "title": "AI Agents y orquestación",
+      "shortTitle": "Agentes",
+      "description": "Patrones agentic, LangGraph, MCP, tool use, multi-agente, memoria y evaluación.",
+      "durationHours": { "min": 50, "max": 60 },
+      "ects": 2,
+      "prerequisites": ["module-01", "module-02"],
+      "competencies": ["agents", "evaluation", "security"],
+      "milestone": "Sistema multi-agente con servidor MCP, trazas y recuperación de fallos."
+    },
+    {
+      "id": "module-05",
+      "number": 5,
+      "slug": "llmops",
+      "path": "modulo-05-llmops",
+      "title": "LLMOps, producción y Responsible AI",
+      "shortTitle": "LLMOps",
+      "description": "Observabilidad, eval continua, costes, despliegue, seguridad, safety y gobierno.",
+      "durationHours": { "min": 50, "max": 60 },
+      "ects": 2,
+      "prerequisites": ["module-03", "module-04"],
+      "competencies": ["operations", "evaluation", "security", "architecture"],
+      "milestone": "Sistema desplegado con SLOs, costes, evals y runbook operativo."
+    },
+    {
+      "id": "module-06",
+      "number": 6,
+      "slug": "capstone",
+      "path": "modulo-06-capstone",
+      "title": "Capstone de producción",
+      "shortTitle": "Capstone",
+      "description": "Proyecto integral, portfolio técnico, despliegue, defensa y preparación final.",
+      "durationHours": { "min": 47, "max": 57 },
+      "ects": 2,
+      "prerequisites": ["module-03", "module-04", "module-05"],
+      "competencies": ["foundations", "prompt-systems", "retrieval", "agents", "evaluation", "operations", "security", "architecture"],
+      "milestone": "Sistema defendible en entrevista con arquitectura, métricas, costes y demo."
+    }
+  ],
+  "certifications": [
+    {
+      "id": "aws-aif-c01",
+      "name": "AWS Certified AI Practitioner",
+      "code": "AIF-C01",
+      "officialUrl": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+      "verifiedAt": "2026-08-21",
+      "sourcePath": "certificaciones/aws-aif-c01",
+      "exam": {
+        "durationMinutes": 90,
+        "questions": 65,
+        "scoredQuestions": 50,
+        "passingScaledScore": 700
+      },
+      "domains": [
+        { "id": "aws-d1", "label": "Fundamentals of AI and ML", "weight": 20, "modules": ["module-01"] },
+        { "id": "aws-d2", "label": "Fundamentals of Generative AI", "weight": 24, "modules": ["module-01", "module-02", "module-03"] },
+        { "id": "aws-d3", "label": "Applications of Foundation Models", "weight": 28, "modules": ["module-02", "module-03", "module-04"] },
+        { "id": "aws-d4", "label": "Guidelines for Responsible AI", "weight": 14, "modules": ["module-02", "module-05"] },
+        { "id": "aws-d5", "label": "Security, Compliance, and Governance", "weight": 14, "modules": ["module-05"] }
+      ]
+    },
+    {
+      "id": "nvidia-nca-genl",
+      "name": "NVIDIA-Certified Associate: Generative AI LLMs",
+      "code": "NCA-GENL",
+      "officialUrl": "https://www.nvidia.com/en-us/learn/certification/generative-ai-llm-associate/",
+      "verifiedAt": "2026-08-21",
+      "sourcePath": "certificaciones/nvidia-nca-genl",
+      "exam": {
+        "durationMinutes": 60,
+        "questionsMin": 50,
+        "questionsMax": 60,
+        "validityYears": 2
+      },
+      "domains": [
+        { "id": "nvidia-d1", "label": "Core Machine Learning and AI Knowledge", "weight": 30, "modules": ["module-01", "module-02", "module-04"] },
+        { "id": "nvidia-d2", "label": "Software Development", "weight": 24, "modules": ["module-02", "module-03", "module-04", "module-05"] },
+        { "id": "nvidia-d3", "label": "Experimentation", "weight": 22, "modules": ["module-02", "module-03", "module-05"] },
+        { "id": "nvidia-d4", "label": "Data Analysis and Visualization", "weight": 14, "modules": ["module-01", "module-03", "module-05"] },
+        { "id": "nvidia-d5", "label": "Trustworthy AI", "weight": 10, "modules": ["module-04", "module-05"] }
+      ]
+    }
+  ],
+  "publishing": {
+    "include": [
+      "README.md",
+      "PLAN_DE_ESTUDIOS.md",
+      "modulo-*/README.md",
+      "modulo-*/teoria/*.md",
+      "modulo-*/labs/*.py",
+      "modulo-*/ejercicios.md",
+      "modulo-*/proyecto/README.md",
+      "modulo-06-capstone/**/*.md",
+      "certificaciones/**/*.md",
+      "recursos/**/*.md",
+      "setup/README.md"
+    ],
+    "exclude": ["**/.DS_Store", "**/__pycache__/**", "**/.venv/**", "**/soluciones/**"]
+  }
+}

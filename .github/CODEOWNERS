@@ -1,0 +1,5 @@
+/course.json @jlcases
+/course.schema.json @jlcases
+/certificaciones/ @jlcases
+/modulo-05-llmops/teoria/08-seguridad-y-governance.md @jlcases
+/modulo-05-llmops/teoria/09-safety-en-produccion.md @jlcases

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://llmengineerclub.com/schemas/course.schema.json",
+  "title": "LLM Engineer Club course contract",
+  "type": "object",
+  "required": ["schemaVersion", "id", "title", "language", "sourceRepository", "reviewedAt", "durationHours", "competencies", "modules", "certifications", "publishing"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "title": { "type": "string", "minLength": 10 },
+    "shortTitle": { "type": "string", "minLength": 3 },
+    "language": { "enum": ["es", "en"] },
+    "availableLanguages": { "type": "array", "items": { "enum": ["es", "en"] }, "uniqueItems": true },
+    "translationSource": { "type": "string" },
+    "description": { "type": "string", "minLength": 80 },
+    "sourceRepository": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
+    "canonicalSite": { "type": "string", "format": "uri" },
+    "reviewedAt": { "type": "string", "format": "date" },
+    "durationHours": { "$ref": "#/$defs/range" },
+    "ects": { "type": "number", "exclusiveMinimum": 0 },
+    "outcomes": { "type": "array", "minItems": 5, "items": { "type": "string", "minLength": 20 }, "uniqueItems": true },
+    "competencies": {
+      "type": "array",
+      "minItems": 6,
+      "items": { "$ref": "#/$defs/competency" }
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 6,
+      "items": { "$ref": "#/$defs/module" }
+    },
+    "certifications": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/certification" }
+    },
+    "publishing": {
+      "type": "object",
+      "required": ["include", "exclude"],
+      "additionalProperties": false,
+      "properties": {
+        "include": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "exclude": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "$defs": {
+    "range": {
+      "type": "object",
+      "required": ["min", "max"],
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": "integer", "minimum": 1 },
+        "max": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "competency": {
+      "type": "object",
+      "required": ["id", "label", "description", "evidence"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "label": { "type": "string", "minLength": 3 },
+        "description": { "type": "string", "minLength": 20 },
+        "evidence": { "type": "string", "minLength": 20 }
+      }
+    },
+    "module": {
+      "type": "object",
+      "required": ["id", "number", "slug", "path", "title", "description", "durationHours", "ects", "prerequisites", "competencies", "milestone"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^module-[0-9]{2}$" },
+        "number": { "type": "integer", "minimum": 1 },
+        "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "sourceSlug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "path": { "type": "string" },
+        "title": { "type": "string", "minLength": 5 },
+        "shortTitle": { "type": "string", "minLength": 3 },
+        "description": { "type": "string", "minLength": 30 },
+        "durationHours": { "$ref": "#/$defs/range" },
+        "ects": { "type": "number", "exclusiveMinimum": 0 },
+        "prerequisites": { "type": "array", "items": { "type": "string", "pattern": "^module-[0-9]{2}$" }, "uniqueItems": true },
+        "competencies": { "type": "array", "minItems": 1, "items": { "type": "string" }, "uniqueItems": true },
+        "milestone": { "type": "string", "minLength": 20 }
+      }
+    },
+    "certification": {
+      "type": "object",
+      "required": ["id", "name", "code", "officialUrl", "verifiedAt", "sourcePath", "exam", "domains"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "officialUrl": { "type": "string", "format": "uri" },
+        "verifiedAt": { "type": "string", "format": "date" },
+        "sourcePath": { "type": "string" },
+        "exam": { "type": "object" },
+        "domains": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "weight", "modules"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" },
+              "label": { "type": "string" },
+              "weight": { "type": "number", "exclusiveMinimum": 0, "maximum": 100 },
+              "modules": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

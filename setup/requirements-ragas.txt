@@ -1,0 +1,8 @@
+# Entorno aislado: RAGAS 0.4.3 arrastra Instructor, que declara OpenAI SDK <3 y Rich <15.
+ragas==0.4.3
+# RAGAS 0.4.3 importa chat_models.vertexai, eliminado en langchain-community 0.4.x.
+langchain-community>=0.3.26,<0.4
+openai>=2,<3
+numpy>=2,<3
+python-dotenv>=1.2,<2
+rich>=14,<15

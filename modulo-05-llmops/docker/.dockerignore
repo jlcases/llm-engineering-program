@@ -1,0 +1,10 @@
+.git
+.env
+.venv
+__pycache__
+*.pyc
+*.log
+Dockerfile*
+docker-compose*.yml
+README.md
+prometheus.yml

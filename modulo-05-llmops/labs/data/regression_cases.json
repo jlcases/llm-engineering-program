@@ -1,0 +1,18 @@
+[
+  {"id":"ops-001","text":"La API devuelve 503 en producción desde las 09:10.","category":"technical","escalate":true,"segment":"critical"},
+  {"id":"ops-002","text":"¿Dónde descargo mi factura de julio?","category":"billing","escalate":false,"segment":"routine"},
+  {"id":"ops-003","text":"He publicado una clave API en un repositorio público.","category":"security","escalate":true,"segment":"critical"},
+  {"id":"ops-004","text":"Quiero cambiar el nombre visible de mi equipo.","category":"account","escalate":false,"segment":"routine"},
+  {"id":"ops-005","text":"El cobro aparece duplicado en la tarjeta.","category":"billing","escalate":true,"segment":"financial"},
+  {"id":"ops-006","text":"No recibo el enlace para restablecer la contraseña.","category":"account","escalate":false,"segment":"routine"},
+  {"id":"ops-007","text":"Un usuario desconocido ha desactivado MFA del administrador.","category":"security","escalate":true,"segment":"critical"},
+  {"id":"ops-008","text":"La latencia p95 ha subido de 800 ms a 12 segundos.","category":"technical","escalate":true,"segment":"critical"},
+  {"id":"ops-009","text":"¿Se puede añadir un destinatario para las facturas?","category":"billing","escalate":false,"segment":"routine"},
+  {"id":"ops-010","text":"Necesito invitar a otra persona al workspace.","category":"account","escalate":false,"segment":"routine"},
+  {"id":"ops-011","text":"Los webhooks fallan con timeout de forma intermitente.","category":"technical","escalate":false,"segment":"technical"},
+  {"id":"ops-012","text":"Creo que alguien ha robado mi token de sesión.","category":"security","escalate":true,"segment":"critical"},
+  {"id":"ops-013","text":"El IVA de la factura no corresponde al país configurado.","category":"billing","escalate":false,"segment":"financial"},
+  {"id":"ops-014","text":"Después del despliegue todos los jobs quedan bloqueados.","category":"technical","escalate":true,"segment":"critical"},
+  {"id":"ops-015","text":"Quiero actualizar el email del propietario.","category":"account","escalate":false,"segment":"routine"},
+  {"id":"ops-016","text":"Hay datos de otro tenant en nuestra exportación.","category":"security","escalate":true,"segment":"critical"}
+]
