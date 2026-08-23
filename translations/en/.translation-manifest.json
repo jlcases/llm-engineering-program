@@ -1,7 +1,7 @@
 {
   "version": 1,
   "model": "qwen3.6:35b-a3b-coding-nvfp4",
-  "generatedAt": "2026-08-22T00:28:52.823Z",
+  "generatedAt": "2026-08-22T12:09:54.118Z",
   "files": {
     "modulo-01-fundamentos-llm/README.md": {
       "sourceHash": "8c2018885548e3cba24f899f6cb293f3e20025bd9f42f1db45437423e4b205fc",
@@ -28,12 +28,12 @@
       "translatedAt": "2026-08-22T00:09:48.180Z"
     },
     "README.md": {
-      "sourceHash": "d925f96259adfca122b614eb35ff2ba3c5ab7aac88ae87897681826a4046cb7b",
-      "translationHash": "bb7201d4abae594efcfc59544fea3cf17443127b764a84f59d85cb469b911815",
+      "sourceHash": "a33440c9d742044b3c8ce0aaf8f9589b5a12ed695fb4018fa5bac22f8e56e666",
+      "translationHash": "fec4e4b51ceb7270a3c283a48705622b0e9de9b044a9c6950ecdab2fada1c958",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:48.233Z"
+      "translatedAt": "2026-08-22T12:09:54.117Z"
     },
     "certificaciones/README.md": {
       "sourceHash": "789727992b9e9c434b1a7d265d2bd2c0344da08e459d2779c4dec605afcaa518",

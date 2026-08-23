@@ -52,10 +52,20 @@ and portfolio. No account required: progress lives in the browser. Page authorsh
 synchronized from merged PRs and links to the public profile of whoever created, improved, or reviewed the
 content.
 
+The **Club Quiz** is a separate, voluntary experience: it offers a local practice run with retired
+questions and one official attempt per pseudonymous passkey. Scoring takes both correct answers and
+server-measured response speed into account. It uses no cookies and the result is private by default;
+only afterwards may a participant voluntarily link a social profile to enter the leaderboard. Every
+result has a verifiable Ed25519 proof.
+
 This repository contains knowledge, problem statements, fictional data, and verifiable criteria. Editorial
 exercise solutions are kept outside both the public repository and the web artifact. Mock-exam keys do not
 live here either: the website combines them from its private source and only reveals the review after an exam
 is submitted.
+
+PRs may also propose objectives and blueprints for future questions. The exact material for a competitive
+edition is transformed and reviewed outside the public history; after retirement, it may return here as open
+practice. Read the [Club Quiz contribution policy](docs/club-quiz-contributions.md).
 
 ## Local Validation
 

@@ -24,3 +24,4 @@
 - [ ] Los enlaces y fuentes son accesibles.
 - [ ] He actualizado la traducción EN equivalente o he explicado por qué requiere apoyo editorial.
 - [ ] No contiene soluciones completas ni una carpeta de solucionarios.
+- [ ] Si propone contenido para el Club Quiz, no incluye ninguna pregunta activa ni su clave; solo un blueprint público.

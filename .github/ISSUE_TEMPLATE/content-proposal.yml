@@ -38,3 +38,5 @@ body:
       options:
         - label: La propuesta no publicará soluciones completas ni datos, prompts o credenciales privadas.
           required: true
+        - label: Si la propuesta puede alimentar el Club Quiz, contiene solo un blueprint y ninguna pregunta activa ni clave de respuesta.
+          required: true

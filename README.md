@@ -57,10 +57,21 @@ y portfolio. No requiere cuenta: el progreso vive en el navegador. La autoría d
 sincroniza desde las PR fusionadas y enlaza al perfil público de quien creó, mejoró o revisó el
 contenido.
 
+El **Club Quiz** es una experiencia voluntaria y separada: ofrece una práctica local con preguntas
+retiradas y un único intento oficial por passkey seudónima. La puntuación tiene en cuenta los
+aciertos y la velocidad medida en servidor. No usa cookies y el resultado queda privado por
+defecto; solo después se puede vincular voluntariamente un perfil social para optar al ranking.
+Cada resultado dispone de una prueba Ed25519 verificable.
+
 Este repositorio contiene conocimiento, enunciados, datos ficticios y criterios verificables. Los
 solucionarios editoriales de ejercicios se mantienen fuera del repositorio público y del artefacto
 web. Las claves de simulacro tampoco viven aquí: la web las combina desde su fuente privada y solo
 muestra la corrección después de entregar el examen.
+
+Las PR también pueden proponer objetivos y blueprints para futuras preguntas. El material exacto
+de una edición competitiva se transforma y revisa fuera del historial público; cuando se retira,
+puede volver aquí como práctica abierta. Consulta la
+[política de contribuciones al Club Quiz](docs/club-quiz-contributions.md).
 
 ## Validación local
 

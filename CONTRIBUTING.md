@@ -31,6 +31,16 @@ marcada como respuesta oficial se rechaza automáticamente. Sí son bienvenidos 
 rúbricas, pistas graduales y criterios verificables que permitan aprender sin publicar la
 respuesta.
 
+### Propuestas para el Club Quiz
+
+Puedes aportar un objetivo evaluable, un escenario base, la dificultad, fuentes y un análisis de
+ambigüedad. No publiques una pregunta que ya esté activa ni su combinación exacta de enunciado,
+opciones, clave y explicación. Tras el merge, el equipo editorial genera una variante privada,
+conserva la atribución de la PR y la somete a revisión antes de incorporarla a D1. Las preguntas
+retiradas sí pueden publicarse después como práctica abierta.
+
+El contrato completo está en [`docs/club-quiz-contributions.md`](docs/club-quiz-contributions.md).
+
 ## Estructura
 
 - Teoría: `modulo-NN-*/teoria/NN-titulo.md`.
@@ -40,6 +50,8 @@ respuesta.
   en un repositorio privado y **no se aceptan** en este repositorio público.
 - Certificaciones: `certificaciones/<codigo>/`. Los enunciados y distractores son públicos; no
   añadas una hoja de respuestas. La clave razonada se coordina con el mantenedor fuera de la PR.
+- Club Quiz: aporta blueprints públicos siguiendo `docs/club-quiz-contributions.md`; el banco activo
+  y sus respuestas nunca se añaden a este repositorio.
 - Metadatos de la ruta: `course.json`.
 - Traducciones inglesas: `translations/en/<misma-ruta>`, con el manifiesto de hashes
   regenerado mediante `node scripts/translate-content.mjs --path <ruta>`.
