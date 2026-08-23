@@ -150,7 +150,7 @@
 
 ## Mapeo al repo
 
-Este dominio se corresponde con el **módulo 5 (LLMOps: seguridad, IAM, KMS, CloudTrail, VPC endpoints, governance)**.
+Este dominio se corresponde con el **módulo 8 (LLMOps: seguridad, IAM, KMS, CloudTrail, VPC endpoints, governance)**.
 
 ## Recursos para profundizar
 

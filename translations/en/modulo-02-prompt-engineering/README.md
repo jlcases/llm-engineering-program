@@ -1,9 +1,9 @@
-# Module II — Advanced Prompt Engineering (1.5 ECTS)
+# Module 02 — Context and output contracts
 
-> Estimated time: **~40 hours** (≈ 4 weeks at 10 h/week, weeks 3–6 of the calendar).
-> Exit milestone: **fully functional prompt evaluation pipeline with test dataset and A/B testing** from end to end.
+> Suggested effort: **38–45 hours**.
+> Proof of work: **contract evaluation pipeline with a dataset and A/B comparison** running end to end.
 
-The prompt is the actual programming interface of an LLM. This module moves you from "writing prompts that seem to work" to **prompt engineering**: empirically grounded techniques, structured and validated outputs, and —most importantly— an evaluation system that tells you with data whether one prompt is better than another.
+Context and output form a system interface. This module moves from “writing prompts that seem to work” to designing **versioned contracts**: instructions with explicit authority, structured outputs, and an evaluation system proving with data whether one version is better than another.
 
 ## Learning Objectives
 

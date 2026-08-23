@@ -42,7 +42,7 @@ function isPublishable(sourcePath) {
   if (!publishableExtensions.has(extension)) return false;
   if (extension === '.py' && (!sourcePath.includes('/labs/') || path.posix.basename(sourcePath).startsWith('_'))) return false;
   return sourcePath === 'README.md'
-    || sourcePath === 'PLAN_DE_ESTUDIOS.md'
+    || sourcePath === 'RUTA_DE_APRENDIZAJE.md'
     || sourcePath.startsWith('modulo-')
     || sourcePath.startsWith('certificaciones/')
     || sourcePath === 'recursos/README.md'

@@ -1,4 +1,4 @@
-# Module 3 — RAG Systems and Evaluation (2 ECTS · ~55 h)
+# Module 03 — Retrieval Engineering
 
 Retrieval-Augmented Generation is today the most widely deployed production pattern for connecting LLMs with private or up-to-date knowledge. This module covers the complete pipeline — ingestion, chunking, embeddings, indexing, retrieval, reranking, and generation — and, with equal emphasis, how to **evaluate it**: a RAG system without metrics is a demo, not a production system.
 

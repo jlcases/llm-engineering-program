@@ -45,7 +45,7 @@ presupuesto; los módulos 3–5 incluyen además recorridos offline o modelos lo
 ## 4. Servicios locales opcionales
 
 - **Ollama** (`brew install ollama`) — modelos locales para labs de despliegue y para trabajar sin coste de API.
-- **Docker Desktop** — necesario en el módulo 5 (contenedores) y para Qdrant/pgvector locales en el módulo 3.
+- **Docker Desktop** — necesario en el módulo 8 (contenedores) y para Qdrant/pgvector locales en el módulo 3.
 - **Node ≥ 20** — solo para el frontend Next.js del módulo 3.
 
 ## 5. Verificación

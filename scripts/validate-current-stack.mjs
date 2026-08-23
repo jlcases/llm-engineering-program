@@ -69,7 +69,7 @@ for (const file of await walkCurrentSources(root)) {
 const requiredDefaults = new Map([
   ['modulo-01-fundamentos-llm/labs/01_primer_llamada_openai.py', 'gpt-5.6-luna'],
   ['modulo-01-fundamentos-llm/labs/02_primer_llamada_anthropic.py', 'claude-haiku-4-5'],
-  ['modulo-05-llmops/labs/04_model_routing.py', 'gpt-5.6-sol'],
+  ['modulo-08-production-engineering/labs/04_model_routing.py', 'gpt-5.6-sol'],
 ]);
 for (const [file, model] of requiredDefaults) {
   const source = await readFile(file, 'utf8');

@@ -131,7 +131,7 @@ dataset de test ─────────┘                        ─→ jue
                               regresiones vs versión anterior, coste de la eval
 ```
 
-Herramientas existentes que implementan este pipeline (para conocerlas; en los labs lo construimos a mano precisamente para entenderlo): **promptfoo** (config YAML, muy directo para prompts), **Inspect** (framework de evals de AISI, Python), **LangSmith** / **Braintrust** / **Langfuse** (plataformas con datasets, runs y jueces integrados), **OpenAI Evals**. En el módulo 5 se retoma la evaluación como proceso continuo en producción.
+Herramientas existentes que implementan este pipeline (para conocerlas; en los labs lo construimos a mano precisamente para entenderlo): **promptfoo** (config YAML, muy directo para prompts), **Inspect** (framework de evals de AISI, Python), **LangSmith** / **Braintrust** / **Langfuse** (plataformas con datasets, runs y jueces integrados), **OpenAI Evals**. En el módulo 8 se retoma la evaluación como proceso continuo en producción.
 
 ## Cuánto cuesta evaluar (y por qué da igual)
 

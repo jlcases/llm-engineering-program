@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-23",
+  "scope": "Reference set selected for architectural diversity. It is an audited snapshot, not an exhaustive popularity ranking.",
+  "layers": {
+    "coding_agent_runtime": "Owns a coding loop and directly mediates model, repository and executable capabilities.",
+    "personal_agent_runtime": "Owns a persistent, multi-surface agent runtime in which coding is one workload among others.",
+    "integrated_agent_product": "Packages an agent runtime with IDE or CLI product surfaces whose ambient context changes the experiment.",
+    "multi_agent_ade": "Coordinates multiple agent processes and workspaces above their individual loops.",
+    "workflow_orchestrator": "Expresses deterministic, resumable stages and delegates agentic turns to lower-level runtimes."
+  },
+  "harnesses": [
+    {
+      "id": "deepseek-harness",
+      "name": "DeepSeek Harness (dsh)",
+      "repository": "https://github.com/deepseek-ai/deepseek-harness",
+      "primaryLayer": "coding_agent_runtime",
+      "comparisonCohort": "native_tool_cli",
+      "surfaces": ["cli", "web", "headless"],
+      "loopOwnership": "replaceable_plugin",
+      "interactionProtocol": "structured_tool_calls",
+      "backendPortability": "model_adapter_plugin",
+      "trustBoundary": "Sandbox, filesystem and approval behavior depend on the composed profile and providers; inspect the effective plugin tree.",
+      "verifiedFacts": [
+        "Model adapter, tool registry, session log and agent loop are plugins in a Cordis tree.",
+        "The session event log is append-only and is the source from which model-visible history is derived."
+      ],
+      "benchmarkHypotheses": [
+        "A model-specific loop can outperform a general loop without expanding the tool surface."
+      ],
+      "primarySources": [
+        "https://github.com/deepseek-ai/deepseek-harness",
+        "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md"
+      ]
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "repository": "https://github.com/anomalyco/opencode",
+      "primaryLayer": "coding_agent_runtime",
+      "comparisonCohort": "native_tool_cli",
+      "surfaces": ["tui", "desktop", "ide", "headless"],
+      "loopOwnership": "product_runtime",
+      "interactionProtocol": "structured_tool_calls",
+      "backendPortability": "multi_provider",
+      "trustBoundary": "Permission policy and active provider configuration must be captured with every trial.",
+      "verifiedFacts": [
+        "The project describes itself as an open-source coding agent with terminal, desktop and IDE surfaces.",
+        "Its documented agents separate a build role from a read-only plan role."
+      ],
+      "benchmarkHypotheses": [
+        "Context management and tool recovery remain reliable under long repository tasks."
+      ],
+      "primarySources": [
+        "https://github.com/anomalyco/opencode",
+        "https://opencode.ai/docs/"
+      ]
+    },
+    {
+      "id": "goose",
+      "name": "Goose",
+      "repository": "https://github.com/aaif-goose/goose",
+      "primaryLayer": "coding_agent_runtime",
+      "comparisonCohort": "native_tool_cli",
+      "surfaces": ["cli", "desktop", "api"],
+      "loopOwnership": "product_runtime",
+      "interactionProtocol": "structured_tool_calls_and_mcp",
+      "backendPortability": "multi_provider_including_local",
+      "trustBoundary": "Enabled extensions define both prompt load and authority; benchmark the minimum and full manifests separately.",
+      "verifiedFacts": [
+        "The official project exposes desktop, CLI and API surfaces.",
+        "It supports multiple model providers and extensions through MCP."
+      ],
+      "benchmarkHypotheses": [
+        "Reducing enabled extensions improves tool selection for smaller local models."
+      ],
+      "primarySources": [
+        "https://github.com/aaif-goose/goose",
+        "https://block.github.io/goose/"
+      ]
+    },
+    {
+      "id": "crush",
+      "name": "Crush",
+      "repository": "https://github.com/charmbracelet/crush",
+      "primaryLayer": "coding_agent_runtime",
+      "comparisonCohort": "native_tool_cli",
+      "surfaces": ["tui"],
+      "loopOwnership": "product_runtime",
+      "interactionProtocol": "structured_tool_calls",
+      "backendPortability": "multi_provider_and_compatible_endpoints",
+      "trustBoundary": "The active provider, session configuration and tool policy are part of the agent identity.",
+      "verifiedFacts": [
+        "Crush is a terminal coding agent implemented in Go.",
+        "It documents model switching while preserving session context and compatible API providers."
+      ],
+      "benchmarkHypotheses": [
+        "A small native process reduces harness overhead without weakening recovery behavior."
+      ],
+      "primarySources": [
+        "https://github.com/charmbracelet/crush"
+      ]
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "repository": "https://github.com/Aider-AI/aider",
+      "primaryLayer": "coding_agent_runtime",
+      "comparisonCohort": "text_edit_cli",
+      "surfaces": ["cli"],
+      "loopOwnership": "product_runtime",
+      "interactionProtocol": "model_generated_edit_formats",
+      "backendPortability": "multi_provider",
+      "trustBoundary": "Git and command execution settings still carry effects even when edits are expressed as text.",
+      "verifiedFacts": [
+        "Aider is a terminal pair-programming tool integrated with a local Git repository.",
+        "Its implementation contains multiple explicit edit protocols, including whole-file, diff and unified-diff families."
+      ],
+      "benchmarkHypotheses": [
+        "Textual edit protocols are a stronger baseline than native tool calls for models with fragile function calling."
+      ],
+      "primarySources": [
+        "https://github.com/Aider-AI/aider",
+        "https://aider.chat/docs/more/edit-formats.html"
+      ]
+    },
+    {
+      "id": "hermes-agent",
+      "name": "Hermes Agent",
+      "repository": "https://github.com/NousResearch/hermes-agent",
+      "primaryLayer": "personal_agent_runtime",
+      "comparisonCohort": "persistent_personal_agent",
+      "surfaces": ["tui", "chat_channels", "gateway"],
+      "loopOwnership": "persistent_learning_runtime",
+      "interactionProtocol": "tools_skills_memory_and_subagents",
+      "backendPortability": "multi_provider_and_custom_endpoint",
+      "trustBoundary": "Persistent memory and remote channels enlarge the data-retention and identity boundary beyond one repository run.",
+      "verifiedFacts": [
+        "The runtime includes cross-session memory, skill creation and isolated subagents.",
+        "It supports terminal and remote chat surfaces plus several execution backends."
+      ],
+      "benchmarkHypotheses": [
+        "A second cleanly defined session benefits from retained knowledge without leaking task answers."
+      ],
+      "primarySources": [
+        "https://github.com/NousResearch/hermes-agent",
+        "https://hermes-agent.nousresearch.com/docs/"
+      ]
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "repository": "https://github.com/anthropics/claude-code",
+      "primaryLayer": "coding_agent_runtime",
+      "comparisonCohort": "native_tool_cli",
+      "surfaces": ["cli", "ide", "github"],
+      "loopOwnership": "product_runtime",
+      "interactionProtocol": "structured_tool_calls",
+      "backendPortability": "official_provider_contract",
+      "trustBoundary": "Do not infer local-backend support or permission equivalence from an undocumented compatible endpoint.",
+      "verifiedFacts": [
+        "The product operates from terminal and IDE surfaces and can perform codebase and Git workflows.",
+        "Its public repository contains plugins and issue tracking but does not define an open interchangeable harness contract."
+      ],
+      "benchmarkHypotheses": [
+        "A large default capability surface increases formatting pressure on smaller models."
+      ],
+      "primarySources": [
+        "https://github.com/anthropics/claude-code",
+        "https://docs.anthropic.com/en/docs/claude-code/overview"
+      ]
+    },
+    {
+      "id": "pi",
+      "name": "Pi Agent Harness",
+      "repository": "https://github.com/earendil-works/pi",
+      "primaryLayer": "coding_agent_runtime",
+      "comparisonCohort": "native_tool_cli",
+      "surfaces": ["tui", "print", "json", "rpc", "sdk"],
+      "loopOwnership": "extensible_runtime",
+      "interactionProtocol": "structured_tool_calls",
+      "backendPortability": "unified_multi_provider_api",
+      "trustBoundary": "Pi has no built-in filesystem, process, network or credential permission boundary; external sandboxing is required.",
+      "verifiedFacts": [
+        "The monorepo separates provider API, agent runtime, coding agent and TUI packages.",
+        "The coding agent starts with read, write, edit and bash by default and allows tools and compaction to be replaced or extended."
+      ],
+      "benchmarkHypotheses": [
+        "A minimal default tool set improves selection reliability for constrained models."
+      ],
+      "primarySources": [
+        "https://github.com/earendil-works/pi",
+        "https://github.com/earendil-works/pi/tree/main/packages/coding-agent"
+      ]
+    },
+    {
+      "id": "orca-stablyai",
+      "name": "Orca by stablyai",
+      "repository": "https://github.com/stablyai/orca",
+      "primaryLayer": "multi_agent_ade",
+      "comparisonCohort": "parallel_agent_orchestration",
+      "surfaces": ["desktop", "mobile", "vps", "cli"],
+      "loopOwnership": "delegated_to_coding_agents",
+      "interactionProtocol": "process_and_worktree_orchestration",
+      "backendPortability": "indirect_through_coding_agents",
+      "trustBoundary": "Worktrees isolate Git state, not automatically credentials, network, host processes or shared external services.",
+      "verifiedFacts": [
+        "The product runs multiple coding agents side by side in separate Git worktrees.",
+        "It sits above Codex, Claude Code, OpenCode, Pi and other agent CLIs rather than replacing their loops."
+      ],
+      "benchmarkHypotheses": [
+        "Parallel candidates improve best-of-N outcome enough to justify duplicated compute and merge review."
+      ],
+      "primarySources": [
+        "https://github.com/stablyai/orca",
+        "https://www.onorca.dev/docs/model/worktrees"
+      ],
+      "composesWith": ["claude-code", "opencode", "pi"]
+    },
+    {
+      "id": "orca-virtuslab",
+      "name": "Orca by VirtusLab",
+      "repository": "https://github.com/VirtusLab/orca",
+      "primaryLayer": "workflow_orchestrator",
+      "comparisonCohort": "deterministic_development_workflow",
+      "surfaces": ["interactive_cli", "headless_cli", "scala_flow"],
+      "loopOwnership": "deterministic_stages_delegate_agentic_turns",
+      "interactionProtocol": "typed_resumable_workflow",
+      "backendPortability": "indirect_through_role_backends",
+      "trustBoundary": "Write-capable turns may be auto-approved; run the workflow inside an explicit sandbox and record per-role settings.",
+      "verifiedFacts": [
+        "Development flows are Scala programs made of resumable stages whose progress is tied to commits.",
+        "Planning, coding and review roles can resolve to different supported coding-agent backends and models."
+      ],
+      "benchmarkHypotheses": [
+        "Role-specific model routing lowers cost without reducing reviewed outcome quality."
+      ],
+      "primarySources": [
+        "https://github.com/VirtusLab/orca"
+      ],
+      "composesWith": ["claude-code", "opencode", "pi"]
+    },
+    {
+      "id": "orca-echovic",
+      "name": "Orca Agent by echoVic",
+      "repository": "https://github.com/echoVic/orca-agent",
+      "primaryLayer": "coding_agent_runtime",
+      "comparisonCohort": "native_tool_cli",
+      "surfaces": ["tui", "headless"],
+      "loopOwnership": "product_runtime",
+      "interactionProtocol": "structured_tool_calls",
+      "backendPortability": "provider_configuration_to_be_verified",
+      "trustBoundary": "The DeepSeek-native label does not mean the project is maintained by DeepSeek; assess provenance and sandbox setup independently.",
+      "verifiedFacts": [
+        "This is a third-party Rust terminal coding agent, distinct from DeepSeek Harness.",
+        "Its CLI documents saved, resumable and forkable sessions plus headless execution."
+      ],
+      "benchmarkHypotheses": [
+        "Its model-specific defaults improve DeepSeek tool use under the same authority and task fixture."
+      ],
+      "primarySources": [
+        "https://github.com/echoVic/orca-agent",
+        "https://orcaagent.dev/docs"
+      ]
+    },
+    {
+      "id": "openharness",
+      "name": "OpenHarness and Ohmo",
+      "repository": "https://github.com/HKUDS/OpenHarness",
+      "primaryLayer": "personal_agent_runtime",
+      "comparisonCohort": "persistent_personal_agent",
+      "surfaces": ["cli", "tui", "chat_channels"],
+      "loopOwnership": "framework_plus_reference_agent",
+      "interactionProtocol": "tools_skills_memory_and_multi_agent",
+      "backendPortability": "coding_agent_subscription_backends",
+      "trustBoundary": "Separate claims about the OpenHarness infrastructure from claims about its Ohmo reference agent and channel integrations.",
+      "verifiedFacts": [
+        "OpenHarness provides tool use, skills, memory and multi-agent coordination infrastructure.",
+        "Ohmo is a personal agent built on top of that harness."
+      ],
+      "benchmarkHypotheses": [
+        "Framework-level memory and coordination improve long-session outcomes without hidden cross-task contamination."
+      ],
+      "primarySources": [
+        "https://github.com/HKUDS/OpenHarness"
+      ]
+    },
+    {
+      "id": "kilo-code",
+      "name": "Kilo Code",
+      "repository": "https://github.com/Kilo-Org/kilocode",
+      "primaryLayer": "integrated_agent_product",
+      "comparisonCohort": "ide_and_cli_agent",
+      "surfaces": ["vscode", "jetbrains", "cli"],
+      "loopOwnership": "product_runtime",
+      "interactionProtocol": "structured_tool_calls_with_editor_context",
+      "backendPortability": "multi_provider",
+      "trustBoundary": "Editor context, diagnostics and approval mode must be normalized; automatic approval changes the authority surface.",
+      "verifiedFacts": [
+        "The current project provides VS Code, JetBrains and CLI surfaces.",
+        "It includes agentic editing and inline autocomplete as distinct interaction modes."
+      ],
+      "benchmarkHypotheses": [
+        "Ambient editor diagnostics improve repair outcomes only when their token and authority cost is recorded."
+      ],
+      "primarySources": [
+        "https://github.com/Kilo-Org/kilocode",
+        "https://kilo.ai/docs"
+      ]
+    },
+    {
+      "id": "cline",
+      "name": "Cline",
+      "repository": "https://github.com/cline/cline",
+      "primaryLayer": "integrated_agent_product",
+      "comparisonCohort": "ide_and_cli_agent",
+      "surfaces": ["vscode", "jetbrains", "cli", "sdk"],
+      "loopOwnership": "shared_product_engine",
+      "interactionProtocol": "structured_tool_calls_with_human_approval",
+      "backendPortability": "multi_provider",
+      "trustBoundary": "Human-in-the-loop approval is part of the measured system and cannot be silently replaced with auto-approval.",
+      "verifiedFacts": [
+        "The current project exposes IDE, CLI and SDK forms backed by the same agent engine.",
+        "Its documented tool workflow includes human approval."
+      ],
+      "benchmarkHypotheses": [
+        "IDE context reduces navigation steps while increasing context pressure relative to a headless run."
+      ],
+      "primarySources": [
+        "https://github.com/cline/cline",
+        "https://docs.cline.bot/"
+      ]
+    },
+    {
+      "id": "continue",
+      "name": "Continue",
+      "repository": "https://github.com/continuedev/continue",
+      "primaryLayer": "integrated_agent_product",
+      "comparisonCohort": "ide_and_cli_agent",
+      "surfaces": ["vscode", "jetbrains", "cli"],
+      "loopOwnership": "product_runtime",
+      "interactionProtocol": "agent_and_editor_assistance",
+      "backendPortability": "provider_configuration",
+      "trustBoundary": "Autocomplete, chat and autonomous agent runs are separate workloads and must not share one score.",
+      "verifiedFacts": [
+        "The repository currently presents Continue as a coding agent with CLI, VS Code and JetBrains forms.",
+        "Its interface history includes both editor assistance and agent workflows, which require separate evaluation tasks."
+      ],
+      "benchmarkHypotheses": [
+        "A configured local stack is most useful on interactive editor workloads rather than an unattended repository task."
+      ],
+      "primarySources": [
+        "https://github.com/continuedev/continue",
+        "https://docs.continue.dev/"
+      ]
+    }
+  ]
+}

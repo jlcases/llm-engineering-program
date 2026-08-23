@@ -137,7 +137,7 @@ Capa de seguridad configurable **independiente del modelo** (aplica sobre cualqu
 
 ## Mapeo al repo
 
-Este dominio se corresponde con el **módulo 5 (Responsible AI, guardrails, safety en producción)**, con apoyo del módulo 2 (detección de sesgos y alucinaciones).
+Este dominio se corresponde con el **módulo 8 (Responsible AI, guardrails, safety en producción)**, con apoyo del módulo 2 (detección de sesgos y alucinaciones).
 
 ## Recursos para profundizar
 

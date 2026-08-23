@@ -1,4 +1,4 @@
-# Módulo 3 — RAG systems y evaluación (2 ECTS · ~55 h)
+# Módulo 03 — Retrieval Engineering
 
 Retrieval-Augmented Generation es hoy el patrón más desplegado en producción para conectar
 LLMs con conocimiento privado o actualizado. Este módulo cubre el pipeline completo —

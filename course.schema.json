@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://llmengineerclub.com/schemas/course.schema.json",
-  "title": "LLM Engineer Club course contract",
+  "title": "LLM Engineer Club open learning path contract",
   "type": "object",
-  "required": ["schemaVersion", "id", "title", "language", "sourceRepository", "reviewedAt", "durationHours", "competencies", "modules", "certifications", "publishing"],
+  "required": ["schemaVersion", "id", "title", "language", "sourceRepository", "reviewedAt", "effortHours", "competencies", "modules", "certifications", "publishing"],
   "additionalProperties": false,
   "properties": {
     "$schema": { "type": "string" },
-    "schemaVersion": { "const": 1 },
+    "schemaVersion": { "const": 2 },
     "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
     "title": { "type": "string", "minLength": 10 },
     "shortTitle": { "type": "string", "minLength": 3 },
@@ -18,12 +18,11 @@
     "sourceRepository": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$" },
     "canonicalSite": { "type": "string", "format": "uri" },
     "reviewedAt": { "type": "string", "format": "date" },
-    "durationHours": { "$ref": "#/$defs/range" },
-    "ects": { "type": "number", "exclusiveMinimum": 0 },
+    "effortHours": { "$ref": "#/$defs/range" },
     "outcomes": { "type": "array", "minItems": 5, "items": { "type": "string", "minLength": 20 }, "uniqueItems": true },
     "competencies": {
       "type": "array",
-      "minItems": 6,
+      "minItems": 9,
       "items": { "$ref": "#/$defs/competency" }
     },
     "modules": {
@@ -69,7 +68,7 @@
     },
     "module": {
       "type": "object",
-      "required": ["id", "number", "slug", "path", "title", "description", "durationHours", "ects", "prerequisites", "competencies", "milestone"],
+      "required": ["id", "number", "slug", "path", "title", "description", "effortHours", "prerequisites", "competencies", "proofOfWork"],
       "additionalProperties": false,
       "properties": {
         "id": { "type": "string", "pattern": "^module-[0-9]{2}$" },
@@ -80,11 +79,10 @@
         "title": { "type": "string", "minLength": 5 },
         "shortTitle": { "type": "string", "minLength": 3 },
         "description": { "type": "string", "minLength": 30 },
-        "durationHours": { "$ref": "#/$defs/range" },
-        "ects": { "type": "number", "exclusiveMinimum": 0 },
+        "effortHours": { "$ref": "#/$defs/range" },
         "prerequisites": { "type": "array", "items": { "type": "string", "pattern": "^module-[0-9]{2}$" }, "uniqueItems": true },
         "competencies": { "type": "array", "minItems": 1, "items": { "type": "string" }, "uniqueItems": true },
-        "milestone": { "type": "string", "minLength": 20 }
+        "proofOfWork": { "type": "string", "minLength": 20 }
       }
     },
     "certification": {

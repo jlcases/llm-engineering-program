@@ -1,10 +1,10 @@
-# Module I — LLMs and APIs Fundamentals (0.5 ECTS)
+# Module 01 — Model interfaces and foundations
 
-> Estimated time: **15–18 hours** (weeks 1–2 of the program).
-> Milestone: a **multi-provider client** capable of invoking OpenAI, Anthropic, and
+> Suggested effort: **15–18 hours**.
+> Proof of work: a **multi-provider client** capable of invoking OpenAI, Anthropic, and
 > Amazon Bedrock behind a custom interface, logging tokens, latency, and stop reason.
 
-This module builds the technical vocabulary you will use throughout the program. It does not
+This module builds the technical vocabulary you will use throughout the path. It does not
 aim for you to train a transformer from scratch: it aims for you to understand what happens between the input text
 and the next token, to anticipate the effect of tokenization and sampling parameters, and to know how to integrate three APIs without obscuring their key differences.
 

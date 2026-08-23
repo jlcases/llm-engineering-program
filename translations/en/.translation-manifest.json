@@ -1,43 +1,27 @@
 {
   "version": 1,
   "model": "qwen3.6:35b-a3b-coding-nvfp4",
-  "generatedAt": "2026-08-22T12:09:54.118Z",
+  "generatedAt": "2026-08-23T08:31:35.919Z",
   "files": {
-    "modulo-01-fundamentos-llm/README.md": {
-      "sourceHash": "8c2018885548e3cba24f899f6cb293f3e20025bd9f42f1db45437423e4b205fc",
-      "translationHash": "e36aeb5a854e41806563bcdf3e01a28e1467e749b75c694db0f38fd822c5f75f",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:48.038Z"
-    },
-    "modulo-01-fundamentos-llm/labs/01_primer_llamada_openai.py": {
-      "sourceHash": "321d386d81c3a51ecc0528ccd5b9f0d699c0fc351969a08e0bbe96b18b9829a5",
-      "translationHash": "3ce46c90c2647135ae32a8ff07ff38934da5651130e7440ccc66770a7c6c4240",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:48.094Z"
-    },
-    "PLAN_DE_ESTUDIOS.md": {
-      "sourceHash": "2fee2d6ad2d56f9ac86aac7ab28791235a41f291317317c709018c327d77ab17",
-      "translationHash": "aab46a94c399c10ecfd8f72d0cad5de905a7ebab618ad1dce6f76fcb5c8cebd0",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:48.180Z"
-    },
     "README.md": {
-      "sourceHash": "a33440c9d742044b3c8ce0aaf8f9589b5a12ed695fb4018fa5bac22f8e56e666",
-      "translationHash": "fec4e4b51ceb7270a3c283a48705622b0e9de9b044a9c6950ecdab2fada1c958",
+      "sourceHash": "ab0083efaab4e402d15113f5e92090f47ed3ec68d22d86d5c64d91dc5c3e04f2",
+      "translationHash": "8605a2de7a9c3c94fca14d2abad84e947de5e159c3b0d724707cf248b49063d7",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T12:09:54.117Z"
     },
+    "RUTA_DE_APRENDIZAJE.md": {
+      "sourceHash": "404123d112d5d9a3b69d88f442785f8e9b9b0d86b76d6afbf3ba2c13111cb079",
+      "translationHash": "7641528fdcb758cb8d6856519162cb3ee7de388177959d6a3d318c07844d758b",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:48.180Z"
+    },
     "certificaciones/README.md": {
-      "sourceHash": "789727992b9e9c434b1a7d265d2bd2c0344da08e459d2779c4dec605afcaa518",
-      "translationHash": "bcc886816371b2f732dca6f9934bbd967d65eaf00c0ed136f92b094376d5b7f0",
+      "sourceHash": "336622bf6b39de6a3f44c8669cf7c7450c76046890eb410fb0d8cb3b87626fdd",
+      "translationHash": "96163777146b738903b629e729e44c16a847e7b6a96adf734205700f76e081d2",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
@@ -84,7 +68,7 @@
       "translatedAt": "2026-08-22T00:09:48.555Z"
     },
     "certificaciones/aws-aif-c01/guia-dominio-4.md": {
-      "sourceHash": "05d1062ce49914bcfad552100d5fc5fe0040cf88db60c998bbcf888bb6e2d9d5",
+      "sourceHash": "dfe8ec7cc8d4ba0a650486cff329a0eedf37b6489026f4ecd2984babbd02f556",
       "translationHash": "424f6e130a34ffa673bee32c3f3513dd107729f96a1bd3e0c8e39e40420d0258",
       "model": "human-reviewed",
       "editor": "jlcases",
@@ -92,7 +76,7 @@
       "translatedAt": "2026-08-22T00:09:48.608Z"
     },
     "certificaciones/aws-aif-c01/guia-dominio-5.md": {
-      "sourceHash": "c3822d064991bcbdf1c9ffb9790a87a0da202eb40a36e38e9c61cce4ff2ead9f",
+      "sourceHash": "df613e5adaf6655f89d3e81022f50323a0d3f4c5507bc5eed2a65dd8ffdf341c",
       "translationHash": "7e3967f721e343ebb984804a85fd0473c316a9e0468fcfa98474ba0d0454837f",
       "model": "human-reviewed",
       "editor": "jlcases",
@@ -139,6 +123,14 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:48.945Z"
     },
+    "modulo-01-fundamentos-llm/README.md": {
+      "sourceHash": "8dccc0e5b9aad3bac6aac22029366b22582e7918cf9f1dd37f0427b8f02e5336",
+      "translationHash": "4988c6d2aaf41123d268f89054fa64637e57457e7702eecd27b607df8fa4b555",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:48.038Z"
+    },
     "modulo-01-fundamentos-llm/ejercicios.md": {
       "sourceHash": "66c0b7b196b4a570b4a64058de41896c0dfbb2f850f8e136bf3077eca74a02f2",
       "translationHash": "950d17f735b401d8a8e11bbcd2efd2b3b163c7a961a3f2c01624b6bea5fd2dda",
@@ -146,6 +138,14 @@
       "editor": "jlcases",
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:48.998Z"
+    },
+    "modulo-01-fundamentos-llm/labs/01_primer_llamada_openai.py": {
+      "sourceHash": "321d386d81c3a51ecc0528ccd5b9f0d699c0fc351969a08e0bbe96b18b9829a5",
+      "translationHash": "3ce46c90c2647135ae32a8ff07ff38934da5651130e7440ccc66770a7c6c4240",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-22T00:09:48.094Z"
     },
     "modulo-01-fundamentos-llm/labs/02_primer_llamada_anthropic.py": {
       "sourceHash": "a0cf6abd63b949a90129e0f6b66e372e4310bc20ef77c3e16c07e8052f1f1916",
@@ -219,6 +219,14 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:49.640Z"
     },
+    "modulo-02-prompt-engineering/README.md": {
+      "sourceHash": "730f59b764f3d9c1980bf0c31c62678151ad52c89807f7b4d6833778c72206b8",
+      "translationHash": "aacb3de30df4d7f2691d547b37f2f38522111f9c67dca8b89a0c9598a59f499f",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:49.849Z"
+    },
     "modulo-02-prompt-engineering/ejercicios.md": {
       "sourceHash": "47839102c048830cc2083f61e021250e72919c8304bb094545d94ff8dc6d719d",
       "translationHash": "0900182112069ef71c7c7305bbe08a8abbed70bc66764c20ab57fba95839c16c",
@@ -226,22 +234,6 @@
       "editor": "jlcases",
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:49.698Z"
-    },
-    "modulo-02-prompt-engineering/labs/02_chain_of_thought.py": {
-      "sourceHash": "42207dc54310be5187c290fa6d51b09f42e36ee9e4b79ecec77ce7b5fef915c8",
-      "translationHash": "ad5bd50eaf67ef5320cadbc9dedf00798e657aae617e3bf1cba05a259168838b",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:49.755Z"
-    },
-    "modulo-02-prompt-engineering/README.md": {
-      "sourceHash": "4a18f4e96902e4baa8e52bf90c6a9cdc000b702f68600ab34f38c004193c28ae",
-      "translationHash": "709cbe9c559d5a32fc78b00d4f3b610e26144fa6965c1e23e5e6774d68a180d6",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:49.849Z"
     },
     "modulo-02-prompt-engineering/labs/01_zero_vs_few_shot.py": {
       "sourceHash": "1077fbe25bf4a52373f0d7982c9368287aa68d8709e77bcd9b534bf7b75fd3b3",
@@ -251,6 +243,14 @@
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:49.907Z"
     },
+    "modulo-02-prompt-engineering/labs/02_chain_of_thought.py": {
+      "sourceHash": "42207dc54310be5187c290fa6d51b09f42e36ee9e4b79ecec77ce7b5fef915c8",
+      "translationHash": "ad5bd50eaf67ef5320cadbc9dedf00798e657aae617e3bf1cba05a259168838b",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-22T00:09:49.755Z"
+    },
     "modulo-02-prompt-engineering/labs/03_function_calling_openai.py": {
       "sourceHash": "a605e933a23343afdb59e77ecab3fca6b6dd86f4dea75ed895129bb894d56389",
       "translationHash": "cde7b10fc07c4950f3809783ffdd6474e65dd413143b0bc06851fd85e284ded6",
@@ -258,54 +258,6 @@
       "editor": "jlcases",
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:50.003Z"
-    },
-    "modulo-02-prompt-engineering/labs/05_structured_outputs_instructor.py": {
-      "sourceHash": "9919797e29a38b7296d2b90e891f73b1453eb76b4ff79b16284bdb1fb5b560d9",
-      "translationHash": "bf21035289cdfb9b8eced3fdc4fa4f2945264a6dc76a2af12496a96f963943f5",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:50.098Z"
-    },
-    "modulo-02-prompt-engineering/labs/07_ab_testing_prompts.py": {
-      "sourceHash": "f1957c881df13a75d6782c02cbb31a9c8b7640ba1c97acffa6169ee86330cbfb",
-      "translationHash": "d6725ad7d10021514e667300e3ce81156b980188137dc4bcf556b89b6685f789",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:50.192Z"
-    },
-    "modulo-02-prompt-engineering/teoria/02-system-prompts-y-contexto.md": {
-      "sourceHash": "b6f965f671be73cf184af74db3f63f15e12d02e4c664a5ec57d3905347b3d204",
-      "translationHash": "194d2737966513310912a5cd612841bd6b1c001f46ffa0a859bf3ebe017cedbf",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:50.291Z"
-    },
-    "modulo-02-prompt-engineering/teoria/04-structured-outputs.md": {
-      "sourceHash": "7b8c14092f715a30a3798672e3000ad35155b82960d8ee551a0c658ea5b93531",
-      "translationHash": "5f7ed7bff5f247783e30eb2f6eace477ab018f5b9dcd2c3d1038763959fd9136",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:50.351Z"
-    },
-    "modulo-02-prompt-engineering/teoria/06-versionado-y-gestion.md": {
-      "sourceHash": "581e3eb23b953ad01f83225b59890857691855ddfe2e277cc859094cf1bc1b6e",
-      "translationHash": "257fcd062a7d759aa583235d939a92d95316d4cf96d38fadd021195ad4e00fd0",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:50.411Z"
-    },
-    "modulo-03-rag/README.md": {
-      "sourceHash": "56c8e0ae59b78b6223a3c1ac3cb801a2ffefca9da560cdd6a9229275fb161405",
-      "translationHash": "09d44dc45d0e15c0519d05fc166ad9303f5451b6764e5af6a48ad21e90bcf59c",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:50.471Z"
     },
     "modulo-02-prompt-engineering/labs/04_tool_use_anthropic.py": {
       "sourceHash": "2158a9d953899acac161411b9c8c7d148c43c707ba209ed14c9e6ecbba0602f5",
@@ -315,13 +267,13 @@
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:50.531Z"
     },
-    "modulo-03-rag/labs/01_embeddings_similitud.py": {
-      "sourceHash": "c260c6868925f0284335ecf8bb0d2d8ac5045fe5d012f54afc64aef5f2dd7614",
-      "translationHash": "781e16e97b68a80bbe25f28e44813b9bd9862cdcab315955593cff8deeb2dcf0",
+    "modulo-02-prompt-engineering/labs/05_structured_outputs_instructor.py": {
+      "sourceHash": "9919797e29a38b7296d2b90e891f73b1453eb76b4ff79b16284bdb1fb5b560d9",
+      "translationHash": "bf21035289cdfb9b8eced3fdc4fa4f2945264a6dc76a2af12496a96f963943f5",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:50.628Z"
+      "translatedAt": "2026-08-22T00:09:50.098Z"
     },
     "modulo-02-prompt-engineering/labs/06_eval_prompts_dataset.py": {
       "sourceHash": "1dada43c5f6105a483b83b1f22fc3978983f0356e00101161538d14fa6c0ce66",
@@ -331,29 +283,13 @@
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:50.727Z"
     },
-    "modulo-03-rag/labs/03_chunking_comparado.py": {
-      "sourceHash": "04f8bc4b286ec4e997ded01bf488f2aded86057ee157fc1c96fea13d19b498ee",
-      "translationHash": "213ceca170d51f0991dc4bf585ca92f65529ad4cf3f5040f4939fc109b9dd568",
+    "modulo-02-prompt-engineering/labs/07_ab_testing_prompts.py": {
+      "sourceHash": "f1957c881df13a75d6782c02cbb31a9c8b7640ba1c97acffa6169ee86330cbfb",
+      "translationHash": "d6725ad7d10021514e667300e3ce81156b980188137dc4bcf556b89b6685f789",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:50.831Z"
-    },
-    "modulo-03-rag/labs/05_rag_avanzado_multiquery_hyde.py": {
-      "sourceHash": "899e64f0ff0044f1b941e944492baaa6b3b63ea8074b1ad21bc5a7f6348c98e0",
-      "translationHash": "5580c561d7a4bf57077d9add63b447b2b873051f8fd33589d386ba2c0d9c9cfa",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:50.931Z"
-    },
-    "modulo-03-rag/labs/data/facturacion.md": {
-      "sourceHash": "1d061220f19140a796fe35dbc4798e81624e280b23aa15514f7ecfcf6a9ecf35",
-      "translationHash": "81e0abbb072351b136492b7208bf5b4c1eec08750be1bb7f83fff142e649e9bf",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:51.025Z"
+      "translatedAt": "2026-08-22T00:09:50.192Z"
     },
     "modulo-02-prompt-engineering/teoria/01-tecnicas-base.md": {
       "sourceHash": "0dc6062baeb581d57e6af13b243c59875d964a467e215a7cde167cbb2411fb08",
@@ -363,61 +299,13 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:51.085Z"
     },
-    "modulo-03-rag/labs/data/handbook.md": {
-      "sourceHash": "143589a5550b4f610277d44422f5052ae99d6e44b3ffc3a76f74e499ef735d84",
-      "translationHash": "08f22b7ac7a0d74a373c5e32c0e19dcf3edc02c303231a56bab9208d2ff69bda",
+    "modulo-02-prompt-engineering/teoria/02-system-prompts-y-contexto.md": {
+      "sourceHash": "b6f965f671be73cf184af74db3f63f15e12d02e4c664a5ec57d3905347b3d204",
+      "translationHash": "194d2737966513310912a5cd612841bd6b1c001f46ffa0a859bf3ebe017cedbf",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:51.144Z"
-    },
-    "modulo-03-rag/labs/data/runbook-incidentes.md": {
-      "sourceHash": "58d2cad48bd871a46d5b292d27ee5ff8e599966c6c987412007e04507decbb44",
-      "translationHash": "1f37fe7b5ec47126e4d649b73fab2e5349dcf9b2ba928fc9db0b068c405136eb",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:51.201Z"
-    },
-    "modulo-03-rag/proyecto/README.md": {
-      "sourceHash": "45ce289714251693ee6a29eeb1cae55ad68405451060b3e9fc73a3de230ee8fc",
-      "translationHash": "27163ebf8c44f046c84e2a9436a378df3ab1e6d4a1070a9015512a0f51df876b",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:51.258Z"
-    },
-    "modulo-03-rag/teoria/02-embeddings-y-vector-dbs.md": {
-      "sourceHash": "da757db6806e06b59ab2fc0b9a96c16bf86be351cfab2f1e0b65162a4d4673d6",
-      "translationHash": "e5f0c70767f5748d05507528262c7fab1412d0c4c7975ba55a9bdd1ae8e550cc",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:51.325Z"
-    },
-    "modulo-03-rag/teoria/04-reranking.md": {
-      "sourceHash": "24d202605a4e63740e2de0070146ea605c633bf90b2d7cfe20186501376bb0e7",
-      "translationHash": "e8fa6833c8eae36e67f228de673da62668e865e5b58ab3a14a65fae9792e8649",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:51.423Z"
-    },
-    "modulo-03-rag/teoria/06-bedrock-knowledge-bases.md": {
-      "sourceHash": "b0d87e5b879641a071c36d5baf8c2408f1767531191a21319996d773e8312611",
-      "translationHash": "da30ad61a099445cb034203617c9cee2bdbeab9153c249f0521346624cc8ba9e",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:51.492Z"
-    },
-    "modulo-03-rag/teoria/08-alucinaciones.md": {
-      "sourceHash": "763ab538ed132dcd10ba61f6b8bab8d489da9655071e18c20c1ed7c3dccd02d5",
-      "translationHash": "2a6102e0c8ed7de6a454fd685b8cc2c46c77f7c1da0e043937d28387624e3ed3",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:51.554Z"
+      "translatedAt": "2026-08-22T00:09:50.291Z"
     },
     "modulo-02-prompt-engineering/teoria/03-function-calling.md": {
       "sourceHash": "e47410fc4c59a1e7a06dab58c15760245ac4e5517064a71545c888d4cc2e3723",
@@ -427,53 +315,45 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:51.616Z"
     },
-    "modulo-04-agentes/ejercicios.md": {
-      "sourceHash": "e481751eccb976d7b1c92902005a6438cef4ac5ae25685b504953b3c6309aa56",
-      "translationHash": "9da1bff71f030587e0bc4c88eb28b9078049f639c43107ca36e406f5c435e480",
+    "modulo-02-prompt-engineering/teoria/04-structured-outputs.md": {
+      "sourceHash": "7b8c14092f715a30a3798672e3000ad35155b82960d8ee551a0c658ea5b93531",
+      "translationHash": "5f7ed7bff5f247783e30eb2f6eace477ab018f5b9dcd2c3d1038763959fd9136",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:51.680Z"
+      "translatedAt": "2026-08-22T00:09:50.351Z"
     },
     "modulo-02-prompt-engineering/teoria/05-evaluacion-de-prompts.md": {
-      "sourceHash": "4ca76f2134d72c574f07465840395a3be6d0135a02ade098d35962539849545a",
-      "translationHash": "62f510368cdfb6f081df2c02d80b3180aa935c0780319a3c872f0e85279fe0f0",
+      "sourceHash": "dc65a2e881ede0fd64da1cceaa807d362789bc62ef0395ec189fa98ac1d16893",
+      "translationHash": "39260b13043a1c8fb669233a3817733768d3ce4a68acc71ed7b7469682105e36",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:51.741Z"
     },
-    "modulo-04-agentes/labs/02_langgraph_basico.py": {
-      "sourceHash": "75edb78a35a00554a42d0a9accb1f9ef472b7778331d5b87487c0a8c53d22f19",
-      "translationHash": "0042548106f23d3f65146c1e02fe6b9bd391c18184355f9f900ce995d4e12883",
+    "modulo-02-prompt-engineering/teoria/06-versionado-y-gestion.md": {
+      "sourceHash": "581e3eb23b953ad01f83225b59890857691855ddfe2e277cc859094cf1bc1b6e",
+      "translationHash": "257fcd062a7d759aa583235d939a92d95316d4cf96d38fadd021195ad4e00fd0",
       "model": "human-reviewed",
       "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:51.800Z"
-    },
-    "modulo-04-agentes/labs/04_langgraph_checkpoints.py": {
-      "sourceHash": "5a181d19b503058d05372fce40c6348b5f9f6b312dcb51f62a2a0bc1f435e137",
-      "translationHash": "52ac01d46ec5976afd59ab6d242ab8955995d81ada87d2cfaa277fe42333acb5",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:51.893Z"
-    },
-    "modulo-04-agentes/labs/06_multiagente_supervisor.py": {
-      "sourceHash": "587411a6b5216f84382ff241564a9c79ea4f9812f0e2323197b09cfd9643bad5",
-      "translationHash": "8624afd1075fce62ceb75e5ce589f92a3b0a514ab22fb1ae8b66a5d4ce08893e",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:51.986Z"
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:50.411Z"
     },
     "modulo-02-prompt-engineering/teoria/07-sesgos-y-alucinaciones.md": {
-      "sourceHash": "36797fd06419961e3f079c2850e2fb610dd82ff6ddfc970f62e6bf186d30d6eb",
-      "translationHash": "4f67e0fce3be7dfaafdd807396ba6b7c346c5c57f3fa854db98e9c187dcc7805",
+      "sourceHash": "dc7b21ec66e11740d7759217349301f71226aa35a53d84977551991f42209a3b",
+      "translationHash": "f59659fccd322027fd68ebd2923cf624c26ab5a2a5bd3a2e06a72aca615cdc71",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:52.079Z"
+    },
+    "modulo-03-rag/README.md": {
+      "sourceHash": "08e48b4793d8c8f34e4e68aefc247d6b8ae47c863a68dda3eeb55a361ae7e9c5",
+      "translationHash": "50c45d89093d5564e812417520d41bf74e83f75112ff3d582e71f471506c1c6e",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:50.471Z"
     },
     "modulo-03-rag/ejercicios.md": {
       "sourceHash": "c71ed61e8516e7213b56ecd55bc897dc151e7a95fb589a6b196a6071042d62a8",
@@ -483,6 +363,14 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:52.136Z"
     },
+    "modulo-03-rag/labs/01_embeddings_similitud.py": {
+      "sourceHash": "c260c6868925f0284335ecf8bb0d2d8ac5045fe5d012f54afc64aef5f2dd7614",
+      "translationHash": "781e16e97b68a80bbe25f28e44813b9bd9862cdcab315955593cff8deeb2dcf0",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-22T00:09:50.628Z"
+    },
     "modulo-03-rag/labs/02_rag_minimo.py": {
       "sourceHash": "fb4d0e747a0ea6de1810b86cfe70ba78da61a0a4a6d671d0125b0407b425dd29",
       "translationHash": "ae082ff4b87664f27206e7ecfc167fd9505a29158ca4a9d3de545bcebcd35ad8",
@@ -490,6 +378,14 @@
       "editor": "jlcases",
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:52.196Z"
+    },
+    "modulo-03-rag/labs/03_chunking_comparado.py": {
+      "sourceHash": "04f8bc4b286ec4e997ded01bf488f2aded86057ee157fc1c96fea13d19b498ee",
+      "translationHash": "213ceca170d51f0991dc4bf585ca92f65529ad4cf3f5040f4939fc109b9dd568",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-22T00:09:50.831Z"
     },
     "modulo-03-rag/labs/04_reranking.py": {
       "sourceHash": "26d31d71960deac6cf481c2c729957b25f01a6a5105152332e69fb0bc850e3ec",
@@ -499,13 +395,13 @@
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:52.291Z"
     },
-    "modulo-04-agentes/teoria/01-patrones-de-agentes.md": {
-      "sourceHash": "28b7ad4bbe7307e2102c3ac474f136e3d2c82c1f7882a9314cf479a0c4960db8",
-      "translationHash": "a890405440aa6e5e7f6cba671f57b19ec94ed4f73287ab44561ecd21684420f7",
+    "modulo-03-rag/labs/05_rag_avanzado_multiquery_hyde.py": {
+      "sourceHash": "899e64f0ff0044f1b941e944492baaa6b3b63ea8074b1ad21bc5a7f6348c98e0",
+      "translationHash": "5580c561d7a4bf57077d9add63b447b2b873051f8fd33589d386ba2c0d9c9cfa",
       "model": "human-reviewed",
       "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:52.387Z"
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-22T00:09:50.931Z"
     },
     "modulo-03-rag/labs/06_evaluacion_ragas.py": {
       "sourceHash": "7a7f1d399815578a70e0d7ffcaa7fa4c561bd86b296b6c98a5df004a7fec91f6",
@@ -515,6 +411,14 @@
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:52.445Z"
     },
+    "modulo-03-rag/labs/data/facturacion.md": {
+      "sourceHash": "1d061220f19140a796fe35dbc4798e81624e280b23aa15514f7ecfcf6a9ecf35",
+      "translationHash": "81e0abbb072351b136492b7208bf5b4c1eec08750be1bb7f83fff142e649e9bf",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:51.025Z"
+    },
     "modulo-03-rag/labs/data/faq.md": {
       "sourceHash": "3c1345a7858bff8455cbae010618f3fa0ba00f3b217030755f7bef402438b5d7",
       "translationHash": "cc0b9a220ae9ba0b830ce26b816e54b794c547e4d52850af83021a4851fdbd44",
@@ -523,13 +427,13 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:52.547Z"
     },
-    "modulo-04-agentes/teoria/03-mcp.md": {
-      "sourceHash": "ac5ddb275e7cecccbf475f0daf85bda1f9e28f64e76de7d0460846c6e94b8877",
-      "translationHash": "f27501f74aa0e9dcb85341da3e197386c4c4446b9b2b7e7f946b89927d26445d",
+    "modulo-03-rag/labs/data/handbook.md": {
+      "sourceHash": "143589a5550b4f610277d44422f5052ae99d6e44b3ffc3a76f74e499ef735d84",
+      "translationHash": "08f22b7ac7a0d74a373c5e32c0e19dcf3edc02c303231a56bab9208d2ff69bda",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:52.604Z"
+      "translatedAt": "2026-08-22T00:09:51.144Z"
     },
     "modulo-03-rag/labs/data/producto.md": {
       "sourceHash": "eebdd412f18c7a266fe9bfe412d4db88ce2d314daa411ddb3e27e613a89b26e7",
@@ -539,13 +443,13 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:52.661Z"
     },
-    "modulo-04-agentes/teoria/05-multi-agente.md": {
-      "sourceHash": "cd61f74c86344bacf823f4fbc3e0e7ed9e9f09f7e171c90e7a91e1c3e818b883",
-      "translationHash": "375f571755389377c4ce6c82947e369747d80b2134d6d4f301f368d80f62a3d0",
+    "modulo-03-rag/labs/data/runbook-incidentes.md": {
+      "sourceHash": "58d2cad48bd871a46d5b292d27ee5ff8e599966c6c987412007e04507decbb44",
+      "translationHash": "1f37fe7b5ec47126e4d649b73fab2e5349dcf9b2ba928fc9db0b068c405136eb",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:52.717Z"
+      "translatedAt": "2026-08-22T00:09:51.201Z"
     },
     "modulo-03-rag/labs/data/seguridad-cuentas.md": {
       "sourceHash": "7d5a3809745a90ad070cf9d0eb0bd760b05bb327bf17397acc9322e243d60797",
@@ -555,13 +459,13 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:52.773Z"
     },
-    "modulo-04-agentes/teoria/07-bedrock-agents.md": {
-      "sourceHash": "58235d153ee3d293dd5d18511e63ab8d429442b8a01138e89101b35cdcec92d9",
-      "translationHash": "815cf282cf452b352ba857e985618386a4c1aff681055419910e384ab06f515f",
+    "modulo-03-rag/proyecto/README.md": {
+      "sourceHash": "45ce289714251693ee6a29eeb1cae55ad68405451060b3e9fc73a3de230ee8fc",
+      "translationHash": "27163ebf8c44f046c84e2a9436a378df3ab1e6d4a1070a9015512a0f51df876b",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:52.831Z"
+      "translatedAt": "2026-08-22T00:09:51.258Z"
     },
     "modulo-03-rag/teoria/01-arquitectura-rag.md": {
       "sourceHash": "b41bdfdc4bd9de85f7e515e78e1dc4ebaaa2b19cb542c8147c7ef34eedb68423",
@@ -571,6 +475,14 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:52.890Z"
     },
+    "modulo-03-rag/teoria/02-embeddings-y-vector-dbs.md": {
+      "sourceHash": "da757db6806e06b59ab2fc0b9a96c16bf86be351cfab2f1e0b65162a4d4673d6",
+      "translationHash": "e5f0c70767f5748d05507528262c7fab1412d0c4c7975ba55a9bdd1ae8e550cc",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:51.325Z"
+    },
     "modulo-03-rag/teoria/03-chunking.md": {
       "sourceHash": "fb618cda1ad8c37d74dd7b445a96c35eff2787745bea7af7dab63067f245af6c",
       "translationHash": "4875b72371be7682bfd4136331338cca9c367a31a0103525ce910a17f583e879",
@@ -579,21 +491,13 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:52.949Z"
     },
-    "modulo-04-agentes/teoria/09-alignment-y-fine-tuning.md": {
-      "sourceHash": "42d2fdd9f810b280929e8e37dadc22b46623ab6aa1c8f5d6ec7421bff5d4ffc1",
-      "translationHash": "51a9f46408c4dc5a8287f4a7b7afedc9efb1bcbbab4d80595caa055b7ba768ea",
+    "modulo-03-rag/teoria/04-reranking.md": {
+      "sourceHash": "24d202605a4e63740e2de0070146ea605c633bf90b2d7cfe20186501376bb0e7",
+      "translationHash": "e8fa6833c8eae36e67f228de673da62668e865e5b58ab3a14a65fae9792e8649",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:53.009Z"
-    },
-    "modulo-05-llmops/docker/README.md": {
-      "sourceHash": "a990f48c0b79359d28e3913c962efe830de81c1097ff4357c274925d7355d43f",
-      "translationHash": "b2e8a96901819ef97bfce776624913372c299bbbe0048af132d3daec381f4970",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:53.068Z"
+      "translatedAt": "2026-08-22T00:09:51.423Z"
     },
     "modulo-03-rag/teoria/05-rag-avanzado.md": {
       "sourceHash": "6e835e7c4a164f95bcbc3da367820f82aff0461851536555c3f936580ba96cdd",
@@ -603,37 +507,13 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:53.124Z"
     },
-    "modulo-05-llmops/labs/01_trazas_manuales.py": {
-      "sourceHash": "c9feeb5aa19219579dd8d99a9ee893eb13f1f375085c5835af0417694e369fdd",
-      "translationHash": "7bf4efbca49d94cafc730e5aefe5962075ff4cdb001762e19116fa4beb33a24f",
+    "modulo-03-rag/teoria/06-bedrock-knowledge-bases.md": {
+      "sourceHash": "b0d87e5b879641a071c36d5baf8c2408f1767531191a21319996d773e8312611",
+      "translationHash": "da30ad61a099445cb034203617c9cee2bdbeab9153c249f0521346624cc8ba9e",
       "model": "human-reviewed",
       "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:53.180Z"
-    },
-    "modulo-05-llmops/labs/03_cache_semantico.py": {
-      "sourceHash": "a9bed903c6eddec97e4575d2986eaf030ae1a32877d04fc8b22a21eb7f104fcd",
-      "translationHash": "f3685d3b8cacc78e5481ffc6d683da8c6792a3f1599085ceb1478e2f8ecdaa7c",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:53.275Z"
-    },
-    "modulo-05-llmops/labs/05_eval_regresion.py": {
-      "sourceHash": "5192844952d9c072058facbd3242de6dcb94025716fb2053566acd59b4564a1e",
-      "translationHash": "e4c6cfe1075f2aabcdd74f6988542b24c5ccc1221c0be9666beb37c55ffd5cc3",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:53.371Z"
-    },
-    "modulo-05-llmops/labs/07_prompt_injection.py": {
-      "sourceHash": "5e9a57c7b618ea74e0ff3c6301247bd672cfd0bc719603c3160a33f9158ad6e6",
-      "translationHash": "952eeab62bd849e5ecc75eaaafc2f238040223dd199103ebc09ccea46c94ee5d",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:53.470Z"
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:51.492Z"
     },
     "modulo-03-rag/teoria/07-evaluacion-ragas.md": {
       "sourceHash": "9c33fdcfcb62487a20bebc9568b9baa5fd2507ab7751fa8e25025a7d1ab3503f",
@@ -643,13 +523,29 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:53.570Z"
     },
+    "modulo-03-rag/teoria/08-alucinaciones.md": {
+      "sourceHash": "763ab538ed132dcd10ba61f6b8bab8d489da9655071e18c20c1ed7c3dccd02d5",
+      "translationHash": "2a6102e0c8ed7de6a454fd685b8cc2c46c77f7c1da0e043937d28387624e3ed3",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:51.554Z"
+    },
     "modulo-04-agentes/README.md": {
-      "sourceHash": "d264f0b463ff24c35c3456bfc8a4dd26d5c5b06bf6dee55cce8f71801646c603",
-      "translationHash": "ef0add2b88c7cc29ccd221a4117b38aa5c149bb7272653c438007480cde90441",
+      "sourceHash": "0df917fc451fa9d70021eb694e55c1a8be8c6d416ea932118d0b7c9778377a90",
+      "translationHash": "11c9ac88df9b29830a6bd37bbc7cecd3923c11acd457660b5331d1b5c473922c",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:53.630Z"
+    },
+    "modulo-04-agentes/ejercicios.md": {
+      "sourceHash": "e481751eccb976d7b1c92902005a6438cef4ac5ae25685b504953b3c6309aa56",
+      "translationHash": "9da1bff71f030587e0bc4c88eb28b9078049f639c43107ca36e406f5c435e480",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:51.680Z"
     },
     "modulo-04-agentes/labs/01_react_desde_cero.py": {
       "sourceHash": "f291903df4c794bcfa928f4680c968e6424da3bf4ca2d04998d8d3356a113ad7",
@@ -659,6 +555,14 @@
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:53.688Z"
     },
+    "modulo-04-agentes/labs/02_langgraph_basico.py": {
+      "sourceHash": "75edb78a35a00554a42d0a9accb1f9ef472b7778331d5b87487c0a8c53d22f19",
+      "translationHash": "0042548106f23d3f65146c1e02fe6b9bd391c18184355f9f900ce995d4e12883",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-22T00:09:51.800Z"
+    },
     "modulo-04-agentes/labs/03_langgraph_ciclos_condicionales.py": {
       "sourceHash": "8915dee7eec256daee5a329d4e183e35a2beeed91d76b3afe1619f3784c32671",
       "translationHash": "7cc873cc3ba0420807446aa7a6f2ce245ec0aefe7fde843247df98be1d8de517",
@@ -666,6 +570,14 @@
       "editor": "jlcases",
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:53.786Z"
+    },
+    "modulo-04-agentes/labs/04_langgraph_checkpoints.py": {
+      "sourceHash": "5a181d19b503058d05372fce40c6348b5f9f6b312dcb51f62a2a0bc1f435e137",
+      "translationHash": "52ac01d46ec5976afd59ab6d242ab8955995d81ada87d2cfaa277fe42333acb5",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-22T00:09:51.893Z"
     },
     "modulo-04-agentes/labs/05_mcp_server.py": {
       "sourceHash": "275c0d2dd74d91a4d1c9123338b90ad7e0518d7c5db44465b00763a0d7734e16",
@@ -675,6 +587,14 @@
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:53.878Z"
     },
+    "modulo-04-agentes/labs/06_multiagente_supervisor.py": {
+      "sourceHash": "587411a6b5216f84382ff241564a9c79ea4f9812f0e2323197b09cfd9643bad5",
+      "translationHash": "8624afd1075fce62ceb75e5ce589f92a3b0a514ab22fb1ae8b66a5d4ce08893e",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-22T00:09:51.986Z"
+    },
     "modulo-04-agentes/labs/07_memoria_agente.py": {
       "sourceHash": "28ccd682eb19134cb224ded190c62e5ac547f643ef50482c3adcadeecd923b77",
       "translationHash": "5f2dd9a125e941b71629a732f10cee8c3df43f483e8500e815cb4f7948cd21e1",
@@ -683,13 +603,13 @@
       "pipelineVersion": 1,
       "translatedAt": "2026-08-22T00:09:53.974Z"
     },
-    "modulo-05-llmops/teoria/02-evaluacion-continua.md": {
-      "sourceHash": "a52324537e09f2c9dd12154dba27dd0297d3f6df244934df0bfc62a349791405",
-      "translationHash": "36388deb02f1eeb2511cba4d06276f3f38b64b3f1b5a6f7626c47ba390a79d54",
+    "modulo-04-agentes/teoria/01-patrones-de-agentes.md": {
+      "sourceHash": "28b7ad4bbe7307e2102c3ac474f136e3d2c82c1f7882a9314cf479a0c4960db8",
+      "translationHash": "a890405440aa6e5e7f6cba671f57b19ec94ed4f73287ab44561ecd21684420f7",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:54.068Z"
+      "translatedAt": "2026-08-22T00:09:52.387Z"
     },
     "modulo-04-agentes/teoria/02-langgraph.md": {
       "sourceHash": "c6d2e5bae1c20314a9d1157bf757e503a1d0e0cb919c5cbf6b7b129717059f96",
@@ -699,13 +619,13 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:54.126Z"
     },
-    "modulo-05-llmops/teoria/04-docker-para-llms.md": {
-      "sourceHash": "b073b1e4208120a6b66136d06432cff408b9b01a020368df6ebbb197339b757e",
-      "translationHash": "11279e8e8558c1fba2d0492c7213905eb365f88ce826feaf95136ce232d0b7c0",
+    "modulo-04-agentes/teoria/03-mcp.md": {
+      "sourceHash": "ac5ddb275e7cecccbf475f0daf85bda1f9e28f64e76de7d0460846c6e94b8877",
+      "translationHash": "f27501f74aa0e9dcb85341da3e197386c4c4446b9b2b7e7f946b89927d26445d",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:54.184Z"
+      "translatedAt": "2026-08-22T00:09:52.604Z"
     },
     "modulo-04-agentes/teoria/04-tool-use-avanzado.md": {
       "sourceHash": "86e312797844a1cfa563e1f218701f5bb1fb604ec6157abf93a2fa174895e1d5",
@@ -715,21 +635,13 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:54.242Z"
     },
-    "modulo-05-llmops/teoria/06-aws-despliegue.md": {
-      "sourceHash": "a8c4a15d5ca78429e08fad90466be8abdf31af8a19ea7a14934605c0aea0dded",
-      "translationHash": "9ad4c5313d0671432f874c448f088722ea14fa649c0a1337be950f6b80fc3189",
+    "modulo-04-agentes/teoria/05-multi-agente.md": {
+      "sourceHash": "cd61f74c86344bacf823f4fbc3e0e7ed9e9f09f7e171c90e7a91e1c3e818b883",
+      "translationHash": "375f571755389377c4ce6c82947e369747d80b2134d6d4f301f368d80f62a3d0",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:54.298Z"
-    },
-    "modulo-05-llmops/teoria/08-seguridad-y-governance.md": {
-      "sourceHash": "60eb58721448d0bef964c56f7444d196e5088dbfe426f3ecfa64029a9495e472",
-      "translationHash": "90cd77b204538e2d6901e74abb47fbc09e8596b2cd707a1d8d7dffb5b97d57af",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:54.356Z"
+      "translatedAt": "2026-08-22T00:09:52.717Z"
     },
     "modulo-04-agentes/teoria/06-memoria.md": {
       "sourceHash": "67d9c84ee74b2a370b2df55b1f1d4295375d42a235fac5ea874e63c360df5572",
@@ -739,197 +651,501 @@
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:54.414Z"
     },
-    "modulo-06-capstone/01-propuestas-de-proyecto.md": {
-      "sourceHash": "de3deb50b376df83dd6a126564d1c5a32b6453686615396195b0de95bd2d283b",
-      "translationHash": "9a94d5789c0b77a2f04d369dab39be9b6f37cbc006136e5a906bd9713a0701ef",
+    "modulo-04-agentes/teoria/07-bedrock-agents.md": {
+      "sourceHash": "58235d153ee3d293dd5d18511e63ab8d429442b8a01138e89101b35cdcec92d9",
+      "translationHash": "815cf282cf452b352ba857e985618386a4c1aff681055419910e384ab06f515f",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:54.473Z"
-    },
-    "modulo-06-capstone/02-documento-de-arquitectura/plantilla-arquitectura.md": {
-      "sourceHash": "9034e0d7b626f27bba41881eee1d87be252b52e16ad916390a7e5e3a04def172",
-      "translationHash": "e0d6ac78f549eb1bc2333a22ad8458692c1fbd73f87a868e9d07d685d99a97a8",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:54.533Z"
+      "translatedAt": "2026-08-22T00:09:52.831Z"
     },
     "modulo-04-agentes/teoria/08-evaluacion-de-agentes.md": {
-      "sourceHash": "390a1e9656bfa3b29eaa90f16c7b1074834ecc5009d42b36a7ee1862c798a007",
-      "translationHash": "1a0c814737272d11b320874077a4483b5b2751a43862d22c7bb1098813fcf49c",
+      "sourceHash": "61b9049c2754249febc185b3e57de49cdc90c6f443a7912c4fbea2faadde15cc",
+      "translationHash": "bab4706e50f4a8f616be174989f264a4bc2f2a836daccbf7688604e28c9b6362",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:54.594Z"
     },
-    "modulo-06-capstone/04-guia-agente.md": {
-      "sourceHash": "9140510c9e52a6e1c85dda5dc3c1dbb6ec07ad35f5932a83297e4fe5332ba97f",
-      "translationHash": "2b19bd77aa94bcbcd10e3b0f33bcb63a6e61b32064332eb359f7650ed53d6e40",
+    "modulo-04-agentes/teoria/09-alignment-y-fine-tuning.md": {
+      "sourceHash": "42d2fdd9f810b280929e8e37dadc22b46623ab6aa1c8f5d6ec7421bff5d4ffc1",
+      "translationHash": "51a9f46408c4dc5a8287f4a7b7afedc9efb1bcbbab4d80595caa055b7ba768ea",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:54.650Z"
+      "translatedAt": "2026-08-22T00:09:53.009Z"
     },
-    "modulo-05-llmops/README.md": {
-      "sourceHash": "65a98f9aff84f6568f920a0923a7c5c0a09705968b8274fbc98ef81174cf2a40",
-      "translationHash": "8a7fa60a1f9fb08a70927a57dabb1a3e138d2aec9afa64f0cfbd57070bba9175",
+    "modulo-05-harness-engineering/README.md": {
+      "sourceHash": "2ddacb8fb9b1cf6896ed18c98416360dd5fb3d4bc588469545ac1b9cd7945ede",
+      "translationHash": "ed74cf90966baaee27d8276a906a095ddc31d6d9b44f8cd4320b0a1e71abc30e",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:54.710Z"
+      "translatedAt": "2026-08-23T08:31:35.608Z"
     },
-    "modulo-06-capstone/06-guia-llmops.md": {
-      "sourceHash": "e021f6b3867487bf20f858f19d3d4906844ef68336497efb04a7b27294829f6a",
-      "translationHash": "1573cd234efede1b7fcd9e35716bdcefa8a402694bbeed4b02b3e62517b09593",
+    "modulo-05-harness-engineering/ejercicios.md": {
+      "sourceHash": "155f73ecc04eee0aff86bfb90ce70d0f65c489154712e73de1e9eeb76e9ae1d7",
+      "translationHash": "c765f974e12bc9147ee3523e7b959bbb7f408187d8057b85fb32da2e0e596a96",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:54.768Z"
+      "translatedAt": "2026-08-23T08:31:35.670Z"
     },
-    "modulo-05-llmops/ejercicios.md": {
-      "sourceHash": "0799d3ab104b7218079d1aec71d2b2b8fee6ef7618dc1837539052844ac840c1",
-      "translationHash": "c864fbacc0960b946aea5234c6fc191452fc6b7706e7fb6465583667b115b1e6",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:54.829Z"
-    },
-    "modulo-05-llmops/labs/02_langsmith_tracing.py": {
-      "sourceHash": "d94b43c62929ca024ef57225947a377d8ec7b15f2bafbd45d0a1c427a350bbf0",
-      "translationHash": "6b30d6dc717ab6a887e1c288b18e8067783e2880675e94927e3a7893e2ab9687",
+    "modulo-05-harness-engineering/labs/01_capability_harness.py": {
+      "sourceHash": "b21914b77ad2dee36d823a4edf608bcd911e5e38bc6b0a650b974f835a56cef1",
+      "translationHash": "83e41541e232f8e09d55ee6b6159581cb0a4040fd30721169110174a9e3cc8e0",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:54.887Z"
+      "translatedAt": "2026-08-23T07:45:24.374Z"
     },
-    "modulo-05-llmops/labs/04_model_routing.py": {
-      "sourceHash": "55c67ae3bdad3bc27b992060c7a09902dffec0ade02edb0312197d98782cf7f2",
-      "translationHash": "b2ef9e7a1fa7050df6c25fd56a76851215020651d9e383d9da75c4543fb26f14",
+    "modulo-05-harness-engineering/labs/02_eval_harness.py": {
+      "sourceHash": "b271e2ab355b14d1794e060c71e637991eae0447339e8ef05673781091f2eec9",
+      "translationHash": "fe7a4ebb18c5b8f548979d9c91844418cb17d36ec960b8e53ed5d6faa368a1ef",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:54.980Z"
+      "translatedAt": "2026-08-23T07:45:24.374Z"
     },
-    "modulo-06-capstone/08-defensa-y-demo.md": {
-      "sourceHash": "79ea595f64a6e9b41a7736c80c826881320ace24163b296bf52c2534a3e0dce2",
-      "translationHash": "346311dddde64bd7c97b963dc78781661f13bf8f939cf658486d19bd79b2ab69",
+    "modulo-05-harness-engineering/proyecto/README.md": {
+      "sourceHash": "a843656897d286a9b885a3a1da239bfd8d85193365f12232e3cb325ce73c374b",
+      "translationHash": "f41315c3a57b8e397ea69c91c9fea434a8e4c941c529da1f3583fb00d3d888d4",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.073Z"
+      "translatedAt": "2026-08-23T08:31:35.730Z"
     },
-    "modulo-05-llmops/labs/06_ollama_local.py": {
-      "sourceHash": "fc0424c77478294895ff34d82c6f42cd259abb5f89278bccbe755ba9cacb0017",
-      "translationHash": "0c1e0128b0adeb17bacbb1d1276baecd1c72672e19e2e68bb34ff7948075fa70",
+    "modulo-05-harness-engineering/teoria/01-anatomia-y-contratos.md": {
+      "sourceHash": "d165ca438054b943bb51faad08588befe1078cddb93d79885c93d6dde9e90e2d",
+      "translationHash": "1180f4c2d699bb719304c54498918b1282ec9929d6a413795a53ea329826c339",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-05-harness-engineering/teoria/02-contexto-capacidades-y-aislamiento.md": {
+      "sourceHash": "411f375039e6cf80e4019953341b572f2bcd74f7362e92539ffe88f6c6bbefb1",
+      "translationHash": "7539c24302c777af410972f69f12578003e261550fdd7a1743e68437cc50ccc2",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-05-harness-engineering/teoria/03-trazas-y-evaluation-harness.md": {
+      "sourceHash": "dcc80328bcbdff029a49e9a980d8ef031110175818e171f65b954d57d11f1039",
+      "translationHash": "882823b5e90d6b2e551de97c5d365e49c15f93eed33d7a6c77faf2b35c4b1d8d",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-06-loop-engineering/README.md": {
+      "sourceHash": "19717fc10cf3acc592b8834f0b6c41cd95cf0c2b1ecd22040d0a148d2da2f867",
+      "translationHash": "5e89d5748ba8d2d4bffd4ffc26b62e0ca66f30cdc3818e5ea5c5df93ad428124",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-06-loop-engineering/ejercicios.md": {
+      "sourceHash": "8666f166cd3c5e7e94c7e02debe4009eb867313486b592e49393c54eb97d63cb",
+      "translationHash": "92aadc5443349d6a41adae57a5a431a2f6e632ceef897a7e25fe21a77b4b0abd",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-06-loop-engineering/labs/01_bounded_loop.py": {
+      "sourceHash": "686f5b13dfccb1efadf1e3ca1d1e6eab8e607a578a5a3893c3eae038593ccf72",
+      "translationHash": "1dbedf58d9bf23af3a1d39f414364549be944eea47c69e6969d537e564dd1d5f",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:55.133Z"
+      "translatedAt": "2026-08-23T07:45:24.374Z"
     },
-    "modulo-06-capstone/checklist-final.md": {
-      "sourceHash": "d5011df52befc7d1ed09b578f2076048d770bb4856f154cf6e8de6de0aee7a3d",
-      "translationHash": "6c2520a1953ad4ce022d7d6d04778870d8fe52b26e183bc84695ed5d35516073",
+    "modulo-06-loop-engineering/labs/02_durable_loop.py": {
+      "sourceHash": "e36a34dcb1773e265206b4e01d12050e0ff07887c35f6a95eeaa17a2d6ce7066",
+      "translationHash": "7500e5141fb6c4e8f30f375879aba520779ba1f85cf5e3d60390492d9e3a78d0",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-06-loop-engineering/proyecto/README.md": {
+      "sourceHash": "1158a9c66187f774d01197a48c661bab80ae84f7a23dc3625ec1e2286e49ca41",
+      "translationHash": "98ac2c976797be996b1d5003efe2fdf5f4b1b43ccc84acdfd0ca43b0a888aec8",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.229Z"
+      "translatedAt": "2026-08-23T07:45:24.374Z"
     },
-    "modulo-05-llmops/teoria/01-observabilidad.md": {
+    "modulo-06-loop-engineering/teoria/01-estado-presupuestos-y-terminacion.md": {
+      "sourceHash": "6323a49464c776a61a54a73ae968a77528959410ec5d1416f46d05528f0f9959",
+      "translationHash": "d5ac8e458eb2c5639c8b06c79f6ed75b1c6b43ab1d9ad76bb89f97c9198bd568",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-06-loop-engineering/teoria/02-errores-idempotencia-y-reanudacion.md": {
+      "sourceHash": "abca56e3735050e8c91712de417da06e68f9995e75e9b1e37883a52547514a6e",
+      "translationHash": "a99a7fb7c8465b88eff7d9fe74c2ea68c346262d80a1ac60d62e050f94281411",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-06-loop-engineering/teoria/03-progreso-concurrencia-y-evaluacion.md": {
+      "sourceHash": "c2f7d9ea4931954e86e607b8f053aa8d49bd45bada22d9bdf3076febdf363068",
+      "translationHash": "459b90ffc50aa3c02c338e6480912c5d73a7a577e9e25b8d5562103b62edc93b",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-07-graph-engineering/README.md": {
+      "sourceHash": "f4ef362b99e4af215145a186cb97ab4b06e8cca38ce946f8cc382945c3e61357",
+      "translationHash": "8265efa86531cb2be90b0797082bcf6c86aad62da708ed05683c116b374e0bcb",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-07-graph-engineering/ejercicios.md": {
+      "sourceHash": "260fed8e629ee87605aeeae8ca88ca5532a153473c2ff7f6336e912be1782ef2",
+      "translationHash": "41122b6910d3ffe8038eff5766deb61a997c9d339d840300b912b1b700ccf6e8",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-07-graph-engineering/labs/01_typed_provenance_graph.py": {
+      "sourceHash": "dfdf18476bfa356572dfa96f305a12c68b9c0ff2998db56f5ddc99f9b80b9e5b",
+      "translationHash": "17405f9363d16512f121df35811b98484672c79eee253d894d0540afe8730dbe",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-07-graph-engineering/labs/02_hybrid_graph_retrieval.py": {
+      "sourceHash": "82f5b8417c6aa2037cf868163c0edaa799da79e4b1fd3c6b459b2cf29a34a67c",
+      "translationHash": "e66ad648bef0041db56b85bb33dbe069cd9c07a05e55c6b466b861b9e3e1cb5a",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-07-graph-engineering/proyecto/README.md": {
+      "sourceHash": "3ccb5cce05f2109679c7d03209d6807828480f67c8a260dbc23d33c3e19f30c6",
+      "translationHash": "cb9c91afb1f5402ce33502a75ff907d9281a27930409a390ac4adecdb7f0f069",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-07-graph-engineering/teoria/01-tres-grafos-y-sus-invariantes.md": {
+      "sourceHash": "0d20989c90604285f308812eebaeeb00ef351154a893bd6835ab7c54e3925ece",
+      "translationHash": "62a23e39c8ddafbd49a99c03ee0471b18d1f6edbb88e5db878086b57fab18703",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-07-graph-engineering/teoria/02-conocimiento-identidad-y-procedencia.md": {
+      "sourceHash": "9a6d63c7fc533f6be9e47420b2ffa9ea8951d2fe57ada43a6ea66aa94bf44a76",
+      "translationHash": "608671b239a85d64c7974beab8ffde4fcc9dc4b10ccb5ac5832d99233f976bbe",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-07-graph-engineering/teoria/03-retrieval-hibrido-y-evaluacion.md": {
+      "sourceHash": "3aecb64208f66da1d1c2943b0214400375d8f8dbea86fdf3bfd5d4bf6d5c6433",
+      "translationHash": "20db629874e1bd3cb7a312e0d6d12e21b5da69d7e4417fd30d35cf53d22bdc43",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/README.md": {
+      "sourceHash": "81a5dac46b7c6bfce013280708caf3993b79e99f3c4da35a483781a1aa17d3fb",
+      "translationHash": "0e43e372e95ff9be560593736b6351cfcf034f66842400a4a6083188d568ad77",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/docker/README.md": {
+      "sourceHash": "a990f48c0b79359d28e3913c962efe830de81c1097ff4357c274925d7355d43f",
+      "translationHash": "b2e8a96901819ef97bfce776624913372c299bbbe0048af132d3daec381f4970",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/ejercicios.md": {
+      "sourceHash": "4ef775ddb2c7511126b3b9db488046aa0d8957f59a04ad4aa0feccf9a7c0a3a3",
+      "translationHash": "a9f48164e06fc8dda8c1adca00277bc38ba70e1df58dfd058797f9931e1d61ce",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/labs/01_trazas_manuales.py": {
+      "sourceHash": "4c48909ca111453760100a26a951d0fbb2fafaca654e4d18cc5c5e7cf90a9ec5",
+      "translationHash": "0a552572fd01ca25f42be46b4254e8b5302804c400b4851203af18d3d7fb15c6",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/labs/02_langsmith_tracing.py": {
+      "sourceHash": "5c907d28502411830f49227109adf8d05f2a2025673603c1b10090e130ce8fe1",
+      "translationHash": "9ecad4c0a6306e3a7bb61be71c1ec3786508dcb1ff089ed06b73cf5513781b89",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/labs/03_cache_semantico.py": {
+      "sourceHash": "2e6ab3f8086593f938786e10ba65319ff5a67bbde62deba715445ce31107b711",
+      "translationHash": "5a8305bb30a7e070482f1a5f11a96e2b7d314e2b1ca355d7e70289e0d55d5472",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/labs/04_model_routing.py": {
+      "sourceHash": "acc69c65e923b00b6d5aa0f6cf3811f012ee5cbee1e36441011da4d9e93551dd",
+      "translationHash": "7d6270aea3d339ddf0ad191b2b18a008e99bc36b72b41f4fc94f8bfb3062bcca",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/labs/05_eval_regresion.py": {
+      "sourceHash": "a4a236f2472028fe1a47ede701c68721112a0963995b4d6c5e377d2d80ac4be4",
+      "translationHash": "bf2bb43e105d949f6ad4735ea86cb86dde0df8a5c0eaead4bdd29bdf8efa0517",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/labs/06_ollama_local.py": {
+      "sourceHash": "effec87b043cf5528d101ae521dc34023d4c0cbd3492e3f8334103eeed980509",
+      "translationHash": "ba1b39256a8b6ec91bdd8bdcb91a610dbe60121ba9edb39f63033dad4e111274",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/labs/07_prompt_injection.py": {
+      "sourceHash": "28c8ffee604dce4204e0ec0649ae3957fe682e2076ded3ddc62d54304773d446",
+      "translationHash": "e531c55a48720832dc8855d5c1f030d6fad4d35581f2ebe25dc31f1a2e37e10d",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/teoria/01-observabilidad.md": {
       "sourceHash": "ba3b3553218a1dd0d9f4e05cc5be7b4629c1bb1cb14dca2aa48241bfd1f1e606",
       "translationHash": "e7abb521497db7d8e111a410f5a2aa49749a78281e5acb6fa42313fe6bf966cf",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.284Z"
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/teoria/02-evaluacion-continua.md": {
+      "sourceHash": "66d890edade0f8593b275890ae27628d554529352115b78e6e580c65804f6d95",
+      "translationHash": "3e039fda8e15f8fd012749f3e32aeae610cc6a1725fc57d5e7d2f1c6960791cb",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/teoria/03-optimizacion-costes.md": {
+      "sourceHash": "2f2554f018ef6b7e1d3dbf5a0d6f673c04c1f8d2cca882cb9fa9c4163238223b",
+      "translationHash": "f87dbf1b3a2cf671abec24252139260252a91fba7b0d475f9841313f70c7b04e",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/teoria/04-docker-para-llms.md": {
+      "sourceHash": "b073b1e4208120a6b66136d06432cff408b9b01a020368df6ebbb197339b757e",
+      "translationHash": "11279e8e8558c1fba2d0492c7213905eb365f88ce826feaf95136ce232d0b7c0",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/teoria/05-despliegue-open-source.md": {
+      "sourceHash": "96e5472290f7aec8d302cf052ac36e0002ec990ba88fdb636af4625770de549a",
+      "translationHash": "367199fb7f3501f7613bef5e20bbb303a337149eff0b97a0dc6fb8de3a1b9a04",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/teoria/06-aws-despliegue.md": {
+      "sourceHash": "a8c4a15d5ca78429e08fad90466be8abdf31af8a19ea7a14934605c0aea0dded",
+      "translationHash": "9ad4c5313d0671432f874c448f088722ea14fa649c0a1337be950f6b80fc3189",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/teoria/07-responsible-ai.md": {
+      "sourceHash": "61b8081f819e786f08f1d685ec5f9c34d5c28e3d9bae252a72e2da54ebd94cc7",
+      "translationHash": "5b6d1306e2d7bd0c3a7c5bcba5c69c52e6ca0c6af635b669eed3ddd6508f14bf",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/teoria/08-seguridad-y-governance.md": {
+      "sourceHash": "60eb58721448d0bef964c56f7444d196e5088dbfe426f3ecfa64029a9495e472",
+      "translationHash": "90cd77b204538e2d6901e74abb47fbc09e8596b2cd707a1d8d7dffb5b97d57af",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-08-production-engineering/teoria/09-safety-en-produccion.md": {
+      "sourceHash": "3a842f4c97535ae433491a14b37e999d4c82410b14465a3ad8103a189d317362",
+      "translationHash": "dbedc84a9ec7354c0e459a55f3e65fcbb4c33a4146cdb10b28987664c9a7c481",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/01-propuestas-de-proyecto.md": {
+      "sourceHash": "cd02e88c6abf5c8fdb9aa91e8ec78e767de9ef2f53e6968a88eeaacca76d3069",
+      "translationHash": "e55aed45b54e93525416e24e65a8b5fc959da14c3a91a9b797352a1541b84a43",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/02-documento-de-arquitectura/plantilla-adr.md": {
+      "sourceHash": "1a06a4fb697e91bd4993cac5554d996e5cee006a9811881d3994b95490f66dc2",
+      "translationHash": "bb5e08fd80f1a287c2e818f5fc3abc5d90e45d584ce8421f8f5c866955d55918",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/02-documento-de-arquitectura/plantilla-arquitectura.md": {
+      "sourceHash": "88ebac6f488d3754b3742acbe4bd99c83133eb23fb302b508b80b9451377be29",
+      "translationHash": "4ee29256e979cf331e1c6050ee1f0dfa4b5a1c0d033140b39bb1d2888efbd411",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/03-guia-rag.md": {
+      "sourceHash": "9d4d08f917d0b90eb093452f6cd52e46382fe49b0eab821ed5cd2f096ac67e60",
+      "translationHash": "ae644257155c0c6ca0cdfceff0fd9feb4f6f7baf40b6405fdc557ff94d521787",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/04-guia-agente.md": {
+      "sourceHash": "720ff003f4a8db23a0a6144c3bb51b6e6c2c701d9acbde5558b27acc8c778950",
+      "translationHash": "ab695c3ef7bc039107d45f48744a70583628e97578b3ec02fb4f8b7c904cd154",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/05-guia-despliegue.md": {
+      "sourceHash": "9fc714d7fbc33d97c4d001cc8c97b378097de1164687cd2d64a66b0a64977eb9",
+      "translationHash": "240071cabf0c6d21ff133a8db8dfde421e1cc299479c26fce834326f4c933494",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/06-guia-llmops.md": {
+      "sourceHash": "8198f227070efab6e354a963c200a0a0f60a67f1f876bd955005c84386b94823",
+      "translationHash": "faec9cf1fdb71f6fb32fcdf953fed1943774ae6f66fff6fed1c3ea6b5d14b467",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/07-analisis-de-costes.md": {
+      "sourceHash": "e34cd0e1e0217d33cb97460f66563a100ff638fa243e0b62dbf3029e579d0879",
+      "translationHash": "a3057943eac09413cb4b4e5c774354dd5cbac41809876c0f1070e52989c8acf5",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/08-defensa-y-demo.md": {
+      "sourceHash": "9a6591295a962da7e7a5a5de8c8e589b30a9f55dfb10c391c2b4faa8f9bfe746",
+      "translationHash": "5a248b63a24dd99f5b99d8e3570df75796b16afd4093601b4c0c7b34812c5e81",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/README.md": {
+      "sourceHash": "8f7570ee77b3bf9019ddadb51a88d964e9cac373c94b82fad134a9baf993629e",
+      "translationHash": "982c7b15aa7637337045c9103063d5f9455faeec65b718ec356c6bfc04191b87",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "modulo-09-proyecto-de-campo/checklist-final.md": {
+      "sourceHash": "90ae363b04a99a0e0f9f9fbfd91d6263dd6b61afd038c3057d28be6bf0276139",
+      "translationHash": "8407ad6cd809f8c10c339c3a36e9b008cad4588d2129b778ae4eabfe34784c22",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-23T07:45:24.374Z"
+    },
+    "recursos/README.md": {
+      "sourceHash": "ff76f1c07601a8f56137c8964e3faa9f6e1c94bd8429da8ac528c1e0100b81ea",
+      "translationHash": "e5f7c09fd3abafeaff88fc80769f9acdbbc14f98bc9499de88bdeea312f0a61a",
+      "model": "human-reviewed",
+      "editor": "jlcases",
+      "pipelineVersion": 2,
+      "translatedAt": "2026-08-22T00:09:56.004Z"
     },
     "setup/README.md": {
-      "sourceHash": "7e3757133c42c51a05ac0a3ac812429d38fba269765e87cf8ae62b707220a1cf",
+      "sourceHash": "1302f26845e153677f3f9021d2310043738d92dd7e570afdb415ca451877d150",
       "translationHash": "e1ff93591c98eb235054428986917f52f9a937aec9b0fe46b45db898892036fd",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
       "translatedAt": "2026-08-22T00:09:55.341Z"
     },
-    "modulo-05-llmops/teoria/03-optimizacion-costes.md": {
-      "sourceHash": "2f2554f018ef6b7e1d3dbf5a0d6f673c04c1f8d2cca882cb9fa9c4163238223b",
-      "translationHash": "f87dbf1b3a2cf671abec24252139260252a91fba7b0d475f9841313f70c7b04e",
+    "modulo-05-harness-engineering/teoria/04-panorama-de-harnesses-actuales.md": {
+      "sourceHash": "1493f7090da661159cac375484fad246ce4f61b35921733c283c67f691b53692",
+      "translationHash": "0450410c478b14402c2cb7d04ded15d41260b1fc9c10ecb874789867e9388d8b",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.402Z"
+      "translatedAt": "2026-08-23T08:31:35.788Z"
     },
-    "modulo-05-llmops/teoria/05-despliegue-open-source.md": {
-      "sourceHash": "96e5472290f7aec8d302cf052ac36e0002ec990ba88fdb636af4625770de549a",
-      "translationHash": "367199fb7f3501f7613bef5e20bbb303a337149eff0b97a0dc6fb8de3a1b9a04",
+    "modulo-05-harness-engineering/teoria/05-benchmarking-de-harnesses.md": {
+      "sourceHash": "c0a18ff569192c2a5848cc1b8a137ba64c95ddef79fe5d1530456230e8e2b0d9",
+      "translationHash": "e6526d713de5263551db9f95f4c7c566d38001c7a22b28fc6689941cfce84cf7",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.496Z"
+      "translatedAt": "2026-08-23T08:31:35.849Z"
     },
-    "modulo-05-llmops/teoria/07-responsible-ai.md": {
-      "sourceHash": "61b8081f819e786f08f1d685ec5f9c34d5c28e3d9bae252a72e2da54ebd94cc7",
-      "translationHash": "5b6d1306e2d7bd0c3a7c5bcba5c69c52e6ca0c6af635b669eed3ddd6508f14bf",
+    "modulo-05-harness-engineering/labs/03_harness_landscape.py": {
+      "sourceHash": "a96c1851f27489a83196be86f33e9ddf1330588baa1928e774c3640ebec7bab1",
+      "translationHash": "cdfa8cbd9477a4ceaca1b8b0673365441647323fee7aaab32615b01219d04921",
       "model": "human-reviewed",
       "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.564Z"
-    },
-    "modulo-05-llmops/teoria/09-safety-en-produccion.md": {
-      "sourceHash": "3a842f4c97535ae433491a14b37e999d4c82410b14465a3ad8103a189d317362",
-      "translationHash": "dbedc84a9ec7354c0e459a55f3e65fcbb4c33a4146cdb10b28987664c9a7c481",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.628Z"
-    },
-    "modulo-06-capstone/02-documento-de-arquitectura/plantilla-adr.md": {
-      "sourceHash": "58f2a399abf52c2e65aff7c4d153efe488e5c103897620e796ee05e87e68f16b",
-      "translationHash": "e630d3281d7421292617bbdd211dca0e3421abd72b8dc0a58e1206047415489e",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.691Z"
-    },
-    "modulo-06-capstone/03-guia-rag.md": {
-      "sourceHash": "7da75e13ca9c60c3c4f8c74a1e141156c78a188e3f2273b4cdb1e01ebbdb08d9",
-      "translationHash": "c2f164a09ef945496367a377ef0e4500113dd4c414b736af41cfbf7bcd8c4d4d",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.756Z"
-    },
-    "modulo-06-capstone/05-guia-despliegue.md": {
-      "sourceHash": "4f1eef356757f3cc79b2fadfde76208788553866be6ba6849a388f3fd03c3961",
-      "translationHash": "8d9f636e58647a5a97e697d3d177831bd757c73b4e570a1026f4c491e5045f0e",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.823Z"
-    },
-    "modulo-06-capstone/07-analisis-de-costes.md": {
-      "sourceHash": "e34cd0e1e0217d33cb97460f66563a100ff638fa243e0b62dbf3029e579d0879",
-      "translationHash": "a3057943eac09413cb4b4e5c774354dd5cbac41809876c0f1070e52989c8acf5",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.882Z"
-    },
-    "modulo-06-capstone/README.md": {
-      "sourceHash": "6d494a2c30170e5c8f4d20288b9ba1c2038fb2d4f3c4eb16d58cc0abbd855cd1",
-      "translationHash": "051aee641e8874572988d2788f2a95358dae0c67b2fecd2c36b7e9091ea4e982",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.944Z"
-    },
-    "recursos/README.md": {
-      "sourceHash": "dee71b239e0769f96e6ceaef9bc9615f58ffefffa4321dd41a17ec815d4cb65e",
-      "translationHash": "e5f7c09fd3abafeaff88fc80769f9acdbbc14f98bc9499de88bdeea312f0a61a",
-      "model": "human-reviewed",
-      "editor": "jlcases",
-      "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:56.004Z"
+      "pipelineVersion": 1,
+      "translatedAt": "2026-08-23T08:31:35.919Z"
     }
   }
 }

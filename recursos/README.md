@@ -19,7 +19,7 @@ Referencias transversales al programa, comentadas. Cada módulo tiene además su
 - **LangGraph** — langchain-ai.github.io/langgraph.
 - **RAGAS** — docs.ragas.io.
 - **Amazon Bedrock** — docs.aws.amazon.com/bedrock.
-- **OWASP Top 10 for LLM Applications** — genai.owasp.org (módulo 5).
+- **OWASP Top 10 for LLM Applications** — genai.owasp.org (módulo 8).
 
 ## Cursos complementarios gratuitos
 

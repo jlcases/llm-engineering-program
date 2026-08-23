@@ -1,4 +1,4 @@
-# Module IV — AI Agents and Orchestration (2 ECTS)
+# Module 04 — Agent and tool interfaces
 
 > Agents capable of planning, reasoning, and using tools. Multi-agent systems with LangGraph and MCP.
 > Memory, flow control, and reliability evaluation. **~55 hours of work.**
@@ -44,7 +44,7 @@ uv sync --extra agents
 | 9 | [`teoria/09-alignment-y-fine-tuning.md`](teoria/09-alignment-y-fine-tuning.md) — RLHF, RLAIF, Constitutional AI | no lab (theoretical) | 4 |
 | — | [`ejercicios.md`](ejercicios.md) — 12 exercises + mini-project (research agent) | Tests and rubric | 13 |
 
-**Total: ~55 h** (≈ 2 ECTS). At 10 h/week, this corresponds to weeks 13–18 of the program.
+**Suggested effort: 50–60 h.** Move forward when you can produce the evidence, not when a date arrives.
 
 ## How to work through the module
 
@@ -54,7 +54,7 @@ uv sync --extra agents
    calculate the cost using the current rate and set a budget.
 3. Complete the exercises from the block upon finishing it, not all of them at the end.
 4. The **mini-project** (exercise 12) is the module's milestone: a research agent
-   with 3+ tools, traces, and evaluation. Save it: you will reuse it in the capstone.
+   with 3+ tools, traces, and evaluation. Save it: it becomes the input to Harness Engineering.
 
 ## Module Mind Map
 
