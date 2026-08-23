@@ -1,7 +1,7 @@
 [project]
 name = "llm-engineering-program"
 version = "0.1.0"
-description = "Programa de experto en LLM Engineering e IA Agéntica — labs y ejercicios"
+description = "Ruta abierta de Ingeniería de Sistemas LLM — labs y pruebas de trabajo"
 requires-python = ">=3.12"
 dependencies = [
     # Base (módulos 1-2)
@@ -34,7 +34,7 @@ agents = [
     "mcp[cli]>=2,<3",
 ]
 ops = [
-    # Módulo 5
+    # Módulo 8
     "prometheus-client>=0.26,<1",
     "locust>=2.46,<3",
 ]
@@ -49,5 +49,5 @@ all = ["llm-engineering-program[rag,agents,ops]"]
 package = false
 
 [tool.pytest.ini_options]
-testpaths = ["modulo-03-rag/proyecto/backend/tests"]
+testpaths = ["modulo-03-rag/proyecto/backend/tests", "tests"]
 pythonpath = ["modulo-03-rag/proyecto/backend"]

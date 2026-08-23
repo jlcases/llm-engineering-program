@@ -1,42 +1,49 @@
 {
   "$schema": "./course.schema.json",
-  "schemaVersion": 1,
-  "id": "llm-engineering-professional",
-  "title": "Professional Program in LLM Engineering and Agentic AI",
-  "shortTitle": "LLM Engineer",
+  "schemaVersion": 2,
+  "id": "llm-systems-engineering-open-path",
+  "title": "LLM Systems Engineering: Open Field Path",
+  "shortTitle": "LLM Systems",
   "language": "en",
-  "description": "An applied path to design, build, evaluate, and operate production LLM systems, demonstrate competence through a capstone, and prepare for professional certifications.",
+  "description": "A practitioner-maintained field path for designing, controlling, evaluating, and operating verifiable LLM systems, from the model interface to the environment that makes it reliable.",
   "sourceRepository": "jlcases/llm-engineering-program",
-  "canonicalSite": "https://llmengineerclub.com/en/",
-  "reviewedAt": "2026-08-21",
-  "durationHours": { "min": 250, "max": 300 },
-  "ects": 10,
+  "canonicalSite": "https://llmengineerclub.com/",
+  "reviewedAt": "2026-08-23",
+  "effortHours": { "min": 325, "max": 405 },
   "outcomes": [
-    "Integrate OpenAI, Anthropic, and Amazon Bedrock models behind provider-neutral, observable contracts.",
-    "Design prompts, tools, and structured outputs evaluated with reproducible datasets.",
-    "Build and measure RAG systems across retrieval, reranking, grounding, and continuous evaluation.",
-    "Orchestrate reliable agents with LangGraph, MCP, memory, traces, and safety boundaries.",
-    "Operate LLM applications with observability, cost controls, deployment, and governance.",
-    "Defend a production-grade capstone with evidence, metrics, and architectural decisions.",
-    "Prepare for AWS Certified AI Practitioner and NVIDIA-Certified Associate Generative AI LLMs."
+    "Integrate models behind observable, replaceable contracts you own.",
+    "Design context, tools, and structured outputs as versioned interfaces.",
+    "Build measurable retrieval with citations, abstention, and verifiable provenance.",
+    "Engineer a harness that makes the environment legible, safe, and actionable for the model.",
+    "Control loops through budgets, stopping criteria, recovery, and idempotency.",
+    "Model execution, knowledge, and provenance as evaluable graphs.",
+    "Operate LLM systems with observability, cost control, security, and governance.",
+    "Prove competence through executable artifacts and a field project.",
+    "Treat professional certifications as an optional, separate route."
   ],
   "competencies": [
     { "id": "foundations", "label": "Foundations and models", "description": "Explain transformers, tokenization, inference, and model selection through explicit trade-offs.", "evidence": "An executable comparison and a model decision backed by evaluation." },
     { "id": "prompt-systems", "label": "Prompt systems", "description": "Treat prompts, schemas, and tools as versioned, testable contracts.", "evidence": "A regression dataset and A/B pipeline with explicit criteria." },
     { "id": "retrieval", "label": "RAG and retrieval", "description": "Design ingestion, chunking, search, reranking, grounding, and RAG evaluation.", "evidence": "A measured RAG system with answerable and unanswerable cases, citations, and retrieval metrics." },
-    { "id": "agents", "label": "Agents and MCP", "description": "Build graphs, tools, memory, and failure recovery without losing control.", "evidence": "An agent with three tools, traces, idempotency, and negative-path tests." },
+    { "id": "agents", "label": "Agent interfaces", "description": "Design tools, MCP, memory, and authority boundaries without delegating control to the model.", "evidence": "An agent with three typed tools, explicit permissions, and negative-path tests." },
+    { "id": "harnesses", "label": "Harness Engineering", "description": "Build the environment that supplies context, capabilities, isolation, signals, and evaluations to an agent.", "evidence": "A reproducible harness with a capability manifest, sandbox, traces, and isolated evals." },
+    { "id": "loops", "label": "Loop Engineering", "description": "Control iterations, budgets, progress, retries, concurrency, stopping, and resumption.", "evidence": "A bounded, resumable loop that proves termination, idempotency, and failure recovery." },
+    { "id": "graphs", "label": "Graph Engineering", "description": "Model execution, knowledge, and provenance graphs with explicit invariants and measurable queries.", "evidence": "A hybrid system that connects state, evidence, and decisions without losing provenance." },
     { "id": "evaluation", "label": "Evaluation", "description": "Separate model, retrieval, and application quality through reproducible evaluations.", "evidence": "A regression suite with a baseline, rubric, failed samples, and acceptance gates." },
     { "id": "operations", "label": "LLMOps", "description": "Observe latency, cost, quality, safety, and distribution shifts in production.", "evidence": "An operational dashboard, alerts, and an incident runbook." },
     { "id": "security", "label": "Safety and governance", "description": "Model threats, constrain tools, and apply privacy, guardrails, and auditability.", "evidence": "A threat model, prompt-injection test, and verifiable controls." },
-    { "id": "architecture", "label": "Product architecture", "description": "Make build-vs-buy, cost, reliability, and user-experience decisions.", "evidence": "ADRs, cost analysis, and a technical capstone defense." }
+    { "id": "architecture", "label": "Product architecture", "description": "Make build-vs-buy, cost, reliability, and user-experience decisions.", "evidence": "ADRs, cost analysis, and a technical field-project review." }
   ],
   "modules": [
-    { "id": "module-01", "number": 1, "slug": "llm-foundations", "sourceSlug": "fundamentos-llm", "path": "modulo-01-fundamentos-llm", "title": "LLM Foundations and APIs", "shortTitle": "Foundations", "description": "Transformers, tokenization, generation, current models, and multi-provider clients.", "durationHours": { "min": 15, "max": 18 }, "ects": 0.5, "prerequisites": [], "competencies": ["foundations", "architecture"], "milestone": "A multi-provider client with observable tokens, latency, errors, and metadata." },
-    { "id": "module-02", "number": 2, "slug": "prompt-engineering", "sourceSlug": "prompt-engineering", "path": "modulo-02-prompt-engineering", "title": "Advanced Prompt Engineering", "shortTitle": "Prompt systems", "description": "Prompts as software: tools, structured outputs, evaluation, versioning, and mitigation.", "durationHours": { "min": 38, "max": 45 }, "ects": 1.5, "prerequisites": ["module-01"], "competencies": ["prompt-systems", "evaluation", "security"], "milestone": "A prompt-evaluation pipeline with a dataset, A/B tests, and regression gates in CI." },
-    { "id": "module-03", "number": 3, "slug": "rag", "sourceSlug": "rag", "path": "modulo-03-rag", "title": "RAG Systems and Evaluation", "shortTitle": "RAG", "description": "Ingestion, embeddings, vector stores, chunking, reranking, grounding, and RAGAS.", "durationHours": { "min": 50, "max": 60 }, "ects": 2, "prerequisites": ["module-01", "module-02"], "competencies": ["retrieval", "evaluation", "architecture"], "milestone": "A RAG application with citations, abstention, and automated evaluation." },
-    { "id": "module-04", "number": 4, "slug": "agents", "sourceSlug": "agentes", "path": "modulo-04-agentes", "title": "AI Agents and Orchestration", "shortTitle": "Agents", "description": "Agentic patterns, LangGraph, MCP, tool use, multi-agent systems, memory, and evaluation.", "durationHours": { "min": 50, "max": 60 }, "ects": 2, "prerequisites": ["module-01", "module-02"], "competencies": ["agents", "evaluation", "security"], "milestone": "A multi-agent system with an MCP server, traces, and failure recovery." },
-    { "id": "module-05", "number": 5, "slug": "llmops", "sourceSlug": "llmops", "path": "modulo-05-llmops", "title": "LLMOps, Production, and Responsible AI", "shortTitle": "LLMOps", "description": "Observability, continuous evaluation, cost, deployment, security, safety, and governance.", "durationHours": { "min": 50, "max": 60 }, "ects": 2, "prerequisites": ["module-03", "module-04"], "competencies": ["operations", "evaluation", "security", "architecture"], "milestone": "A deployed system with SLOs, costs, evaluations, and an operational runbook." },
-    { "id": "module-06", "number": 6, "slug": "capstone", "sourceSlug": "capstone", "path": "modulo-06-capstone", "title": "Production Capstone", "shortTitle": "Capstone", "description": "End-to-end project, technical portfolio, deployment, defense, and final preparation.", "durationHours": { "min": 47, "max": 57 }, "ects": 2, "prerequisites": ["module-03", "module-04", "module-05"], "competencies": ["foundations", "prompt-systems", "retrieval", "agents", "evaluation", "operations", "security", "architecture"], "milestone": "An interview-ready system with architecture, metrics, costs, and a live demo." }
+    { "id": "module-01", "number": 1, "slug": "model-interfaces", "sourceSlug": "interfaces-de-modelo", "path": "modulo-01-fundamentos-llm", "title": "Model Interfaces and Foundations", "shortTitle": "Models", "description": "Transformers, tokenization, generation, and multi-provider clients treated as replaceable components.", "effortHours": { "min": 15, "max": 18 }, "prerequisites": [], "competencies": ["foundations", "architecture"], "proofOfWork": "A multi-provider client with observable tokens, latency, errors, and metadata." },
+    { "id": "module-02", "number": 2, "slug": "context-and-output-contracts", "sourceSlug": "contexto-y-contratos", "path": "modulo-02-prompt-engineering", "title": "Context and Output Contracts", "shortTitle": "Contracts", "description": "Context, instructions, tools, and structured outputs as versioned, evaluable interfaces.", "effortHours": { "min": 38, "max": 45 }, "prerequisites": ["module-01"], "competencies": ["prompt-systems", "evaluation", "security"], "proofOfWork": "A contract-evaluation pipeline with a dataset, A/B comparison, and regression gates in CI." },
+    { "id": "module-03", "number": 3, "slug": "retrieval-engineering", "sourceSlug": "retrieval-engineering", "path": "modulo-03-rag", "title": "Retrieval Engineering", "shortTitle": "Retrieval", "description": "Ingestion, embeddings, vector stores, chunking, reranking, grounding, and retrieval evaluation.", "effortHours": { "min": 50, "max": 60 }, "prerequisites": ["module-01", "module-02"], "competencies": ["retrieval", "evaluation", "architecture"], "proofOfWork": "A retrieval system with citations, abstention, traceability, and automated evaluation." },
+    { "id": "module-04", "number": 4, "slug": "agent-interfaces", "sourceSlug": "interfaces-de-agentes", "path": "modulo-04-agentes", "title": "Agent and Tool Interfaces", "shortTitle": "Agents", "description": "Agent patterns, tool use, MCP, memory, and agent collaboration with explicit authority.", "effortHours": { "min": 50, "max": 60 }, "prerequisites": ["module-01", "module-02"], "competencies": ["agents", "evaluation", "security"], "proofOfWork": "An agent with an MCP server, typed tools, authority boundaries, and complete traces." },
+    { "id": "module-05", "number": 5, "slug": "harness-engineering", "sourceSlug": "harness-engineering", "path": "modulo-05-harness-engineering", "title": "Harness Engineering", "shortTitle": "Harnesses", "description": "Architecture and causal evaluation of harnesses: context, loops, capabilities, sandboxes, the current ecosystem, and reproducible benchmarks.", "effortHours": { "min": 25, "max": 35 }, "prerequisites": ["module-02", "module-04"], "competencies": ["harnesses", "evaluation", "security", "architecture"], "proofOfWork": "An executable harness and causal benchmark of current runtimes, with isolation, traces, injected failures, and reproducible evidence." },
+    { "id": "module-06", "number": 6, "slug": "loop-engineering", "sourceSlug": "loop-engineering", "path": "modulo-06-loop-engineering", "title": "Loop Engineering", "shortTitle": "Loops", "description": "Governable execution loops: state, progress, budgets, termination, retries, and resumption.", "effortHours": { "min": 25, "max": 35 }, "prerequisites": ["module-04", "module-05"], "competencies": ["loops", "agents", "evaluation", "operations"], "proofOfWork": "A durable loop with multidimensional budgets, verifiable stopping, idempotency, and recovery." },
+    { "id": "module-07", "number": 7, "slug": "graph-engineering", "sourceSlug": "graph-engineering", "path": "modulo-07-graph-engineering", "title": "Graph Engineering", "shortTitle": "Graphs", "description": "Execution, knowledge, and provenance graphs for LLM systems that must explain what they know and what they did.", "effortHours": { "min": 25, "max": 35 }, "prerequisites": ["module-03", "module-04", "module-06"], "competencies": ["graphs", "retrieval", "loops", "architecture"], "proofOfWork": "A hybrid system with a state graph, knowledge graph, provenance, and query evaluation." },
+    { "id": "module-08", "number": 8, "slug": "production-engineering", "sourceSlug": "production-engineering", "path": "modulo-08-production-engineering", "title": "Production Engineering for LLM Systems", "shortTitle": "Production", "description": "Observability, continuous evaluation, cost, deployment, security, safety, and governance.", "effortHours": { "min": 50, "max": 60 }, "prerequisites": ["module-03", "module-05", "module-06", "module-07"], "competencies": ["operations", "evaluation", "security", "architecture"], "proofOfWork": "A deployed system with SLOs, costs, evaluations, and an operational runbook." },
+    { "id": "module-09", "number": 9, "slug": "field-project", "sourceSlug": "proyecto-de-campo", "path": "modulo-09-proyecto-de-campo", "title": "Field Project", "shortTitle": "Project", "description": "A real, bounded, verifiable system integrating decisions, failures, metrics, operations, and public review.", "effortHours": { "min": 47, "max": 57 }, "prerequisites": ["module-03", "module-05", "module-06", "module-07", "module-08"], "competencies": ["foundations", "prompt-systems", "retrieval", "agents", "harnesses", "loops", "graphs", "evaluation", "operations", "security", "architecture"], "proofOfWork": "A defensible system with architecture, evals, traces, costs, a runbook, and a reproducible demo." }
   ],
   "certifications": [
     {
@@ -46,8 +53,8 @@
         { "id": "aws-d1", "label": "Fundamentals of AI and ML", "weight": 20, "modules": ["module-01"] },
         { "id": "aws-d2", "label": "Fundamentals of Generative AI", "weight": 24, "modules": ["module-01", "module-02", "module-03"] },
         { "id": "aws-d3", "label": "Applications of Foundation Models", "weight": 28, "modules": ["module-02", "module-03", "module-04"] },
-        { "id": "aws-d4", "label": "Guidelines for Responsible AI", "weight": 14, "modules": ["module-02", "module-05"] },
-        { "id": "aws-d5", "label": "Security, Compliance, and Governance", "weight": 14, "modules": ["module-05"] }
+        { "id": "aws-d4", "label": "Guidelines for Responsible AI", "weight": 14, "modules": ["module-02", "module-08"] },
+        { "id": "aws-d5", "label": "Security, Compliance, and Governance", "weight": 14, "modules": ["module-08"] }
       ]
     },
     {
@@ -55,15 +62,15 @@
       "exam": { "durationMinutes": 60, "questionsMin": 50, "questionsMax": 60, "validityYears": 2 },
       "domains": [
         { "id": "nvidia-d1", "label": "Core Machine Learning and AI Knowledge", "weight": 30, "modules": ["module-01", "module-02", "module-04"] },
-        { "id": "nvidia-d2", "label": "Software Development", "weight": 24, "modules": ["module-02", "module-03", "module-04", "module-05"] },
-        { "id": "nvidia-d3", "label": "Experimentation", "weight": 22, "modules": ["module-02", "module-03", "module-05"] },
-        { "id": "nvidia-d4", "label": "Data Analysis and Visualization", "weight": 14, "modules": ["module-01", "module-03", "module-05"] },
-        { "id": "nvidia-d5", "label": "Trustworthy AI", "weight": 10, "modules": ["module-04", "module-05"] }
+        { "id": "nvidia-d2", "label": "Software Development", "weight": 24, "modules": ["module-02", "module-03", "module-04", "module-08"] },
+        { "id": "nvidia-d3", "label": "Experimentation", "weight": 22, "modules": ["module-02", "module-03", "module-08"] },
+        { "id": "nvidia-d4", "label": "Data Analysis and Visualization", "weight": 14, "modules": ["module-01", "module-03", "module-08"] },
+        { "id": "nvidia-d5", "label": "Trustworthy AI", "weight": 10, "modules": ["module-04", "module-08"] }
       ]
     }
   ],
   "publishing": {
-    "include": ["README.md", "PLAN_DE_ESTUDIOS.md", "modulo-*/README.md", "modulo-*/teoria/*.md", "modulo-*/labs/*.py", "modulo-*/ejercicios.md", "modulo-*/proyecto/README.md", "modulo-06-capstone/**/*.md", "certificaciones/**/*.md", "recursos/**/*.md", "setup/README.md"],
+    "include": ["README.md", "RUTA_DE_APRENDIZAJE.md", "modulo-*/README.md", "modulo-*/teoria/*.md", "modulo-*/labs/*.py", "modulo-*/ejercicios.md", "modulo-*/proyecto/README.md", "modulo-09-proyecto-de-campo/**/*.md", "certificaciones/**/*.md", "recursos/**/*.md", "setup/README.md"],
     "exclude": ["**/.DS_Store", "**/__pycache__/**", "**/.venv/**", "**/soluciones/**"]
   }
 }

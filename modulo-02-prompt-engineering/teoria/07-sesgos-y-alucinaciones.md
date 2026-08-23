@@ -219,7 +219,7 @@ acción indebida, pero su causa es un cambio de prioridad de instrucciones. La d
 - validación de argumentos y salida;
 - tests adversarios.
 
-El módulo 5 desarrolla esta amenaza. Ningún delimitador hace que una inyección sea imposible.
+El módulo 8 desarrolla esta amenaza. Ningún delimitador hace que una inyección sea imposible.
 
 ## 10. Checklist de producción
 

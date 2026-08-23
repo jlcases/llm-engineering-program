@@ -64,12 +64,19 @@ for (let index = 0; index < spanish.modules.length; index += 1) {
   assert(spanish.modules[index].slug === english.modules[index].sourceSlug, `sourceSlug EN incorrecto en ${english.modules[index].id}.`);
   assert(JSON.stringify(spanish.modules[index].prerequisites) === JSON.stringify(english.modules[index].prerequisites), `Prerequisitos desalineados en ${english.modules[index].id}.`);
   assert(JSON.stringify(spanish.modules[index].competencies) === JSON.stringify(english.modules[index].competencies), `Competencias desalineadas en ${english.modules[index].id}.`);
-  assert(spanish.modules[index].ects === english.modules[index].ects, `ECTS desalineados en ${english.modules[index].id}.`);
+  assert(JSON.stringify(spanish.modules[index].effortHours) === JSON.stringify(english.modules[index].effortHours), `Esfuerzo desalineado en ${english.modules[index].id}.`);
+  assert(spanish.modules[index].number === index + 1, `Numeración no secuencial en ${spanish.modules[index].id}.`);
+  assert(english.modules[index].number === index + 1, `Numeración EN no secuencial en ${english.modules[index].id}.`);
 }
 
 assert(new Set(spanish.modules.map((module) => module.id)).size === spanish.modules.length, 'IDs de módulo duplicados.');
 assert(new Set(spanish.competencies.map((competency) => competency.id)).size === spanish.competencies.length, 'IDs de competencia duplicados.');
-assert(spanish.modules.reduce((sum, module) => sum + module.ects, 0) === spanish.ects, 'Los ECTS de los módulos no suman el total del curso.');
+const summedEffort = spanish.modules.reduce(
+  (total, module) => ({ min: total.min + module.effortHours.min, max: total.max + module.effortHours.max }),
+  { min: 0, max: 0 },
+);
+assert(JSON.stringify(summedEffort) === JSON.stringify(spanish.effortHours), 'El esfuerzo estimado de los módulos no suma el total de la ruta.');
+assert(JSON.stringify(spanish.effortHours) === JSON.stringify(english.effortHours), 'El esfuerzo total difiere entre ES y EN.');
 const moduleIds = new Set(spanish.modules.map((module) => module.id));
 const competencyIds = new Set(spanish.competencies.map((competency) => competency.id));
 for (const module of spanish.modules) {

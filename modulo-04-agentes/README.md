@@ -1,4 +1,4 @@
-# Módulo IV — AI Agents y orquestación (2 ECTS)
+# Módulo 04 — Interfaces de agentes y tools
 
 > Agentes capaces de planificar, razonar y usar herramientas. Multi-agente con LangGraph y MCP.
 > Memoria, control de flujos y evaluación de fiabilidad. **~55 horas de trabajo.**
@@ -44,7 +44,7 @@ uv sync --extra agents
 | 9 | [`teoria/09-alignment-y-fine-tuning.md`](teoria/09-alignment-y-fine-tuning.md) — RLHF, RLAIF, Constitutional AI | sin lab (teórico) | 4 |
 | — | [`ejercicios.md`](ejercicios.md) — 12 ejercicios + mini-proyecto (agente de investigación) | Tests y rúbrica | 13 |
 
-**Total: ~55 h** (≈ 2 ECTS). A 10 h/semana son las semanas 13–18 del programa.
+**Esfuerzo orientativo: 50–60 h.** Avanza cuando puedas producir la evidencia, no al cumplir una fecha.
 
 ## Cómo trabajar el módulo
 
@@ -54,7 +54,7 @@ uv sync --extra agents
    calcula el coste con la tarifa vigente y fija un presupuesto.
 3. Haz los ejercicios del bloque al terminarlo, no todos al final.
 4. El **mini-proyecto** (ejercicio 12) es el hito de salida del módulo: un agente de investigación
-   con 3+ herramientas, trazas y evaluación. Guárdalo: lo reutilizarás en el capstone.
+   con 3+ herramientas, trazas y evaluación. Guárdalo: será la entrada de Harness Engineering.
 
 ## Mapa mental del módulo
 

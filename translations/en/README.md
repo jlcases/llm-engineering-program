@@ -1,73 +1,90 @@
-# LLM Engineering and Agentic AI Expert Program
+# LLM Systems Engineering — an open field path
 
-Self-study repository covering, in depth and with real-world practice, the full syllabus of an LLM Engineering expert program (10 ECTS): LLM fundamentals, prompt engineering, RAG systems, agents, LLMOps, and a production-level capstone project. Includes preparation for the **AWS Certified AI Practitioner (AIF-C01)** and **NVIDIA Certified Associate: Generative AI LLMs (NCA-GENL)** certifications.
+This repository does not try to turn a fast-moving technology into an academic title. It is a
+self-directed, public, versioned path for learning to build LLM systems that can be inspected,
+measured, stopped, recovered, and defended with evidence. Working practitioners maintain the
+content through pull requests; the history and authorship of every improvement remain visible.
 
-## Current Program Stack
+The unit of progress is not seat time or a credit: it is an executable artifact. Every module ends
+with proof of work that another person can review, reproduce, and challenge.
 
-Stack snapshot reviewed on **August 21, 2026**. The executable defaults are
-[`gpt-5.6-luna`](https://developers.openai.com/api/docs/models) and
-[`claude-haiku-4-5`](https://platform.claude.com/docs/en/about-claude/models/overview); the routing module compares GPT-5.6 Luna, Terra, and Sol. The panorama includes Claude Sonnet/Opus 5, Gemini 3.x,
-Llama 4, Mistral Small 4, and the current Qwen family. GPT-4o, GPT-3, and Llama 3 appear only when needed to explain history, papers, or tokenizers—never as defaults for a new integration.
+## The path's thesis
 
-New code uses current **OpenAI Responses**, structured outputs, and function calling;
-**Anthropic Messages/tool use**; **LangGraph 1.2**; **MCP Python SDK 2.x**; and **RAGAS 0.4.3**. All models are configurable via `.env`: updating the catalog requires neither code changes nor invalidating evaluation datasets.
+A capable model does not guarantee a capable system. The engineering lives in everything around it:
 
-## Repo Structure
+1. **Interfaces** — context, output contracts, retrieval, and tools.
+2. **Harnesses** — the legible environment that supplies capabilities, limits, observability, and evals.
+3. **Loops** — control over state, budget, progress, stopping, and recovery.
+4. **Graphs** — execution, knowledge, and provenance relationships that support reasoning without
+   losing traceability.
+5. **Operations** — quality, cost, security, and behavior under real failures.
 
-| Folder | Content | ECTS |
-|---|---|---|
-| [`modulo-01-fundamentos-llm/`](modulo-01-fundamentos-llm/) | Transformer architecture, tokenization, generation parameters, model landscape, Amazon Bedrock, and OpenAI/Anthropic APIs | 0.5 |
-| [`modulo-02-prompt-engineering/`](modulo-02-prompt-engineering/) | Zero/few-shot, chain-of-thought, function calling, structured outputs (Pydantic + Instructor), prompt evaluation and versioning | 1.5 |
-| [`modulo-03-rag/`](modulo-03-rag/) | Production RAG: chunking, vector DBs, reranking, advanced RAG (HyDE, self-RAG, CRAG), RAGAS evaluation, full-stack app | 2 |
-| [`modulo-04-agentes/`](modulo-04-agentes/) | Agent patterns (ReAct, reflection), LangGraph, MCP, tool use, multi-agent, memory, Bedrock Agents, alignment | 2 |
-| [`modulo-05-llmops/`](modulo-05-llmops/) | Observability, continuous evaluation, cost optimization, Docker/K8s, vLLM/Ollama, AWS, Responsible AI, security | 2 |
-| [`modulo-06-capstone/`](modulo-06-capstone/) | Final project: RAG + autonomous agent deployed on cloud with LLMOps and controlled costs | 2 |
-| [`certificaciones/`](certificaciones/) | Study guides, flashcards, and mock exams for AIF-C01 and NCA-GENL | — |
-| [`setup/`](setup/) | Development environment, dependencies, and API keys | — |
-| [`recursos/`](recursos/) | Bibliography, papers, courses, and annotated links | — |
+This axis separates the path from a collection of provider or framework tutorials. Models and
+libraries are replaceable pieces; contracts, invariants, and evidence endure.
 
-## How to Use This Repo
+## Current stack
 
-1. **Set up the environment** by following [`setup/README.md`](setup/README.md) (Python 3.12 + `uv`, API keys in `.env`).
-2. **Follow the modules in order.** Each module includes:
-   - `README.md` — module map and learning objectives
-   - `teoria/` — in-depth notes, one file per topic
-   - `labs/` — executable code, one lab per key concept
-   - `ejercicios.md` — proposed exercises with acceptance criteria and public tests
+Snapshot reviewed on **August 23, 2026**. The executable defaults are
+[gpt-5.6-luna](https://developers.openai.com/api/docs/models) and
+[claude-haiku-4-5](https://platform.claude.com/docs/en/about-claude/models/overview); routing lets
+you compare current alternatives without coupling the code to one brand.
 
-Reference solutions are not part of the public repository. Grading relies on
-tests, rubrics, and reproducible evidence so that completing an exercise demonstrates competence.
-CI runs `node scripts/validate-public-content.mjs` and blocks any leakage via path or
-reserved marker.
-3. **Work on certifications in parallel:** AIF-C01 is covered in modules 1–5 and NCA-GENL in modules 2–6. Mock-exam questions are in `certificaciones/`; the reasoned grading key is integrated from the website's private source.
-4. **Finish with the capstone** in module 6, which integrates everything above.
+New code uses OpenAI Responses, Anthropic Messages/tool use, LangGraph 1.2, MCP Python SDK 2.x, and
+RAGAS 0.4.3. Every model is configurable through `.env`. Historical integrations appear only when
+they help explain a decision or migration.
 
-The suggested schedule and full syllabus details are in [`PLAN_DE_ESTUDIOS.md`](PLAN_DE_ESTUDIOS.md).
+## Repository map
 
-## Web Version and Progress
+| Module | Engineering question | Proof of work | Suggested effort |
+|---|---|---|---:|
+| [01 · Model interfaces](modulo-01-fundamentos-llm/) | How can a model be replaced without rewriting the product? | Observable multi-provider client | 15–18 h |
+| [02 · Context and contracts](modulo-02-prompt-engineering/) | How do instructions and outputs become testable interfaces? | A/B contract regression | 38–45 h |
+| [03 · Retrieval Engineering](modulo-03-rag/) | How do you know what evidence was retrieved and why? | Retrieval with citations, abstention, and metrics | 50–60 h |
+| [04 · Agent interfaces](modulo-04-agentes/) | What may the model do, and under whose authority? | Agent with typed tools and MCP | 50–60 h |
+| [05 · Harness Engineering](modulo-05-harness-engineering/) | What environment lets an agent work verifiably? | Isolated harness with an eval suite | 25–35 h |
+| [06 · Loop Engineering](modulo-06-loop-engineering/) | How does an execution progress, stop, and recover? | Bounded, durable, idempotent loop | 25–35 h |
+| [07 · Graph Engineering](modulo-07-graph-engineering/) | How do state, knowledge, and provenance connect? | Evaluated hybrid graph system | 25–35 h |
+| [08 · Production Engineering](modulo-08-production-engineering/) | How does the system behave when the world changes or fails? | Service with SLOs, evals, and a runbook | 50–60 h |
+| [09 · Field project](modulo-09-proyecto-de-campo/) | Can every decision be defended with real evidence? | Deployed system and reproducible demo | 47–57 h |
 
-[llmengineerclub.com](https://llmengineerclub.com) transforms this content into an
-Astro bilingual experience with a guided path, search, local tools, mock exams, flashcards, a skills assessment,
-and portfolio. No account required: progress lives in the browser. Page authorship is
-synchronized from merged PRs and links to the public profile of whoever created, improved, or reviewed the
-content.
+The [complete learning path](RUTA_DE_APRENDIZAJE.md) explains dependencies, branches, and criteria
+for skipping material you already master. Certification preparation lives under
+[certificaciones/](certificaciones/) as an optional route, not the center of the product.
 
-The **Club Quiz** is a separate, voluntary experience: it offers a local practice run with retired
-questions and one official attempt per pseudonymous passkey. Scoring takes both correct answers and
-server-measured response speed into account. It uses no cookies and the result is private by default;
-only afterwards may a participant voluntarily link a social profile to enter the leaderboard. Every
-result has a verifiable Ed25519 proof.
+## How to work with the repository
 
-This repository contains knowledge, problem statements, fictional data, and verifiable criteria. Editorial
-exercise solutions are kept outside both the public repository and the web artifact. Mock-exam keys do not
-live here either: the website combines them from its private source and only reveals the review after an exam
-is submitted.
+1. Prepare the environment with [setup/README.md](setup/README.md).
+2. Run the site's diagnostic or begin with the module whose proof of work you cannot yet produce.
+3. Read only the theory required to build the artifact.
+4. Run the labs, break the happy paths, and retain traces, metrics, and decisions.
+5. Request review: a claim without evidence does not complete a module.
 
-PRs may also propose objectives and blueprints for future questions. The exact material for a competitive
-edition is transformed and reviewed outside the public history; after retirement, it may return here as open
-practice. Read the [Club Quiz contribution policy](docs/club-quiz-contributions.md).
+Each module contains a map, theory, labs, exercises with public criteria, and a project. Editorial
+solutions are not part of the public repository. CI blocks paths, keys, and markers that could reveal
+an active solution.
 
-## Local Validation
+## From public knowledge to the web
+
+[llmengineerclub.com](https://llmengineerclub.com) publishes the English edition at the root and the
+Spanish edition under `/es/`. The site adds navigation, local progress, tools, competitive tests, and
+attribution, but it does not turn the repository into a black box: every page links to its source and
+the pull requests that improved it.
+
+Ordinary progress lives in the browser and needs no account. Club Quiz is a separate experience with
+a pseudonymous passkey, server-measured time, and optional social linking after completion. Neither
+experience needs cookies.
+
+## Public and private boundary
+
+This repository contains knowledge, task statements, fictional data, rubrics, and public tests. It
+does not contain editorial solutions, mock-exam keys, or the active competitive question bank. A
+pull request may propose objectives and blueprints; the exact material for an edition is transformed
+and reviewed in the site's private source and returns to the repository only after it is retired.
+
+Read the [Club Quiz contribution policy](docs/club-quiz-contributions.md) and
+[CONTRIBUTING.md](CONTRIBUTING.md). Every merged contribution keeps permanent attribution.
+
+## Local validation
 
 ```bash
 node scripts/validate-public-content.mjs
@@ -81,18 +98,9 @@ uv run python -m compileall -q modulo-* setup translations/en
 uv run pytest -q
 ```
 
-Stack validation rejects legacy models as defaults and requires a course catalog review every 120 days. Certification validation pins the published contracts for AIF-C01 revision 1.1 and NCA-GENL and rejects retired nomenclature. Bilingual validation preserves code blocks, link destinations, and the executable AST of each lab.
+## Entry point
 
-Consult [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a PR. Every merged contribution retains permanent attribution on the web.
-
-## Prerequisites
-
-- One year of full-stack programming experience (Python is the repo language).
-- ML fundamentals: model, training, validation, overfitting, metrics.
-- REST APIs: HTTP, JSON, API key authentication.
-- VS Code or Jupyter and basic Git.
-- Recommended: NumPy/pandas, SQL, some AWS experience, and prior hands-on use of ChatGPT or Claude in a technical context.
-
-## Professional roles covered by the syllabus
-
-LLM Engineer / AI Engineer · RAG Systems Engineer · AI Agents Developer · AI Product Engineer · AI Consultant/freelancer.
+You need basic programming, HTTP/JSON, and Git experience. If you can read Python but do not yet
+understand ML, begin with module 1. If you have already deployed a RAG system or an agent, use the
+proof-of-work gates in modules 5–8 as your diagnostic: that is usually where the distance between a
+demo and a professional system becomes visible.

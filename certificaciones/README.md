@@ -1,14 +1,14 @@
 # Preparación de certificaciones
 
-Este directorio contiene material de repaso para las dos certificaciones alineadas con el
-programa. Las guías complementan los módulos; no sustituyen la guía oficial ni el trabajo
+Este directorio contiene material de repaso opcional para certificaciones relacionadas con la
+ruta. Las guías complementan los módulos; no sustituyen la guía oficial ni el trabajo
 práctico. Los temarios, nombres de servicios y políticas de examen pueden cambiar, así que
 comprueba siempre la versión vigente antes de reservar fecha.
 
 | Certificación | Material | Momento recomendado |
 |---|---|---|
-| AWS Certified AI Practitioner (AIF-C01) | [Guías por dominio, flashcards y simulacro](aws-aif-c01/) | Estudio paralelo en módulos 1–5; simulacro al cerrar el módulo 5 |
-| NVIDIA Certified Associate: Generative AI LLMs (NCA-GENL) | [Cinco áreas ponderadas, diez temas, flashcards y simulacro](nvidia-nca-genl/) | Estudio paralelo en módulos 2–6; simulacro durante el capstone |
+| AWS Certified AI Practitioner (AIF-C01) | [Guías por dominio, flashcards y simulacro](aws-aif-c01/) | Ruta opcional después de los módulos relacionados |
+| NVIDIA Certified Associate: Generative AI LLMs (NCA-GENL) | [Cinco áreas ponderadas, diez temas, flashcards y simulacro](nvidia-nca-genl/) | Ruta opcional después de los módulos relacionados; independiente del proyecto de campo |
 
 ## Protocolo de estudio
 

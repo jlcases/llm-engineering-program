@@ -212,7 +212,7 @@ improper action, but its cause is a shift in instruction priority. The defense c
 - argument and output validation;
 - adversarial tests.
 
-Module 5 develops this threat. No delimiter makes an injection impossible.
+Module 8 develops this threat. No delimiter makes an injection impossible.
 
 ## 10. Production checklist
 

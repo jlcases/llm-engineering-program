@@ -1,14 +1,14 @@
 # Certification Preparation
 
-This directory contains review materials for the two certifications aligned with the
-program. These guides supplement the modules; they do not replace the official documentation or hands-on
+This directory contains optional review materials for certifications related to the
+path. These guides supplement the modules; they do not replace the official documentation or hands-on
 practice. Exam syllabi, service names, and policies are subject to change, so
 always verify the current version before scheduling your exam.
 
 | Certification | Material | Recommended Timing |
 |---|---|---|
-| AWS Certified AI Practitioner (AIF-C01) | [Domain guides, flashcards, and practice exam](aws-aif-c01/) | Parallel study across modules 1–5; practice exam upon completing module 5 |
-| NVIDIA Certified Associate: Generative AI LLMs (NCA-GENL) | [Five weighted domains, ten topics, flashcards, and practice exam](nvidia-nca-genl/) | Parallel study across modules 2–6; practice exam during the capstone |
+| AWS Certified AI Practitioner (AIF-C01) | [Domain guides, flashcards, and practice exam](aws-aif-c01/) | Optional route after the related modules |
+| NVIDIA Certified Associate: Generative AI LLMs (NCA-GENL) | [Five weighted domains, ten topics, flashcards, and practice exam](nvidia-nca-genl/) | Optional route after the related modules; independent from the field project |
 
 ## Study Protocol
 

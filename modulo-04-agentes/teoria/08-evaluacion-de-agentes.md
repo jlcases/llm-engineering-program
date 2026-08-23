@@ -1,6 +1,6 @@
 # 08 — Evaluación de agentes: resultado, trayectoria, coste y seguridad
 
-> Este tema define la rúbrica del mini-proyecto y prepara la evaluación del capstone.
+> Este tema define señales de revisión del mini-proyecto y prepara la evaluación del proyecto de campo.
 
 Evaluar solo la respuesta final oculta agentes peligrosos: uno puede acertar después de enviar dos
 emails por error, leer datos de otro usuario o gastar treinta llamadas. La unidad de evaluación es

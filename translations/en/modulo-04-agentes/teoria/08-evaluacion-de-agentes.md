@@ -1,6 +1,6 @@
 # 08 — Agent Evaluation: Outcome, Trajectory, Cost, and Safety
 
-> This topic defines the rubric for the mini-project and prepares the capstone evaluation.
+> This topic defines review signals for the mini-project and prepares the field project evaluation.
 
 Evaluating only the final answer hides dangerous agents: one might succeed after sending two emails by mistake, reading another user's data, or spending thirty API calls. The unit of evaluation is the **complete trajectory**: state, decisions, tools, results, effects, and output.
 

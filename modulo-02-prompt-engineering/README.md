@@ -1,9 +1,9 @@
-# Módulo II — Prompt engineering avanzado (1,5 ECTS)
+# Módulo 02 — Contexto y contratos de salida
 
-> Tiempo estimado: **~40 horas** (≈ 4 semanas a 10 h/semana, semanas 3–6 del calendario).
-> Hito de salida: **pipeline de evaluación de prompts con dataset de test y A/B testing** funcionando de principio a fin.
+> Esfuerzo orientativo: **38–45 horas**.
+> Prueba de trabajo: **pipeline de evaluación de contratos con dataset y comparación A/B** funcionando de principio a fin.
 
-El prompt es la interfaz de programación real de un LLM. Este módulo pasa de "escribir prompts que parecen funcionar" a **ingeniería de prompts**: técnicas con base empírica, salidas estructuradas y validadas, y —lo más importante— un sistema de evaluación que te diga con datos si un prompt es mejor que otro.
+El contexto y la salida forman una interfaz del sistema. Este módulo pasa de «escribir prompts que parecen funcionar» a diseñar **contratos versionados**: instrucciones con autoridad explícita, salidas estructuradas y un sistema de evaluación que demuestre con datos si una versión es mejor que otra.
 
 ## Objetivos de aprendizaje
 

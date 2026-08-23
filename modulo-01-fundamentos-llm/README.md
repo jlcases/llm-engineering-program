@@ -1,10 +1,10 @@
-# Módulo I — Fundamentos de LLMs y APIs (0,5 ECTS)
+# Módulo 01 — Interfaces de modelo y fundamentos
 
-> Tiempo estimado: **15–18 horas** (semanas 1–2 del programa).
-> Hito de salida: un **cliente multi-proveedor** capaz de invocar OpenAI, Anthropic y
+> Esfuerzo orientativo: **15–18 horas**.
+> Prueba de trabajo: un **cliente multi-proveedor** capaz de invocar OpenAI, Anthropic y
 > Amazon Bedrock detrás de una interfaz propia, registrando tokens, latencia y motivo de parada.
 
-Este módulo construye el vocabulario técnico que usarás durante todo el programa. No pretende
+Este módulo construye el vocabulario técnico que usarás durante toda la ruta. No pretende
 que entrenes un transformer desde cero: pretende que entiendas qué ocurre entre el texto de
 entrada y el siguiente token, que puedas anticipar el efecto de la tokenización y los parámetros
 de muestreo, y que sepas integrar tres APIs sin ocultar sus diferencias importantes.

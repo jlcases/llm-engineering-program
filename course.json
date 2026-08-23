@@ -1,29 +1,30 @@
 {
   "$schema": "./course.schema.json",
-  "schemaVersion": 1,
-  "id": "llm-engineering-professional",
-  "title": "Programa de Experto en LLM Engineering e IA Agéntica",
-  "shortTitle": "LLM Engineer",
+  "schemaVersion": 2,
+  "id": "llm-systems-engineering-open-path",
+  "title": "Ruta abierta de Ingeniería de Sistemas LLM",
+  "shortTitle": "LLM Systems",
   "language": "es",
   "availableLanguages": ["es", "en"],
   "translationSource": "course.en.json",
-  "description": "Ruta aplicada para diseñar, construir, evaluar y operar sistemas LLM de producción, demostrar la competencia con un capstone y preparar certificaciones profesionales.",
+  "description": "Ruta de campo mantenida por profesionales para diseñar, controlar, evaluar y operar sistemas LLM verificables, desde la interfaz del modelo hasta el entorno que lo hace fiable.",
   "sourceRepository": "jlcases/llm-engineering-program",
-  "canonicalSite": "https://llmengineerclub.com",
-  "reviewedAt": "2026-08-21",
-  "durationHours": {
-    "min": 250,
-    "max": 300
+  "canonicalSite": "https://llmengineerclub.com/es/",
+  "reviewedAt": "2026-08-23",
+  "effortHours": {
+    "min": 325,
+    "max": 405
   },
-  "ects": 10,
   "outcomes": [
-    "Integrar modelos de OpenAI, Anthropic y Amazon Bedrock detrás de contratos propios y observables.",
-    "Diseñar prompts, herramientas y salidas estructuradas evaluadas con datasets reproducibles.",
-    "Construir y medir sistemas RAG con retrieval, reranking, grounding y evaluación continua.",
-    "Orquestar agentes fiables con LangGraph, MCP, memoria, trazas y límites de seguridad.",
-    "Operar aplicaciones LLM con observabilidad, control de costes, despliegue y gobierno.",
-    "Defender un capstone de nivel producción mediante evidencias, métricas y decisiones de arquitectura.",
-    "Preparar AWS Certified AI Practitioner y NVIDIA-Certified Associate Generative AI LLMs."
+    "Integrar modelos detrás de contratos propios, reemplazables y observables.",
+    "Diseñar contexto, herramientas y salidas estructuradas como interfaces versionadas.",
+    "Construir retrieval medible con citas, abstención y procedencia verificable.",
+    "Diseñar un harness que haga el entorno legible, seguro y accionable para el modelo.",
+    "Controlar loops con presupuesto, criterios de parada, recuperación e idempotencia.",
+    "Modelar ejecución, conocimiento y procedencia mediante grafos evaluables.",
+    "Operar sistemas LLM con observabilidad, costes, seguridad y gobierno.",
+    "Demostrar competencia mediante artefactos ejecutables y un proyecto de campo.",
+    "Preparar certificaciones profesionales solo como recorrido opcional y separado."
   ],
   "competencies": [
     {
@@ -46,9 +47,27 @@
     },
     {
       "id": "agents",
-      "label": "Agentes y MCP",
-      "description": "Construir grafos, herramientas, memoria y recuperación de errores sin perder control.",
-      "evidence": "Agente con tres herramientas, trazas, idempotencia y casos negativos."
+      "label": "Interfaces de agentes",
+      "description": "Diseñar tools, MCP, memoria y límites de autoridad sin delegar el control al modelo.",
+      "evidence": "Agente con tres herramientas tipadas, permisos explícitos y casos negativos."
+    },
+    {
+      "id": "harnesses",
+      "label": "Harness Engineering",
+      "description": "Construir el entorno que entrega contexto, capacidades, aislamiento, señales y evaluaciones al agente.",
+      "evidence": "Harness reproducible con manifiesto de capacidades, sandbox, trazas y evals aisladas."
+    },
+    {
+      "id": "loops",
+      "label": "Loop Engineering",
+      "description": "Controlar iteraciones, presupuesto, progreso, reintentos, concurrencia, parada y reanudación.",
+      "evidence": "Loop acotado y reanudable que demuestra terminación, idempotencia y recuperación ante fallos."
+    },
+    {
+      "id": "graphs",
+      "label": "Graph Engineering",
+      "description": "Modelar grafos de ejecución, conocimiento y procedencia con invariantes y consultas medibles.",
+      "evidence": "Sistema híbrido que conecta estado, evidencia y decisiones sin perder procedencia."
     },
     {
       "id": "evaluation",
@@ -72,93 +91,126 @@
       "id": "architecture",
       "label": "Arquitectura de producto",
       "description": "Tomar decisiones de build vs buy, coste, fiabilidad y experiencia de usuario.",
-      "evidence": "ADRs, análisis de costes y defensa técnica del capstone."
+      "evidence": "ADRs, análisis de costes y revisión técnica del proyecto de campo."
     }
   ],
   "modules": [
     {
       "id": "module-01",
       "number": 1,
-      "slug": "fundamentos-llm",
+      "slug": "interfaces-de-modelo",
       "path": "modulo-01-fundamentos-llm",
-      "title": "Fundamentos de LLMs y APIs",
-      "shortTitle": "Fundamentos",
-      "description": "Transformer, tokenización, generación, modelos actuales y clientes multi-proveedor.",
-      "durationHours": { "min": 15, "max": 18 },
-      "ects": 0.5,
+      "title": "Interfaces de modelo y fundamentos",
+      "shortTitle": "Modelos",
+      "description": "Transformer, tokenización, generación y clientes multi-proveedor tratados como componentes reemplazables.",
+      "effortHours": { "min": 15, "max": 18 },
       "prerequisites": [],
       "competencies": ["foundations", "architecture"],
-      "milestone": "Cliente multi-proveedor con tokens, latencia, errores y metadatos observables."
+      "proofOfWork": "Cliente multi-proveedor con tokens, latencia, errores y metadatos observables."
     },
     {
       "id": "module-02",
       "number": 2,
-      "slug": "prompt-engineering",
+      "slug": "contexto-y-contratos",
       "path": "modulo-02-prompt-engineering",
-      "title": "Prompt engineering avanzado",
-      "shortTitle": "Prompt systems",
-      "description": "Prompts como software: tools, structured outputs, evaluación, versionado y mitigación.",
-      "durationHours": { "min": 38, "max": 45 },
-      "ects": 1.5,
+      "title": "Contexto y contratos de salida",
+      "shortTitle": "Contratos",
+      "description": "Contexto, instrucciones, tools y salidas estructuradas como interfaces versionadas y evaluables.",
+      "effortHours": { "min": 38, "max": 45 },
       "prerequisites": ["module-01"],
       "competencies": ["prompt-systems", "evaluation", "security"],
-      "milestone": "Pipeline de evaluación de prompts con dataset, A/B y regresión en CI."
+      "proofOfWork": "Pipeline de evaluación de contratos con dataset, comparación A/B y regresión en CI."
     },
     {
       "id": "module-03",
       "number": 3,
-      "slug": "rag",
+      "slug": "retrieval-engineering",
       "path": "modulo-03-rag",
-      "title": "RAG systems y evaluación",
-      "shortTitle": "RAG",
+      "title": "Retrieval Engineering",
+      "shortTitle": "Retrieval",
       "description": "Ingesta, embeddings, vector stores, chunking, reranking, grounding y RAGAS.",
-      "durationHours": { "min": 50, "max": 60 },
-      "ects": 2,
+      "effortHours": { "min": 50, "max": 60 },
       "prerequisites": ["module-01", "module-02"],
       "competencies": ["retrieval", "evaluation", "architecture"],
-      "milestone": "Aplicación RAG con citas, abstención y evaluación automatizada."
+      "proofOfWork": "Sistema de retrieval con citas, abstención, trazabilidad y evaluación automatizada."
     },
     {
       "id": "module-04",
       "number": 4,
-      "slug": "agentes",
+      "slug": "interfaces-de-agentes",
       "path": "modulo-04-agentes",
-      "title": "AI Agents y orquestación",
+      "title": "Interfaces de agentes y tools",
       "shortTitle": "Agentes",
-      "description": "Patrones agentic, LangGraph, MCP, tool use, multi-agente, memoria y evaluación.",
-      "durationHours": { "min": 50, "max": 60 },
-      "ects": 2,
+      "description": "Patrones agentic, tool use, MCP, memoria y colaboración entre agentes con autoridad explícita.",
+      "effortHours": { "min": 50, "max": 60 },
       "prerequisites": ["module-01", "module-02"],
       "competencies": ["agents", "evaluation", "security"],
-      "milestone": "Sistema multi-agente con servidor MCP, trazas y recuperación de fallos."
+      "proofOfWork": "Agente con servidor MCP, tools tipadas, límites de autoridad y trazas completas."
     },
     {
       "id": "module-05",
       "number": 5,
-      "slug": "llmops",
-      "path": "modulo-05-llmops",
-      "title": "LLMOps, producción y Responsible AI",
-      "shortTitle": "LLMOps",
-      "description": "Observabilidad, eval continua, costes, despliegue, seguridad, safety y gobierno.",
-      "durationHours": { "min": 50, "max": 60 },
-      "ects": 2,
-      "prerequisites": ["module-03", "module-04"],
-      "competencies": ["operations", "evaluation", "security", "architecture"],
-      "milestone": "Sistema desplegado con SLOs, costes, evals y runbook operativo."
+      "slug": "harness-engineering",
+      "path": "modulo-05-harness-engineering",
+      "title": "Harness Engineering",
+      "shortTitle": "Harnesses",
+      "description": "Arquitectura y evaluación causal de harnesses: contexto, loops, capabilities, sandboxes, ecosistema actual y benchmarks reproducibles.",
+      "effortHours": { "min": 25, "max": 35 },
+      "prerequisites": ["module-02", "module-04"],
+      "competencies": ["harnesses", "evaluation", "security", "architecture"],
+      "proofOfWork": "Harness ejecutable y benchmark causal de runtimes actuales, con aislamiento, trazas, fallos inyectados y evidencia reproducible."
     },
     {
       "id": "module-06",
       "number": 6,
-      "slug": "capstone",
-      "path": "modulo-06-capstone",
-      "title": "Capstone de producción",
-      "shortTitle": "Capstone",
-      "description": "Proyecto integral, portfolio técnico, despliegue, defensa y preparación final.",
-      "durationHours": { "min": 47, "max": 57 },
-      "ects": 2,
-      "prerequisites": ["module-03", "module-04", "module-05"],
-      "competencies": ["foundations", "prompt-systems", "retrieval", "agents", "evaluation", "operations", "security", "architecture"],
-      "milestone": "Sistema defendible en entrevista con arquitectura, métricas, costes y demo."
+      "slug": "loop-engineering",
+      "path": "modulo-06-loop-engineering",
+      "title": "Loop Engineering",
+      "shortTitle": "Loops",
+      "description": "Bucles de ejecución gobernables: estado, progreso, presupuestos, terminación, reintentos y reanudación.",
+      "effortHours": { "min": 25, "max": 35 },
+      "prerequisites": ["module-04", "module-05"],
+      "competencies": ["loops", "agents", "evaluation", "operations"],
+      "proofOfWork": "Loop duradero con presupuesto multidimensional, parada verificable, idempotencia y recuperación."
+    },
+    {
+      "id": "module-07",
+      "number": 7,
+      "slug": "graph-engineering",
+      "path": "modulo-07-graph-engineering",
+      "title": "Graph Engineering",
+      "shortTitle": "Graphs",
+      "description": "Grafos de ejecución, conocimiento y procedencia para sistemas LLM que deben explicar qué saben y qué hicieron.",
+      "effortHours": { "min": 25, "max": 35 },
+      "prerequisites": ["module-03", "module-04", "module-06"],
+      "competencies": ["graphs", "retrieval", "loops", "architecture"],
+      "proofOfWork": "Sistema híbrido con grafo de estado, grafo de conocimiento, procedencia y evaluación de consultas."
+    },
+    {
+      "id": "module-08",
+      "number": 8,
+      "slug": "production-engineering",
+      "path": "modulo-08-production-engineering",
+      "title": "Production Engineering para sistemas LLM",
+      "shortTitle": "Producción",
+      "description": "Observabilidad, eval continua, costes, despliegue, seguridad, safety y gobierno.",
+      "effortHours": { "min": 50, "max": 60 },
+      "prerequisites": ["module-03", "module-05", "module-06", "module-07"],
+      "competencies": ["operations", "evaluation", "security", "architecture"],
+      "proofOfWork": "Sistema desplegado con SLOs, costes, evals y runbook operativo."
+    },
+    {
+      "id": "module-09",
+      "number": 9,
+      "slug": "proyecto-de-campo",
+      "path": "modulo-09-proyecto-de-campo",
+      "title": "Proyecto de campo",
+      "shortTitle": "Proyecto",
+      "description": "Un sistema real, acotado y verificable que integra decisiones, fallos, métricas, operación y revisión pública.",
+      "effortHours": { "min": 47, "max": 57 },
+      "prerequisites": ["module-03", "module-05", "module-06", "module-07", "module-08"],
+      "competencies": ["foundations", "prompt-systems", "retrieval", "agents", "harnesses", "loops", "graphs", "evaluation", "operations", "security", "architecture"],
+      "proofOfWork": "Sistema defendible con arquitectura, evals, trazas, costes, runbook y demo reproducible."
     }
   ],
   "certifications": [
@@ -179,8 +231,8 @@
         { "id": "aws-d1", "label": "Fundamentals of AI and ML", "weight": 20, "modules": ["module-01"] },
         { "id": "aws-d2", "label": "Fundamentals of Generative AI", "weight": 24, "modules": ["module-01", "module-02", "module-03"] },
         { "id": "aws-d3", "label": "Applications of Foundation Models", "weight": 28, "modules": ["module-02", "module-03", "module-04"] },
-        { "id": "aws-d4", "label": "Guidelines for Responsible AI", "weight": 14, "modules": ["module-02", "module-05"] },
-        { "id": "aws-d5", "label": "Security, Compliance, and Governance", "weight": 14, "modules": ["module-05"] }
+        { "id": "aws-d4", "label": "Guidelines for Responsible AI", "weight": 14, "modules": ["module-02", "module-08"] },
+        { "id": "aws-d5", "label": "Security, Compliance, and Governance", "weight": 14, "modules": ["module-08"] }
       ]
     },
     {
@@ -198,23 +250,23 @@
       },
       "domains": [
         { "id": "nvidia-d1", "label": "Core Machine Learning and AI Knowledge", "weight": 30, "modules": ["module-01", "module-02", "module-04"] },
-        { "id": "nvidia-d2", "label": "Software Development", "weight": 24, "modules": ["module-02", "module-03", "module-04", "module-05"] },
-        { "id": "nvidia-d3", "label": "Experimentation", "weight": 22, "modules": ["module-02", "module-03", "module-05"] },
-        { "id": "nvidia-d4", "label": "Data Analysis and Visualization", "weight": 14, "modules": ["module-01", "module-03", "module-05"] },
-        { "id": "nvidia-d5", "label": "Trustworthy AI", "weight": 10, "modules": ["module-04", "module-05"] }
+        { "id": "nvidia-d2", "label": "Software Development", "weight": 24, "modules": ["module-02", "module-03", "module-04", "module-08"] },
+        { "id": "nvidia-d3", "label": "Experimentation", "weight": 22, "modules": ["module-02", "module-03", "module-08"] },
+        { "id": "nvidia-d4", "label": "Data Analysis and Visualization", "weight": 14, "modules": ["module-01", "module-03", "module-08"] },
+        { "id": "nvidia-d5", "label": "Trustworthy AI", "weight": 10, "modules": ["module-04", "module-08"] }
       ]
     }
   ],
   "publishing": {
     "include": [
       "README.md",
-      "PLAN_DE_ESTUDIOS.md",
+      "RUTA_DE_APRENDIZAJE.md",
       "modulo-*/README.md",
       "modulo-*/teoria/*.md",
       "modulo-*/labs/*.py",
       "modulo-*/ejercicios.md",
       "modulo-*/proyecto/README.md",
-      "modulo-06-capstone/**/*.md",
+      "modulo-09-proyecto-de-campo/**/*.md",
       "certificaciones/**/*.md",
       "recursos/**/*.md",
       "setup/README.md"
