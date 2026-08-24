@@ -39,13 +39,13 @@ jobs:
         run: node scripts/validate-translations.mjs --complete
       - name: Exercise validator happy and adversarial paths
         run: node --test scripts/tests/*.test.mjs
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
-        with:
-          python-version: '3.12'
       - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: true
+          python-version: '3.12'
           version: '0.12.5'
+      - name: Install Python 3.12 with uv
+        run: uv python install 3.12
       - name: Verify and install the complete locked toolchain
         run: |
           uv lock --check

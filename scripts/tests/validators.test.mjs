@@ -159,8 +159,8 @@ test('repository discovery validator rejects a stale module CTA', async () => {
   );
   await mkdir(path.join(root, 'docs/assets'), { recursive: true });
   await writeFile(
-    path.join(root, 'docs/assets/llm-engineering-course-hero.png'),
-    await readFile(path.join(repositoryRoot, 'docs/assets/llm-engineering-course-hero.png')),
+    path.join(root, 'docs/assets/llm-engineering-course-hero.webp'),
+    await readFile(path.join(repositoryRoot, 'docs/assets/llm-engineering-course-hero.webp')),
   );
   await writeFile(path.join(root, 'README.md'), `# LLM Engineering Course: Test
 
@@ -173,7 +173,7 @@ LLM evaluation and LLMOps.
 [Quiz](https://llmengineerclub.com/quiz/)
 [Live](https://llmengineerclub.com/live/)
 
-![Hero](docs/assets/llm-engineering-course-hero.png)
+![Hero](docs/assets/llm-engineering-course-hero.webp)
 
 <a id="espanol"></a>
 [Curso](https://llmengineerclub.com/es/)
@@ -184,6 +184,21 @@ LLM evaluation and LLMOps.
 
   const problems = await validateRepositoryDiscovery({ root });
   assert.ok(problems.includes('falta el CTA canónico: https://llmengineerclub.com/learn/model-interfaces/'));
+});
+
+test('repository discovery validator rejects an oversized hero even when its WebP header is valid', async () => {
+  const root = await courseFixture();
+  const hero = await readFile(path.join(repositoryRoot, 'docs/assets/llm-engineering-course-hero.webp'));
+  await writeFile(path.join(root, 'pyproject.toml'), await readFile(path.join(repositoryRoot, 'pyproject.toml')));
+  await writeFile(path.join(root, 'README.md'), await readFile(path.join(repositoryRoot, 'README.md')));
+  await mkdir(path.join(root, 'docs/assets'), { recursive: true });
+  await writeFile(
+    path.join(root, 'docs/assets/llm-engineering-course-hero.webp'),
+    Buffer.concat([hero, Buffer.alloc(256 * 1024)]),
+  );
+
+  const problems = await validateRepositoryDiscovery({ root });
+  assert.ok(problems.some((problem) => problem.includes('cabecera visual supera 256 KiB')));
 });
 
 test('current-stack validator rejects invalid and future review dates', async () => {

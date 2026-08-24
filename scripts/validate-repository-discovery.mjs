@@ -20,6 +20,37 @@ function localTarget(root, href) {
   return path.join(root, decoded);
 }
 
+function webpDimensions(image) {
+  if (image.length < 30
+    || image.subarray(0, 4).toString('ascii') !== 'RIFF'
+    || image.subarray(8, 12).toString('ascii') !== 'WEBP') return null;
+
+  const format = image.subarray(12, 16).toString('ascii');
+  if (format === 'VP8 ') {
+    if (image.subarray(23, 26).toString('hex') !== '9d012a') return null;
+    return {
+      width: image.readUInt16LE(26) & 0x3fff,
+      height: image.readUInt16LE(28) & 0x3fff,
+    };
+  }
+  if (format === 'VP8L') {
+    if (image[20] !== 0x2f || image.length < 25) return null;
+    const bits = image.readUInt32LE(21);
+    return {
+      width: (bits & 0x3fff) + 1,
+      height: ((bits >>> 14) & 0x3fff) + 1,
+    };
+  }
+  if (format === 'VP8X') {
+    if (image.length < 30) return null;
+    return {
+      width: image.readUIntLE(24, 3) + 1,
+      height: image.readUIntLE(27, 3) + 1,
+    };
+  }
+  return null;
+}
+
 export async function validateRepositoryDiscovery({ root = defaultRoot } = {}) {
   const problems = [];
   const readmePath = path.join(root, 'README.md');
@@ -91,24 +122,23 @@ export async function validateRepositoryDiscovery({ root = defaultRoot } = {}) {
     }
   }
 
-  const heroRelative = 'docs/assets/llm-engineering-course-hero.png';
+  const heroRelative = 'docs/assets/llm-engineering-course-hero.webp';
   if (!readme.includes(heroRelative)) problems.push(`falta la cabecera visual: ${heroRelative}`);
   const hero = await readFile(path.join(root, heroRelative)).catch(() => null);
   if (!hero) {
     problems.push(`no existe la cabecera visual: ${heroRelative}`);
   } else {
-    const pngSignature = '89504e470d0a1a0a';
-    if (hero.subarray(0, 8).toString('hex') !== pngSignature || hero.length < 24) {
-      problems.push('la cabecera visual debe ser un PNG válido');
+    const dimensions = webpDimensions(hero);
+    if (!dimensions) {
+      problems.push('la cabecera visual debe ser un WebP válido');
     } else {
-      const width = hero.readUInt32BE(16);
-      const height = hero.readUInt32BE(20);
+      const { width, height } = dimensions;
       const ratio = width / height;
       if (width < 1600 || ratio < 2.2 || ratio > 2.6) {
         problems.push(`la cabecera visual debe ser panorámica y nítida; recibida ${width}x${height}`);
       }
-      if (hero.length > 2 * 1024 * 1024) {
-        problems.push(`la cabecera visual supera 2 MiB (${hero.length} bytes)`);
+      if (hero.length > 256 * 1024) {
+        problems.push(`la cabecera visual supera 256 KiB (${hero.length} bytes)`);
       }
     }
   }
