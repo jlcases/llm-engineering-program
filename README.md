@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/assets/llm-engineering-course-hero.png" width="100%" alt="Open-source LLM engineering course covering RAG, AI agents, evals, MCP, harnesses, loops, graphs and production systems">
+  <img src="docs/assets/llm-engineering-course-hero.webp" width="100%" alt="Open-source LLM engineering course covering RAG, AI agents, evals, MCP, harnesses, loops, graphs and production systems">
 </p>
 
 <p align="center">
