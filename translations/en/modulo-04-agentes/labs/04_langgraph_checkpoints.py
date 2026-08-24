@@ -65,7 +65,8 @@ def main() -> int:
     config = {"configurable": {"thread_id": "alice"}}
     history = list(graph.get_state_history(config))
     console.print(f"[bold]Checkpoints de alice:[/bold] {len(history)}")
-    assert second["turns"] == 2 and isolated["turns"] == 1
+    if second["turns"] != 2 or isolated["turns"] != 1:
+        raise RuntimeError("el checkpointer no conservó el aislamiento esperado")
     return 0
 
 

@@ -56,7 +56,10 @@ def main() -> None:
         (root / "brief.md").write_text("Build an observable model router.\n", encoding="utf-8")
         harness = build_harness(root, approve_writes=True)
 
-        brief = harness.invoke("read_file", {"path": "brief.md", "token": "never-log-me"})
+        # Valor canario deliberado para demostrar la redacción; no es una credencial.
+        brief = harness.invoke(
+            "read_file", {"path": "brief.md", "token": "never-log-me"}
+        )
         harness.invoke("write_file", {"path": "artifacts/decision.json", "content": json.dumps(brief)})
 
         print(json.dumps({"manifest": harness.manifest()}, ensure_ascii=False, indent=2))

@@ -47,7 +47,8 @@ docker compose down
 ## Lectura del Dockerfile
 
 1. `uv-bin` fija la herramienta de build.
-2. `builder` crea `/opt/venv`; copiar primero `requirements.txt` conserva la cache.
+2. `requirements.in` declara dependencias directas y `requirements.txt` fija todas las transitivas
+   con hashes SHA-256. `builder` exige esos hashes al crear `/opt/venv`.
 3. `runtime` recibe solo Python, el venv y `app.py`.
 4. El usuario no-root no tiene shell ni home escribible.
 5. El health check usa la stdlib; no instala `curl` en runtime.

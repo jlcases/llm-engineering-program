@@ -5,6 +5,8 @@
   "title": "LLM Systems Engineering: Open Field Path",
   "shortTitle": "LLM Systems",
   "language": "en",
+  "availableLanguages": ["en", "es"],
+  "translationSource": "course.json",
   "description": "A practitioner-maintained field path for designing, controlling, evaluating, and operating verifiable LLM systems, from the model interface to the environment that makes it reliable.",
   "sourceRepository": "jlcases/llm-engineering-program",
   "canonicalSite": "https://llmengineerclub.com/",

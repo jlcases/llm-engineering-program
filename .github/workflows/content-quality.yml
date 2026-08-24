@@ -8,12 +8,21 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: content-quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   public-content:
-    runs-on: ubuntu-latest
+    # Every PR stays on an isolated hosted VM. Standard hosted runners are free for
+    # public repositories; only the already-integrated main SHA reaches the local Mac.
+    runs-on: ${{ github.event_name == 'pull_request' && 'ubuntu-latest' || 'llmec-course-local' }}
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 22
       - name: Prevent solution leakage
@@ -26,25 +35,59 @@ jobs:
         run: node scripts/validate-certification-currency.mjs
       - name: Require complete and structurally safe English translations
         run: node scripts/validate-translations.mjs --complete
-      - uses: actions/setup-python@v7
+      - name: Exercise validator happy and adversarial paths
+        run: node --test scripts/tests/*.test.mjs
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
         with:
           python-version: '3.12'
-      - uses: astral-sh/setup-uv@v10.0.1
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           enable-cache: true
-      - name: Install the locked offline-test toolchain
-        run: uv sync --locked --extra dev
+          version: '0.12.5'
+      - name: Verify and install the complete locked toolchain
+        run: |
+          uv lock --check
+          uv sync --locked --all-extras
+          uv pip compile modulo-08-production-engineering/docker/requirements.in \
+            --generate-hashes --universal --python-version 3.12 \
+            --custom-compile-command 'uv pip compile requirements.in --generate-hashes --universal --python-version 3.12 --output-file requirements.txt' \
+            --output-file modulo-08-production-engineering/docker/requirements.txt
+          git diff --exit-code -- modulo-08-production-engineering/docker/requirements.txt
+          uv run python setup/check_env.py --profile all
+      - name: Audit installed dependencies for known vulnerabilities
+        run: |
+          uv run pip-audit --strict --progress-spinner off --cache-dir "${RUNNER_TEMP}/pip-audit-cache"
+          uv run pip-audit --strict --progress-spinner off --cache-dir "${RUNNER_TEMP}/pip-audit-cache" \
+            --requirement modulo-08-production-engineering/docker/requirements.txt \
+            --disable-pip --require-hashes
+          bash scripts/audit-isolated-requirements.sh
+      - name: Lint CI definitions
+        run: |
+          if command -v actionlint >/dev/null 2>&1; then
+            actionlint
+          else
+            go run github.com/rhysd/actionlint/cmd/actionlint@v1.7.12
+          fi
+          shellcheck scripts/smoke-production-container.sh scripts/audit-isolated-requirements.sh
       - name: Lint every Python lab
         run: uv run ruff check .
+      - name: Reject medium and high confidence security findings
+        run: uv run bandit -q -r modulo-* setup -x '*/tests/*' -ll
       - name: Compile every Spanish and English lab
         run: uv run python -m compileall -q modulo-* setup translations/en
-      - name: Run the offline reference-project tests
-        run: uv run pytest -q
+      - name: Build and exercise the hardened production container
+        run: bash scripts/smoke-production-container.sh
+      - name: Run offline tests and enforce the coverage ratchet
+        run: |
+          uv run coverage run -m pytest -q
+          uv run coverage json -o coverage.json
+          node scripts/validate-coverage.mjs coverage.json
 
   notify-private-web:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: public-content
-    runs-on: ubuntu-latest
+    runs-on: llmec-course-local
+    timeout-minutes: 5
     steps:
       - name: Request an exact web rebuild
         env:

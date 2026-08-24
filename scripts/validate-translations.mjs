@@ -53,6 +53,26 @@ print(ast.dump(tree, annotate_fields=True, include_attributes=False))`;
   return execFileSync('python3', ['-c', program, filePath], { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
 }
 
+function pythonNaturalLanguage(filePath) {
+  const program = String.raw`import ast, io, json, sys, tokenize
+p=sys.argv[1]
+source=open(p, encoding='utf-8').read()
+tree=ast.parse(source, filename=p)
+parts=[]
+for node in ast.walk(tree):
+    if isinstance(node, (ast.Module, ast.ClassDef, ast.FunctionDef, ast.AsyncFunctionDef)):
+        value=ast.get_docstring(node, clean=False)
+        if value:
+            parts.append(value)
+for token in tokenize.generate_tokens(io.StringIO(source).readline):
+    if token.type == tokenize.COMMENT:
+        text=token.string.lstrip('#').strip()
+        if text:
+            parts.append(text)
+print(json.dumps(parts, ensure_ascii=False))`;
+  return JSON.parse(execFileSync('python3', ['-c', program, filePath], { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }));
+}
+
 function markdownArtifacts(source) {
   const fences = source.match(/^```[^\n]*\n[\s\S]*?^```[ \t]*$/gm) ?? [];
   const prose = source.replace(/^```[^\n]*\n[\s\S]*?^```[ \t]*$/gm, 'LLMEC_FENCE');
@@ -163,6 +183,8 @@ for (const sourcePath of paths) {
   if (sourcePath.endsWith('.py')) {
     try {
       if (pythonAstWithoutDocstrings(sourceFile) !== pythonAstWithoutDocstrings(target)) problems.push(`${sourcePath}: cambió el AST fuera de docstrings`);
+      const qualityProblem = englishQualityProblem(pythonNaturalLanguage(target).join('\n\n'));
+      if (qualityProblem) problems.push(`${sourcePath}: docstrings o comentarios siguen en español (${qualityProblem})`);
     } catch (error) {
       problems.push(`${sourcePath}: Python inválido (${error instanceof Error ? error.message : error})`);
     }

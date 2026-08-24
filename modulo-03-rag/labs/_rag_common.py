@@ -38,6 +38,19 @@ class Document:
     source: str
     metadata: dict[str, str]
 
+    def __post_init__(self) -> None:
+        for name in ("doc_id", "title", "text", "source"):
+            value = getattr(self, name)
+            if not isinstance(value, str):
+                raise TypeError(f"{name} debe ser texto")
+        if not self.doc_id.strip():
+            raise ValueError("doc_id no puede estar vacío")
+        if not isinstance(self.metadata, dict) or any(
+            not isinstance(key, str) or not isinstance(value, str)
+            for key, value in self.metadata.items()
+        ):
+            raise TypeError("metadata debe ser un objeto de texto a texto")
+
 
 @dataclass(frozen=True)
 class Chunk:
@@ -47,6 +60,16 @@ class Chunk:
     text: str
     source: str
     position: int
+
+    def __post_init__(self) -> None:
+        for name in ("chunk_id", "doc_id", "title", "text", "source"):
+            value = getattr(self, name)
+            if not isinstance(value, str):
+                raise TypeError(f"{name} debe ser texto")
+        if not self.chunk_id.strip() or not self.doc_id.strip():
+            raise ValueError("chunk_id y doc_id no pueden estar vacíos")
+        if isinstance(self.position, bool) or not isinstance(self.position, int) or self.position < 0:
+            raise ValueError("position debe ser un entero no negativo")
 
 
 @dataclass(frozen=True)
@@ -71,9 +94,15 @@ def parse_front_matter(raw: str) -> tuple[dict[str, str], str]:
 
 def load_documents(data_dir: Path = DATA_DIR) -> list[Document]:
     documents = []
+    sources_by_id: dict[str, Path] = {}
     for path in sorted(data_dir.glob("*.md")):
         metadata, text = parse_front_matter(path.read_text(encoding="utf-8"))
         doc_id = metadata.get("doc_id", path.stem)
+        if not doc_id.strip():
+            raise ValueError(f"doc_id vacío en {path}")
+        if previous := sources_by_id.get(doc_id):
+            raise ValueError(f"doc_id duplicado {doc_id!r}: {previous} y {path}")
+        sources_by_id[doc_id] = path
         title = metadata.get("title", path.stem.replace("-", " ").title())
         documents.append(
             Document(
@@ -87,6 +116,16 @@ def load_documents(data_dir: Path = DATA_DIR) -> list[Document]:
     if not documents:
         raise FileNotFoundError(f"no hay documentos Markdown en {data_dir}")
     return documents
+
+
+def validate_documents(documents: Sequence[Document]) -> None:
+    seen: set[str] = set()
+    for document in documents:
+        if not document.doc_id.strip():
+            raise ValueError("doc_id no puede estar vacío")
+        if document.doc_id in seen:
+            raise ValueError(f"doc_id duplicado: {document.doc_id}")
+        seen.add(document.doc_id)
 
 
 def normalize_text(text: str) -> str:
@@ -105,8 +144,17 @@ def tokenize(text: str) -> list[str]:
 def fixed_word_chunks(
     documents: Sequence[Document], *, size: int = 140, overlap: int = 30
 ) -> list[Chunk]:
-    if size <= 0 or overlap < 0 or overlap >= size:
+    if (
+        isinstance(size, bool)
+        or not isinstance(size, int)
+        or isinstance(overlap, bool)
+        or not isinstance(overlap, int)
+        or size <= 0
+        or overlap < 0
+        or overlap >= size
+    ):
         raise ValueError("se requiere size > 0 y 0 <= overlap < size")
+    validate_documents(documents)
     chunks = []
     step = size - overlap
     for document in documents:
@@ -131,44 +179,61 @@ def fixed_word_chunks(
 
 
 def paragraph_chunks(documents: Sequence[Document], *, max_words: int = 180) -> list[Chunk]:
+    if isinstance(max_words, bool) or not isinstance(max_words, int) or max_words <= 0:
+        raise ValueError("max_words debe ser > 0")
+    validate_documents(documents)
     chunks = []
     for document in documents:
         buffer: list[str] = []
         position = 0
+        doc_id, title, source = document.doc_id, document.title, document.source
+
+        def append_chunk(
+            parts: list[str],
+            *,
+            chunk_doc_id: str = doc_id,
+            chunk_title: str = title,
+            chunk_source: str = source,
+        ) -> None:
+            nonlocal position
+            chunks.append(
+                Chunk(
+                    chunk_id=f"{chunk_doc_id}:paragraph:{position:03d}",
+                    doc_id=chunk_doc_id,
+                    title=chunk_title,
+                    text="\n\n".join(parts),
+                    source=chunk_source,
+                    position=position,
+                )
+            )
+            position += 1
+
         for paragraph in re.split(r"\n\s*\n", document.text):
             paragraph = paragraph.strip()
             if not paragraph:
                 continue
-            projected = sum(len(part.split()) for part in buffer) + len(paragraph.split())
+            paragraph_words = paragraph.split()
+            if len(paragraph_words) > max_words:
+                if buffer:
+                    append_chunk(buffer)
+                    buffer = []
+                for start in range(0, len(paragraph_words), max_words):
+                    append_chunk([" ".join(paragraph_words[start : start + max_words])])
+                continue
+            projected = sum(len(part.split()) for part in buffer) + len(paragraph_words)
             if buffer and projected > max_words:
-                chunks.append(
-                    Chunk(
-                        chunk_id=f"{document.doc_id}:paragraph:{position:03d}",
-                        doc_id=document.doc_id,
-                        title=document.title,
-                        text="\n\n".join(buffer),
-                        source=document.source,
-                        position=position,
-                    )
-                )
-                position += 1
+                append_chunk(buffer)
                 buffer = []
             buffer.append(paragraph)
         if buffer:
-            chunks.append(
-                Chunk(
-                    chunk_id=f"{document.doc_id}:paragraph:{position:03d}",
-                    doc_id=document.doc_id,
-                    title=document.title,
-                    text="\n\n".join(buffer),
-                    source=document.source,
-                    position=position,
-                )
-            )
+            append_chunk(buffer)
     return chunks
 
 
 def heading_chunks(documents: Sequence[Document], *, max_words: int = 220) -> list[Chunk]:
+    if isinstance(max_words, bool) or not isinstance(max_words, int) or max_words <= 0:
+        raise ValueError("max_words debe ser > 0")
+    validate_documents(documents)
     chunks = []
     for document in documents:
         current_heading = document.title
@@ -260,27 +325,39 @@ class SearchIndex:
     def __init__(self, chunks: Sequence[Chunk], *, lexical: bool = False) -> None:
         if not chunks:
             raise ValueError("el índice necesita al menos un chunk")
+        if any(not isinstance(chunk, Chunk) for chunk in chunks):
+            raise TypeError("el índice solo admite objetos Chunk")
+        if len({chunk.chunk_id for chunk in chunks}) != len(chunks):
+            raise ValueError("los chunk_id deben ser únicos")
         self.chunks = list(chunks)
         corpus = [f"{chunk.title}\n{chunk.text}" for chunk in chunks]
         self.encoder = TfidfEncoder(corpus) if lexical else EmbeddingEncoder()
         self.vectors = self.encoder.encode(corpus, kind="passage")
 
     def search(self, query: str, *, top_k: int = 4) -> list[SearchHit]:
-        if top_k <= 0:
+        if isinstance(top_k, bool) or not isinstance(top_k, int) or top_k <= 0:
             raise ValueError("top_k debe ser > 0")
+        if not isinstance(query, str) or not query.strip():
+            raise ValueError("query no puede estar vacía")
         query_vector = self.encoder.encode([query], kind="query")[0]
         scores = self.vectors @ query_vector
-        indices = np.argsort(-scores)[: min(top_k, len(self.chunks))]
+        relevant = np.flatnonzero(np.isfinite(scores) & (scores > 0))
+        indices = relevant[np.argsort(-scores[relevant])][: min(top_k, len(relevant))]
         return [SearchHit(self.chunks[index], float(scores[index])) for index in indices]
 
 
 def reciprocal_rank_fusion(
     result_sets: Sequence[Sequence[SearchHit]], *, k: int = 60
 ) -> list[SearchHit]:
+    if isinstance(k, bool) or not isinstance(k, int) or k < 0:
+        raise ValueError("k debe ser >= 0")
     scores: dict[str, float] = Counter()
     chunks: dict[str, Chunk] = {}
     for hits in result_sets:
         for rank, hit in enumerate(hits, start=1):
+            previous = chunks.get(hit.chunk.chunk_id)
+            if previous is not None and previous != hit.chunk:
+                raise ValueError(f"chunk_id conflictivo en RRF: {hit.chunk.chunk_id}")
             scores[hit.chunk.chunk_id] += 1 / (k + rank)
             chunks[hit.chunk.chunk_id] = hit.chunk
     ordered = sorted(scores.items(), key=lambda item: item[1], reverse=True)

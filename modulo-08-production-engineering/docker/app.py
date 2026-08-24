@@ -23,6 +23,7 @@ LATENCY = Histogram(
     buckets=(0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5),
 )
 PIPELINE = os.getenv("PIPELINE_VERSION", "deterministic-training-v1")
+UNMATCHED_ENDPOINT = "__unmatched__"
 
 
 class AnswerRequest(BaseModel):
@@ -60,7 +61,6 @@ app = FastAPI(
 
 @app.middleware("http")
 async def observe(request: Request, call_next):
-    endpoint = request.url.path
     started = time.perf_counter()
     status = "500"
     try:
@@ -68,6 +68,10 @@ async def observe(request: Request, call_next):
         status = str(response.status_code)
         return response
     finally:
+        route = request.scope.get("route")
+        endpoint = getattr(route, "path", None)
+        if not isinstance(endpoint, str) or not endpoint.startswith("/"):
+            endpoint = UNMATCHED_ENDPOINT
         REQUESTS.labels(endpoint=endpoint, status=status).inc()
         LATENCY.labels(endpoint=endpoint).observe(time.perf_counter() - started)
 

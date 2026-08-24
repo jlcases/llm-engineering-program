@@ -6,15 +6,18 @@ Requires Python ≥ 3.12 and [`uv`](https://docs.astral.sh/uv/).
 
 ```bash
 cd llm-engineering-program
-uv sync            # crea .venv e instala todas las dependencias
+uv sync --locked --all-extras
 source .venv/bin/activate
 ```
+
+`uv sync --locked` installs only the module 1–2 base. Use `--all-extras` so the RAG, agent,
+harness, and production labs never depend on packages that happen to exist on your machine.
 
 Alternative without uv:
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
-pip install -e .
+pip install -e '.[rag,agents,ops,dev]'
 ```
 
 ## 2. API Keys
@@ -31,7 +34,7 @@ cp setup/.env.example .env
 | `ANTHROPIC_API_KEY` | console.anthropic.com | Module 1 |
 | `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` / `AWS_REGION` | AWS Console (IAM) | Module 1 (Bedrock) |
 | `COHERE_API_KEY` | dashboard.cohere.com | Module 3 (rerank) |
-| `LANGSMITH_API_KEY` | smith.langchain.com | Modules 4–6 |
+| `LANGSMITH_API_KEY` | smith.langchain.com | Module 8 (`--send` only) |
 
 The labs load `.env` with `python-dotenv`. **Never** upload `.env` to the repo (it is already in `.gitignore`).
 
@@ -45,16 +48,17 @@ budget; modules 3–5 also include offline workflows or local models with Ollama
 ## 4. Optional Local Services
 
 - **Ollama** (`brew install ollama`) — local models for deployment labs and for working without API costs.
-- **Docker Desktop** — required in module 5 (containers) and for local Qdrant/pgvector in module 3.
+- **Docker Desktop** — required in module 8 (containers) and for local Qdrant/pgvector in module 3.
 - **Node ≥ 20** — only for the Next.js frontend in module 3.
 
 ## 5. Verification
 
 ```bash
-python setup/check_env.py
+python setup/check_env.py --profile all
 ```
 
-Check the Python version, installed dependencies, and which API keys are configured.
+It checks the Python version and dependencies for the selected profile. For security, it only reports
+whether `.env` exists: it never loads, inspects, or prints the status of individual credentials.
 
 ## 6. Instructor Compatibility
 

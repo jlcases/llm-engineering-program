@@ -55,6 +55,7 @@ modulo-08-production-engineering/
 │   ├── docker-compose.yml
 │   ├── app.py
 │   ├── prometheus.yml
+│   ├── requirements.in
 │   ├── requirements.txt
 │   └── README.md
 └── ejercicios.md                  ← enunciados, tests y rúbrica

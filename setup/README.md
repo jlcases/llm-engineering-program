@@ -6,15 +6,19 @@ Requiere Python ≥ 3.12 y [`uv`](https://docs.astral.sh/uv/).
 
 ```bash
 cd llm-engineering-program
-uv sync            # crea .venv e instala todas las dependencias
+uv sync --locked --all-extras
 source .venv/bin/activate
 ```
+
+`uv sync --locked` instala únicamente la base de los módulos 1–2. Usa `--all-extras` para que los
+labs de RAG, agentes, harnesses y producción no dependan de paquetes que casualmente ya estuvieran
+en tu máquina.
 
 Alternativa sin uv:
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
-pip install -e .
+pip install -e '.[rag,agents,ops,dev]'
 ```
 
 ## 2. Claves API
@@ -31,7 +35,7 @@ cp setup/.env.example .env
 | `ANTHROPIC_API_KEY` | console.anthropic.com | Módulo 1 |
 | `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` / `AWS_REGION` | Consola AWS (IAM) | Módulo 1 (Bedrock) |
 | `COHERE_API_KEY` | dashboard.cohere.com | Módulo 3 (rerank) |
-| `LANGSMITH_API_KEY` | smith.langchain.com | Módulos 4–6 |
+| `LANGSMITH_API_KEY` | smith.langchain.com | Módulo 8 (solo con `--send`) |
 
 Los labs cargan `.env` con `python-dotenv`. **Nunca** subas `.env` al repo (ya está en `.gitignore`).
 
@@ -51,10 +55,11 @@ presupuesto; los módulos 3–5 incluyen además recorridos offline o modelos lo
 ## 5. Verificación
 
 ```bash
-python setup/check_env.py
+python setup/check_env.py --profile all
 ```
 
-Comprueba versión de Python, dependencias instaladas y qué claves API hay configuradas.
+Comprueba la versión de Python y las dependencias del perfil elegido. Por seguridad, solo indica si
+existe `.env`: nunca carga, inspecciona ni muestra el estado de credenciales concretas.
 
 ## 6. Compatibilidad de Instructor
 
