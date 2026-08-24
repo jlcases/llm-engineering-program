@@ -92,10 +92,20 @@ node scripts/validate-course-contracts.mjs
 node scripts/validate-current-stack.mjs
 node scripts/validate-certification-currency.mjs
 node scripts/validate-translations.mjs --complete
-uv sync --locked --extra dev
+node --test scripts/tests/*.test.mjs
+uv lock --check
+uv sync --locked --all-extras
+uv run python setup/check_env.py --profile all
 uv run ruff check .
 uv run python -m compileall -q modulo-* setup translations/en
-uv run pytest -q
+uv run bandit -q -r modulo-* setup -x '*/tests/*' -ll
+bash scripts/smoke-production-container.sh
+uv run coverage erase
+uv run coverage run -m pytest -q
+uv run coverage json -o coverage.json
+node scripts/validate-coverage.mjs coverage.json
+uv run pip-audit --strict
+uv run pip-audit --strict --requirement modulo-08-production-engineering/docker/requirements.txt --disable-pip --require-hashes
 ```
 
 ## Entry point

@@ -16,6 +16,7 @@ const shardValue = valueAfter('--shard');
 const force = process.argv.includes('--force');
 const publishableExtensions = new Set(['.md', '.py']);
 const ignored = new Set(['.git', '.venv', 'node_modules', '__pycache__', 'translations']);
+let temporarySequence = 0;
 
 function valueAfter(flag) {
   const index = process.argv.indexOf(flag);
@@ -24,6 +25,33 @@ function valueAfter(flag) {
 
 function sha256(value) {
   return createHash('sha256').update(value).digest('hex');
+}
+
+function temporaryPath(target, purpose) {
+  temporarySequence += 1;
+  return `${target}.${process.pid}.${temporarySequence}.${purpose}.tmp`;
+}
+
+async function atomicWrite(target, value) {
+  await mkdir(path.dirname(target), { recursive: true });
+  const temporary = temporaryPath(target, 'write');
+  let committed = false;
+  try {
+    await writeFile(temporary, value, { encoding: 'utf8', flag: 'wx', mode: 0o600 });
+    await rename(temporary, target);
+    committed = true;
+  } finally {
+    if (!committed) await rm(temporary, { force: true });
+  }
+}
+
+async function fileHashOrNull(filePath) {
+  try {
+    return sha256(await readFile(filePath));
+  } catch (error) {
+    if (error?.code === 'ENOENT') return null;
+    throw error;
+  }
 }
 
 async function walk(directory) {
@@ -439,35 +467,34 @@ print(ast.dump(tree, annotate_fields=True, include_attributes=False))`;
 
 async function validatePython(sourcePath, sourceFile, translated) {
   const target = path.join(outputRoot, sourcePath);
-  const temporary = `${target}.tmp`;
-  const checked = `${temporary}.checked`;
+  const temporary = temporaryPath(target, 'python-check');
   await mkdir(path.dirname(target), { recursive: true });
-  await writeFile(temporary, translated);
+  await writeFile(temporary, translated, { encoding: 'utf8', flag: 'wx', mode: 0o600 });
   try {
     const before = pythonAstWithoutDocstrings(sourceFile);
     const after = pythonAstWithoutDocstrings(temporary);
     if (before !== after) throw new Error('La traducción cambió el AST fuera de docstrings.');
-    await rm(checked, { force: true });
-    await rename(temporary, checked);
   } catch (error) {
     await rm(temporary, { force: true });
     throw error;
   }
-  return checked;
+  return temporary;
 }
 
 async function loadManifest() {
   try { return JSON.parse(await readFile(manifestPath, 'utf8')); }
-  catch { return { version: 1, model, generatedAt: null, files: {} }; }
+  catch (error) {
+    if (error && typeof error === 'object' && error.code === 'ENOENT') {
+      return { version: 1, model, generatedAt: null, files: {} };
+    }
+    throw new Error(`No se pudo leer ${manifestPath}; no se sobrescribirá el historial.`, { cause: error });
+  }
 }
 
 async function saveManifest(manifest) {
   manifest.generatedAt = new Date().toISOString();
   manifest.model = model;
-  await mkdir(outputRoot, { recursive: true });
-  const temporary = `${manifestPath}.${process.pid}.tmp`;
-  await writeFile(temporary, `${JSON.stringify(manifest, null, 2)}\n`);
-  await rename(temporary, manifestPath);
+  await atomicWrite(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
 }
 
 async function acquireManifestLock() {
@@ -527,9 +554,8 @@ for (const [index, sourcePath] of paths.entries()) {
   const pipelineVersion = sourcePath.endsWith('.md') ? 2 : 1;
   const currentPipeline = known?.pipelineVersion === pipelineVersion
     || (pipelineVersion === 1 && known?.pipelineVersion == null);
-  let targetExists = false;
-  try { targetExists = (await stat(target)).isFile(); } catch {}
-  if (!force && targetExists && known?.sourceHash === sourceHash && currentPipeline) {
+  const targetHash = await fileHashOrNull(target);
+  if (!force && targetHash === known?.translationHash && known?.sourceHash === sourceHash && currentPipeline) {
     skippedCount += 1;
     console.log(`[${index + 1}/${paths.length}] sin cambios ${sourcePath}`);
     continue;
@@ -545,17 +571,20 @@ for (const [index, sourcePath] of paths.entries()) {
         validateMarkdownIntegrity(sourcePath, source, translated);
         const qualityProblem = englishQualityProblem(translated);
         if (qualityProblem) throw new Error(`${sourcePath}: traducción inglesa parcial (${qualityProblem}).`);
-        await mkdir(path.dirname(target), { recursive: true });
-        await writeFile(target, translated);
+        await atomicWrite(target, translated);
       } else {
         translated = await translatePython(sourcePath, sourceFile, source, attempt);
         const checked = await validatePython(sourcePath, sourceFile, translated);
-        await rename(checked, target);
+        let committed = false;
+        try {
+          await rename(checked, target);
+          committed = true;
+        } finally {
+          if (!committed) await rm(checked, { force: true });
+        }
       }
       translatedSuccessfully = true;
     } catch (error) {
-      await rm(`${target}.tmp`, { force: true });
-      await rm(`${target}.tmp.checked`, { force: true });
       if (attempt === 2) throw error;
       console.warn(`[${index + 1}/${paths.length}] reintento ${attempt + 2}/3 ${sourcePath}: ${error.message}`);
     }

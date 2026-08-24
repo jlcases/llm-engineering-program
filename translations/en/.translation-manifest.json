@@ -1,15 +1,15 @@
 {
   "version": 1,
   "model": "qwen3.6:35b-a3b-coding-nvfp4",
-  "generatedAt": "2026-08-23T08:31:35.919Z",
+  "generatedAt": "2026-08-24T15:40:10.248Z",
   "files": {
     "README.md": {
-      "sourceHash": "ab0083efaab4e402d15113f5e92090f47ed3ec68d22d86d5c64d91dc5c3e04f2",
-      "translationHash": "8605a2de7a9c3c94fca14d2abad84e947de5e159c3b0d724707cf248b49063d7",
+      "sourceHash": "4cf084901ae01f34e8976a90c3d8125947748e158258de521330c790c88985f8",
+      "translationHash": "a84f5fd105fb1f815ddbe3d62aacfa9b459f67649ce66c40403e469d15249541",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T12:09:54.117Z"
+      "translatedAt": "2026-08-24T15:40:10.246Z"
     },
     "RUTA_DE_APRENDIZAJE.md": {
       "sourceHash": "404123d112d5d9a3b69d88f442785f8e9b9b0d86b76d6afbf3ba2c13111cb079",
@@ -276,20 +276,20 @@
       "translatedAt": "2026-08-22T00:09:50.098Z"
     },
     "modulo-02-prompt-engineering/labs/06_eval_prompts_dataset.py": {
-      "sourceHash": "1dada43c5f6105a483b83b1f22fc3978983f0356e00101161538d14fa6c0ce66",
-      "translationHash": "52f8e90e79fe91e9838aadd79e7cc7711890067e16e91cf3f277645ad52b5bce",
+      "sourceHash": "3ba63f0b67ef88824e58377f8d8f5d71bb5a3b677b64e8a1579d5bce10541dfb",
+      "translationHash": "d9e82b13ef1b48ebf982d2dd81fa1d915fcaa000c3914dd85b6dbe2bcd14e731",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:50.727Z"
+      "translatedAt": "2026-08-24T14:48:55.271Z"
     },
     "modulo-02-prompt-engineering/labs/07_ab_testing_prompts.py": {
-      "sourceHash": "f1957c881df13a75d6782c02cbb31a9c8b7640ba1c97acffa6169ee86330cbfb",
-      "translationHash": "d6725ad7d10021514e667300e3ce81156b980188137dc4bcf556b89b6685f789",
+      "sourceHash": "aaeb911a1a1a978bf31656a75420309953ade015d25737aedc70108edb0bda74",
+      "translationHash": "057fc4b9e4a4b786029f35b8423071d9f3b9c55beee6f242e91f294df947bc9f",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:50.192Z"
+      "translatedAt": "2026-08-24T14:49:00.144Z"
     },
     "modulo-02-prompt-engineering/teoria/01-tecnicas-base.md": {
       "sourceHash": "0dc6062baeb581d57e6af13b243c59875d964a467e215a7cde167cbb2411fb08",
@@ -476,12 +476,12 @@
       "translatedAt": "2026-08-22T00:09:52.890Z"
     },
     "modulo-03-rag/teoria/02-embeddings-y-vector-dbs.md": {
-      "sourceHash": "da757db6806e06b59ab2fc0b9a96c16bf86be351cfab2f1e0b65162a4d4673d6",
-      "translationHash": "e5f0c70767f5748d05507528262c7fab1412d0c4c7975ba55a9bdd1ae8e550cc",
+      "sourceHash": "5e85c6c901bf2c262820f36f1eea4ea44239ed1e83a960fac356fa9c2965abc7",
+      "translationHash": "d10fef3d158da95748475e3a30122b1bc725df6f049e0e99f0d90696824e211d",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:51.325Z"
+      "translatedAt": "2026-08-24T14:49:38.659Z"
     },
     "modulo-03-rag/teoria/03-chunking.md": {
       "sourceHash": "fb618cda1ad8c37d74dd7b445a96c35eff2787745bea7af7dab63067f245af6c",
@@ -572,12 +572,12 @@
       "translatedAt": "2026-08-22T00:09:53.786Z"
     },
     "modulo-04-agentes/labs/04_langgraph_checkpoints.py": {
-      "sourceHash": "5a181d19b503058d05372fce40c6348b5f9f6b312dcb51f62a2a0bc1f435e137",
-      "translationHash": "52ac01d46ec5976afd59ab6d242ab8955995d81ada87d2cfaa277fe42333acb5",
+      "sourceHash": "6e7893b056a6b99f95f20706f644ce406b86ea8823b2f317aa722cc963e02f3a",
+      "translationHash": "e7dd8cf86223dc74025f082c1a2a63289891d00965fe2fb673e00f401202046c",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:51.893Z"
+      "translatedAt": "2026-08-24T14:49:41.636Z"
     },
     "modulo-04-agentes/labs/05_mcp_server.py": {
       "sourceHash": "275c0d2dd74d91a4d1c9123338b90ad7e0518d7c5db44465b00763a0d7734e16",
@@ -596,12 +596,12 @@
       "translatedAt": "2026-08-22T00:09:51.986Z"
     },
     "modulo-04-agentes/labs/07_memoria_agente.py": {
-      "sourceHash": "28ccd682eb19134cb224ded190c62e5ac547f643ef50482c3adcadeecd923b77",
-      "translationHash": "5f2dd9a125e941b71629a732f10cee8c3df43f483e8500e815cb4f7948cd21e1",
+      "sourceHash": "9e5a55108962ca5511697fdc70faf117b7ce28d1d003e2dd89b59b41daf38ed7",
+      "translationHash": "92a20b4309ab764d11a5368e57a0bd434b4d5899a78f7f678dad14cd0204d5c3",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 1,
-      "translatedAt": "2026-08-22T00:09:53.974Z"
+      "translatedAt": "2026-08-24T14:49:45.790Z"
     },
     "modulo-04-agentes/teoria/01-patrones-de-agentes.md": {
       "sourceHash": "28b7ad4bbe7307e2102c3ac474f136e3d2c82c1f7882a9314cf479a0c4960db8",
@@ -692,12 +692,12 @@
       "translatedAt": "2026-08-23T08:31:35.670Z"
     },
     "modulo-05-harness-engineering/labs/01_capability_harness.py": {
-      "sourceHash": "b21914b77ad2dee36d823a4edf608bcd911e5e38bc6b0a650b974f835a56cef1",
-      "translationHash": "83e41541e232f8e09d55ee6b6159581cb0a4040fd30721169110174a9e3cc8e0",
+      "sourceHash": "0386d06c536e6adf6c41917aa11ea8a976f374904b3925d3b5f2ada3110e584b",
+      "translationHash": "9ce4acc64eb1369f2f556a05567aff6b7e7ce8d80949144c002d83573b58ed91",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 1,
-      "translatedAt": "2026-08-23T07:45:24.374Z"
+      "translatedAt": "2026-08-24T14:53:32.066Z"
     },
     "modulo-05-harness-engineering/labs/02_eval_harness.py": {
       "sourceHash": "b271e2ab355b14d1794e060c71e637991eae0447339e8ef05673781091f2eec9",
@@ -868,20 +868,20 @@
       "translatedAt": "2026-08-23T07:45:24.374Z"
     },
     "modulo-08-production-engineering/README.md": {
-      "sourceHash": "81a5dac46b7c6bfce013280708caf3993b79e99f3c4da35a483781a1aa17d3fb",
-      "translationHash": "0e43e372e95ff9be560593736b6351cfcf034f66842400a4a6083188d568ad77",
+      "sourceHash": "1790ac993dee3610e333d060694c5da77d2c7764a3c3aa8556851d0177155a69",
+      "translationHash": "a0ccf2d59f8fa4dcbf4516369ee2f321c592da5d198caec198d44e8eed062816",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-23T07:45:24.374Z"
+      "translatedAt": "2026-08-24T15:13:24.367Z"
     },
     "modulo-08-production-engineering/docker/README.md": {
-      "sourceHash": "a990f48c0b79359d28e3913c962efe830de81c1097ff4357c274925d7355d43f",
-      "translationHash": "b2e8a96901819ef97bfce776624913372c299bbbe0048af132d3daec381f4970",
+      "sourceHash": "c08834d72bd5202ab695e745acba52b76d81b9054ba3838eaa4e943ce08d7211",
+      "translationHash": "e72a95f0aa0a73ade0ba1e92a9e449d065ebde2b66a410b2c1ab34b9021c97d3",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-23T07:45:24.374Z"
+      "translatedAt": "2026-08-24T15:13:25.230Z"
     },
     "modulo-08-production-engineering/ejercicios.md": {
       "sourceHash": "4ef775ddb2c7511126b3b9db488046aa0d8957f59a04ad4aa0feccf9a7c0a3a3",
@@ -1116,12 +1116,12 @@
       "translatedAt": "2026-08-22T00:09:56.004Z"
     },
     "setup/README.md": {
-      "sourceHash": "1302f26845e153677f3f9021d2310043738d92dd7e570afdb415ca451877d150",
-      "translationHash": "e1ff93591c98eb235054428986917f52f9a937aec9b0fe46b45db898892036fd",
+      "sourceHash": "119324b76a6f02f09898af58c68825c5c4783783b620f9f0db6ffdcf6d5ee3e4",
+      "translationHash": "e55eff7500d5933f6847ec15aea38424ba9d03fa8524524440c85b2ef9cec06b",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-22T00:09:55.341Z"
+      "translatedAt": "2026-08-24T14:48:51.525Z"
     },
     "modulo-05-harness-engineering/teoria/04-panorama-de-harnesses-actuales.md": {
       "sourceHash": "1493f7090da661159cac375484fad246ce4f61b35921733c283c67f691b53692",

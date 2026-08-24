@@ -1,14 +1,14 @@
-# syntax=docker/dockerfile:1.7
-FROM ghcr.io/astral-sh/uv:0.12.5 AS uv-bin
+# syntax=docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+FROM ghcr.io/astral-sh/uv:0.12.5@sha256:e85be844203885286c60ffad8a858d48afb6c5a5c237ca0e67f12e74b8f174b1 AS uv-bin
 
-FROM python:3.12-slim-bookworm AS builder
+FROM python:3.12-slim-bookworm@sha256:a116514e19457bcb7af7efe9c3dd0b9b71e85b317694e7882a1c52aa15a78134 AS builder
 COPY --from=uv-bin /uv /usr/local/bin/uv
 WORKDIR /build
 COPY requirements.txt ./
 RUN uv venv /opt/venv && \
-    uv pip install --python /opt/venv/bin/python --no-cache -r requirements.txt
+    uv pip install --python /opt/venv/bin/python --no-cache --require-hashes -r requirements.txt
 
-FROM python:3.12-slim-bookworm AS runtime
+FROM python:3.12-slim-bookworm@sha256:a116514e19457bcb7af7efe9c3dd0b9b71e85b317694e7882a1c52aa15a78134 AS runtime
 ENV PATH="/opt/venv/bin:$PATH" \
     PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \

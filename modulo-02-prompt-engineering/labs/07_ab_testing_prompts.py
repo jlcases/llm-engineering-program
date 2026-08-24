@@ -73,7 +73,8 @@ def paired_bootstrap(
 ) -> tuple[float, float]:
     if repetitions < 1000:
         raise ValueError("usa al menos 1000 repeticiones bootstrap")
-    rng = random.Random(seed)
+    # El generador es deliberadamente determinista para el bootstrap; no protege secretos.
+    rng = random.Random(seed)  # nosec B311
     n = len(baseline)
     differences = []
     for _ in range(repetitions):

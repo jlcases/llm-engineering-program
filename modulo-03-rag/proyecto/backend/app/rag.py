@@ -60,9 +60,17 @@ def parse_document(path: Path) -> tuple[str, str, str]:
 
 
 def section_chunks(corpus_dir: Path, max_words: int = 220) -> list[Chunk]:
+    if max_words <= 0:
+        raise ValueError("max_words debe ser > 0")
     chunks: list[Chunk] = []
+    sources_by_id: dict[str, Path] = {}
     for path in sorted(corpus_dir.glob("*.md")):
         document_id, document_title, body = parse_document(path)
+        if not document_id.strip():
+            raise ValueError(f"doc_id vacío en {path}")
+        if previous := sources_by_id.get(document_id):
+            raise ValueError(f"doc_id duplicado {document_id!r}: {previous} y {path}")
+        sources_by_id[document_id] = path
         heading = document_title
         lines: list[str] = []
         position = 0
@@ -135,13 +143,17 @@ class TfidfRagService:
         return sum(left[term] * right[term] for term in common)
 
     def search(self, question: str, top_k: int) -> list[Hit]:
+        if not question.strip():
+            raise ValueError("question no puede estar vacía")
+        if isinstance(top_k, bool) or not isinstance(top_k, int) or top_k <= 0:
+            raise ValueError("top_k debe ser un entero mayor que cero")
         query = self._vector(tokenize(question))
         scored = [
             Hit(chunk=chunk, score=self._cosine(query, vector))
             for chunk, vector in zip(self.chunks, self.vectors, strict=True)
         ]
         scored.sort(key=lambda hit: hit.score, reverse=True)
-        return scored[:top_k]
+        return [hit for hit in scored[:top_k] if hit.score > 0]
 
     def answer(self, question: str, hits: list[Hit]) -> tuple[str, bool]:
         query_terms = set(tokenize(question))

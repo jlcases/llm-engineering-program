@@ -8,12 +8,28 @@ const pyproject = await readFile('pyproject.toml', 'utf8');
 const failures = [];
 
 function ageInDays(dateText) {
-  return Math.floor((Date.now() - Date.parse(`${dateText}T00:00:00Z`)) / 86_400_000);
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateText);
+  if (!match) return null;
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const timestamp = Date.UTC(year, month - 1, day);
+  const parsed = new Date(timestamp);
+  if (parsed.getUTCFullYear() !== year || parsed.getUTCMonth() !== month - 1 || parsed.getUTCDate() !== day) {
+    return null;
+  }
+  return Math.floor((Date.now() - timestamp) / 86_400_000);
 }
 
-if (ageInDays(course.reviewedAt) > 120) failures.push(`course.reviewedAt lleva ${ageInDays(course.reviewedAt)} días sin revisión (máximo 120).`);
+const courseAge = ageInDays(course.reviewedAt);
+if (courseAge === null) failures.push('course.reviewedAt no es una fecha válida.');
+else if (courseAge < 0) failures.push('course.reviewedAt no puede estar en el futuro.');
+else if (courseAge > 120) failures.push(`course.reviewedAt lleva ${courseAge} días sin revisión (máximo 120).`);
 for (const certification of course.certifications) {
-  if (ageInDays(certification.verifiedAt) > 180) failures.push(`${certification.code} lleva ${ageInDays(certification.verifiedAt)} días sin verificar (máximo 180).`);
+  const age = ageInDays(certification.verifiedAt);
+  if (age === null) failures.push(`${certification.code}.verifiedAt no es una fecha válida.`);
+  else if (age < 0) failures.push(`${certification.code}.verifiedAt no puede estar en el futuro.`);
+  else if (age > 180) failures.push(`${certification.code} lleva ${age} días sin verificar (máximo 180).`);
 }
 
 const requiredDependencyContracts = [

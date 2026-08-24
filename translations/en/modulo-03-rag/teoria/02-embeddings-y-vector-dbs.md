@@ -99,7 +99,8 @@ and binary (~32× less, with re-scoring on the originals to recover precision).
 
 ### How to decide (practical tree)
 
-1. **Prototype or corpus < ~100k chunks?** → Chroma (or numpy). Do not over-engineer.
+1. **Prototype or corpus < ~100k chunks?** → NumPy or a minimal local index. Do not
+   over-engineer or expose a server you do not need.
 2. **Do you already have PostgreSQL and your corpus is small-medium?** → pgvector. One less piece
    of infrastructure, backups and ACLs that you already know, and you can perform `JOIN` between
    vectors and business data. It is the most underrated option.
@@ -107,8 +108,15 @@ and binary (~32× less, with re-scoring on the originals to recover precision).
 4. **Team without ops capacity and budget?** → Pinecone.
 5. **Do you want the DB to also vectorize and generate (all-in-one)?** → Weaviate.
 
-In the labs we use **Chroma** (zero friction, embedded) and **Qdrant via Docker** in the
-project, which is the closest thing to self-hosted production without cost.
+The executable labs use **NumPy/TF-IDF** and preserve IDs and provenance without starting a server.
+Qdrant remains an optional exercise when you need filters, persistence, and a dedicated API.
+
+> **Security notice · 2026-08-24:** `chromadb` 1.0.0–1.5.9 is affected by
+> [GHSA-f4j7-r4q5-qw2c](https://github.com/advisories/GHSA-f4j7-r4q5-qw2c), a critical
+> pre-authentication code-injection vulnerability in the server, and the advisory does not yet list
+> a patched version. The course therefore does not install Chroma. If a fix is released, revalidate
+> the advisory and threat model before adding it again; never expose a lab instance to an untrusted
+> network.
 
 ### Qdrant in 30 Seconds
 
@@ -130,7 +138,7 @@ client.create_collection(
 
 ## Common Errors
 
-1. **Setting up a vector DB cluster for 5,000 chunks.** Brute force with numpy or Chroma
+1. **Setting up a vector DB cluster for 5,000 chunks.** Brute force with NumPy
    solves 90% of enterprise cases. Infrastructure arrives when the numbers
    demand it.
 2. **Misconfigured distance metric** (L2 collection with a model expecting

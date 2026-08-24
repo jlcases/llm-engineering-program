@@ -74,9 +74,16 @@ class RowResult:
     error: str | None
 
 
+def positive_int(value: str) -> int:
+    parsed = int(value)
+    if parsed < 1:
+        raise argparse.ArgumentTypeError("debe ser un entero mayor que cero")
+    return parsed
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--limit", type=int, default=12)
+    parser.add_argument("--limit", type=positive_int, default=12)
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--gate", action="store_true")
     return parser.parse_args()
@@ -177,6 +184,8 @@ def evaluate_variant(
 
 
 def summarize(rows: list[RowResult]) -> dict[str, float | int]:
+    if not rows:
+        raise ValueError("se necesita al menos un resultado para resumir")
     critical = [row for row in rows if row.critical_detected is not None]
     latencies = [row.latency_ms for row in rows]
     return {

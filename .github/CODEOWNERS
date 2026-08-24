@@ -1,5 +1,11 @@
 /course.json @jlcases
+/course.en.json @jlcases
 /course.schema.json @jlcases
 /certificaciones/ @jlcases
-/modulo-05-llmops/teoria/08-seguridad-y-governance.md @jlcases
-/modulo-05-llmops/teoria/09-safety-en-produccion.md @jlcases
+/modulo-08-production-engineering/teoria/08-seguridad-y-governance.md @jlcases
+/modulo-08-production-engineering/teoria/09-safety-en-produccion.md @jlcases
+/scripts/ @jlcases
+/.github/workflows/ @jlcases
+/.github/actionlint.yaml @jlcases
+/pyproject.toml @jlcases
+/uv.lock @jlcases

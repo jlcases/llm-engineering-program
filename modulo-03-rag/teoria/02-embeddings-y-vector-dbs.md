@@ -100,7 +100,8 @@ binaria (~32× menos, con re-scoring sobre los originales para recuperar precisi
 
 ### Cómo decidir (árbol práctico)
 
-1. **¿Prototipo o corpus < ~100k chunks?** → Chroma (o numpy). No sobre-ingenierices.
+1. **¿Prototipo o corpus < ~100k chunks?** → NumPy o un índice local mínimo. No
+   sobre-ingenierices ni expongas un servidor que no necesitas.
 2. **¿Ya tienes PostgreSQL y tu corpus es pequeño-mediano?** → pgvector. Una pieza menos
    de infraestructura, backups y ACL que ya conoces, y puedes hacer `JOIN` entre
    vectores y datos de negocio. Es la opción más infravalorada.
@@ -108,8 +109,15 @@ binaria (~32× menos, con re-scoring sobre los originales para recuperar precisi
 4. **¿Equipo sin capacidad de ops y presupuesto?** → Pinecone.
 5. **¿Quieres que la DB también vectorice y genere (todo-en-uno)?** → Weaviate.
 
-En los labs usamos **Chroma** (cero fricción, embebida) y **Qdrant vía Docker** en el
-proyecto, que es lo más parecido a producción self-hosted sin coste.
+Los labs ejecutables usan **NumPy/TF-IDF** y conservan IDs y procedencia sin levantar un servidor.
+Qdrant queda como práctica opcional cuando necesitas filtros, persistencia y una API dedicada.
+
+> **Aviso de seguridad · 24-08-2026:** `chromadb` 1.0.0–1.5.9 está afectado por
+> [GHSA-f4j7-r4q5-qw2c](https://github.com/advisories/GHSA-f4j7-r4q5-qw2c), una inyección de código
+> crítica preautenticación en el servidor, y el aviso no publica todavía una versión corregida. Por
+> eso el curso no instala Chroma. Si aparece un parche, revalida el advisory y el threat model
+> antes de volver a añadirlo; nunca expongas una instancia de laboratorio a una red
+> no confiable.
 
 ### Qdrant en 30 segundos
 
@@ -131,7 +139,7 @@ client.create_collection(
 
 ## Errores comunes
 
-1. **Montar un cluster de vector DB para 5.000 chunks.** Fuerza bruta con numpy o Chroma
+1. **Montar un cluster de vector DB para 5.000 chunks.** Fuerza bruta con NumPy
    resuelve el 90 % de los casos de empresa. La infraestructura llega cuando los números
    la piden.
 2. **Métrica de distancia mal configurada** (colección en L2 con un modelo que espera

@@ -136,12 +136,14 @@ def main() -> int:
         table.add_row(memory.kind, f"{score:.3f}", memory.text)
     console.print(table)
     console.print(f"[dim]Memoria de trabajo ({len(working.messages)}): {working.messages}[/dim]")
-    assert all(memory.namespace == args.user for memory, _ in results)
+    if not all(memory.namespace == args.user for memory, _ in results):
+        raise RuntimeError("se detectó una fuga entre namespaces")
 
     if args.forget:
         removed = store.forget_namespace(args.user)
         console.print(f"[yellow]Olvido solicitado: {removed} memorias eliminadas.[/yellow]")
-        assert store.count(args.user) == 0
+        if store.count(args.user) != 0:
+            raise RuntimeError("el borrado del namespace no fue completo")
     else:
         console.print(
             "[dim]Ejecuta con --forget para probar el borrado por namespace. En producción, "
