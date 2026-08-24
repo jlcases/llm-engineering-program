@@ -36,6 +36,8 @@ prompt_eval = load_module(
     "modulo-02-prompt-engineering/labs/06_eval_prompts_dataset.py",
 )
 
+RAGAS_LAB = ROOT / "modulo-03-rag/labs/06_evaluacion_ragas.py"
+
 
 def test_harness_enforces_json_schema_before_calling_handler() -> None:
     calls = []
@@ -503,6 +505,15 @@ def test_rag_contract_objects_reject_malformed_values() -> None:
         rag_common.Chunk(" ", "doc:1", "Title", "text", "source.md", 0)
     with pytest.raises(ValueError, match="position"):
         rag_common.Chunk("chunk:1", "doc:1", "Title", "text", "source.md", True)
+
+
+def test_ragas_lab_never_imports_the_vulnerable_multimodal_metric() -> None:
+    source = RAGAS_LAB.read_text(encoding="utf-8")
+    assert "MultiModalFaithfulness" not in source
+    assert "multi_modal_faithfulness" not in source
+    assert "diskcache" not in source.casefold()
+    for metric in ("Faithfulness", "AnswerRelevancy", "ContextPrecision", "ContextRecall"):
+        assert metric in source
 
 
 def test_rag_chunkers_validate_ids_limits_and_oversized_paragraphs() -> None:

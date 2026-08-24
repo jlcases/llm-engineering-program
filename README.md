@@ -107,6 +107,7 @@ uv run coverage json -o coverage.json
 node scripts/validate-coverage.mjs coverage.json
 uv run pip-audit --strict
 uv run pip-audit --strict --requirement modulo-08-production-engineering/docker/requirements.txt --disable-pip --require-hashes
+bash scripts/audit-isolated-requirements.sh
 ```
 
 ## Punto de entrada

@@ -60,6 +60,7 @@ jobs:
           uv run pip-audit --strict --progress-spinner off --cache-dir "${RUNNER_TEMP}/pip-audit-cache" \
             --requirement modulo-08-production-engineering/docker/requirements.txt \
             --disable-pip --require-hashes
+          bash scripts/audit-isolated-requirements.sh
       - name: Lint CI definitions
         run: |
           if command -v actionlint >/dev/null 2>&1; then
@@ -67,7 +68,7 @@ jobs:
           else
             go run github.com/rhysd/actionlint/cmd/actionlint@v1.7.12
           fi
-          shellcheck scripts/smoke-production-container.sh
+          shellcheck scripts/smoke-production-container.sh scripts/audit-isolated-requirements.sh
       - name: Lint every Python lab
         run: uv run ruff check .
       - name: Reject medium and high confidence security findings

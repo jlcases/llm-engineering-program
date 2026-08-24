@@ -58,7 +58,8 @@ presupuesto; los módulos 3–5 incluyen además recorridos offline o modelos lo
 python setup/check_env.py --profile all
 ```
 
-Comprueba versión de Python, dependencias del perfil elegido y qué claves API hay configuradas.
+Comprueba la versión de Python y las dependencias del perfil elegido. Por seguridad, solo indica si
+existe `.env`: nunca carga, inspecciona ni muestra el estado de credenciales concretas.
 
 ## 6. Compatibilidad de Instructor
 

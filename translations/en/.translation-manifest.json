@@ -1,15 +1,15 @@
 {
   "version": 1,
   "model": "qwen3.6:35b-a3b-coding-nvfp4",
-  "generatedAt": "2026-08-24T15:40:10.248Z",
+  "generatedAt": "2026-08-24T15:47:26.059Z",
   "files": {
     "README.md": {
-      "sourceHash": "4cf084901ae01f34e8976a90c3d8125947748e158258de521330c790c88985f8",
-      "translationHash": "a84f5fd105fb1f815ddbe3d62aacfa9b459f67649ce66c40403e469d15249541",
+      "sourceHash": "78f8eb107d67d2de744aa160a5b4fa62d714395f1a5f1d22c45373156b4eb291",
+      "translationHash": "97ce004f48fbed52a100f48c7fe5f8cb1926cc2a56e9f705623aba3e7b1421c9",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-24T15:40:10.246Z"
+      "translatedAt": "2026-08-24T15:44:18.007Z"
     },
     "RUTA_DE_APRENDIZAJE.md": {
       "sourceHash": "404123d112d5d9a3b69d88f442785f8e9b9b0d86b76d6afbf3ba2c13111cb079",
@@ -1116,12 +1116,12 @@
       "translatedAt": "2026-08-22T00:09:56.004Z"
     },
     "setup/README.md": {
-      "sourceHash": "119324b76a6f02f09898af58c68825c5c4783783b620f9f0db6ffdcf6d5ee3e4",
-      "translationHash": "e55eff7500d5933f6847ec15aea38424ba9d03fa8524524440c85b2ef9cec06b",
+      "sourceHash": "b07a58488c8433ce7607979b172e05c5bf2fb6259bd58dd9b3acf283b56da9f0",
+      "translationHash": "dab401d365a20615ad8c2a98e22281667ae6dc376dc533c446d2a6cc6f45013d",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-24T14:48:51.525Z"
+      "translatedAt": "2026-08-24T15:47:26.053Z"
     },
     "modulo-05-harness-engineering/teoria/04-panorama-de-harnesses-actuales.md": {
       "sourceHash": "1493f7090da661159cac375484fad246ce4f61b35921733c283c67f691b53692",

@@ -1,11 +1,10 @@
-"""Verifica Python, dependencias por perfil y claves API configuradas.
+"""Verifica Python y dependencias por perfil sin leer credenciales.
 
 Uso: python setup/check_env.py --profile all
 """
 
 import argparse
 import importlib.util
-import os
 import sys
 from pathlib import Path
 
@@ -27,15 +26,6 @@ PROFILE_PACKAGES = {
     "agents": ["langgraph", "mcp"],
     "ops": ["langsmith", "prometheus_client", "locust"],
 }
-API_KEYS = {
-    "OPENAI_API_KEY": "OpenAI (módulo 1+)",
-    "ANTHROPIC_API_KEY": "Anthropic (módulo 1+)",
-    "AWS_ACCESS_KEY_ID": "AWS Bedrock (módulo 1+)",
-    "COHERE_API_KEY": "Cohere rerank (módulo 3)",
-    "LANGSMITH_API_KEY": "LangSmith (módulo 8, solo con --send)",
-}
-
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -77,20 +67,9 @@ def main() -> int:
 
     env_path = Path(__file__).resolve().parent.parent / ".env"
     if env_path.exists():
-        try:
-            from dotenv import load_dotenv
-
-            load_dotenv(env_path)
-        except ImportError:
-            pass
+        print(f"{OK} archivo .env presente — contenido no inspeccionado")
     else:
         print(f"{WARN} no hay .env en la raíz — copia setup/.env.example")
-
-    for key, desc in API_KEYS.items():
-        configured = bool(os.environ.get(key))
-        icon = OK if configured else WARN
-        state = "credencial configurada" if configured else "credencial sin configurar"
-        print(f"{icon} {desc} — {state}")
 
     print("\nTodo listo." if errors == 0 else f"\n{errors} problema(s) bloqueante(s).")
     return 1 if errors else 0

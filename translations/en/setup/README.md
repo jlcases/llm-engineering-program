@@ -57,7 +57,8 @@ budget; modules 3–5 also include offline workflows or local models with Ollama
 python setup/check_env.py --profile all
 ```
 
-Check the Python version, dependencies for the selected profile, and configured API keys.
+It checks the Python version and dependencies for the selected profile. For security, it only reports
+whether `.env` exists: it never loads, inspects, or prints the status of individual credentials.
 
 ## 6. Instructor Compatibility
 
