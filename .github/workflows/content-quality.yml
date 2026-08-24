@@ -29,6 +29,8 @@ jobs:
         run: node scripts/validate-public-content.mjs
       - name: Validate course contracts
         run: node scripts/validate-course-contracts.mjs
+      - name: Validate bilingual GitHub discovery surface
+        run: node scripts/validate-repository-discovery.mjs
       - name: Enforce current model and SDK defaults
         run: node scripts/validate-current-stack.mjs
       - name: Enforce current certification blueprints

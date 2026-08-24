@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 
 import { validateCourseContracts } from '../validate-course-contracts.mjs';
 import { validatePublicContent } from '../validate-public-content.mjs';
+import { validateRepositoryDiscovery } from '../validate-repository-discovery.mjs';
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const execFileAsync = promisify(execFile);
@@ -146,6 +147,45 @@ test('course validator requires HTTPS for published URLs', async () => {
   await assert.rejects(validateCourseContracts({ root }), /debe usar HTTPS/);
 });
 
+test('repository discovery validator accepts the current bilingual storefront', async () => {
+  assert.deepEqual(await validateRepositoryDiscovery({ root: repositoryRoot }), []);
+});
+
+test('repository discovery validator rejects a stale module CTA', async () => {
+  const root = await courseFixture();
+  await writeFile(
+    path.join(root, 'pyproject.toml'),
+    '[project]\ndescription = "Open, bilingual LLM engineering course with executable labs"\n',
+  );
+  await mkdir(path.join(root, 'docs/assets'), { recursive: true });
+  await writeFile(
+    path.join(root, 'docs/assets/llm-engineering-course-hero.png'),
+    await readFile(path.join(repositoryRoot, 'docs/assets/llm-engineering-course-hero.png')),
+  );
+  await writeFile(path.join(root, 'README.md'), `# LLM Engineering Course: Test
+
+<a id="english"></a>
+An open-source, bilingual path for retrieval-augmented generation, AI agents, Model Context Protocol,
+LLM evaluation and LLMOps.
+
+[Course](https://llmengineerclub.com/)
+[Wrong module](https://llmengineerclub.com/module/model-interfaces/)
+[Quiz](https://llmengineerclub.com/quiz/)
+[Live](https://llmengineerclub.com/live/)
+
+![Hero](docs/assets/llm-engineering-course-hero.png)
+
+<a id="espanol"></a>
+[Curso](https://llmengineerclub.com/es/)
+[Módulo](https://llmengineerclub.com/es/aprender/interfaces-de-modelo/)
+[Quiz ES](https://llmengineerclub.com/es/quiz/)
+[Live ES](https://llmengineerclub.com/es/live/)
+`);
+
+  const problems = await validateRepositoryDiscovery({ root });
+  assert.ok(problems.includes('falta el CTA canónico: https://llmengineerclub.com/learn/model-interfaces/'));
+});
+
 test('current-stack validator rejects invalid and future review dates', async () => {
   const script = path.join(repositoryRoot, 'scripts/validate-current-stack.mjs');
   for (const reviewedAt of ['2026-02-30', '2099-99-99', '2999-01-01']) {
@@ -214,4 +254,68 @@ test('translation pipeline verifies the output hash before skipping a source', a
   await writeFile(target, tampered);
   await assert.rejects(execFileAsync(process.execPath, [script, '--path', 'README.md'], options));
   assert.equal(await readFile(target, 'utf8'), tampered);
+});
+
+test('translation validator accepts the bilingual GitHub README with an English-only web edition', async () => {
+  const root = await temporaryDirectory('llmec-bilingual-readme-');
+  const source = '# LLM Engineering Course\n\n## English\n\nBuild reliable systems.\n\n## Español\n\nConstruye sistemas fiables.\n';
+  const translation = '# LLM Engineering Course\n\nBuild reliable systems.\n';
+  const target = path.join(root, 'translations/en/README.md');
+  const manifest = path.join(root, 'translations/en/.translation-manifest.json');
+  await mkdir(path.dirname(target), { recursive: true });
+  await writeFile(path.join(root, 'README.md'), source);
+  await writeFile(target, translation);
+  await writeFile(manifest, `${JSON.stringify({
+    version: 1,
+    model: 'human-reviewed',
+    generatedAt: '2026-08-24T00:00:00.000Z',
+    files: {
+      'README.md': {
+        sourceHash: sha256(source),
+        translationHash: sha256(translation),
+        model: 'human-reviewed',
+        pipelineVersion: 2,
+        translatedAt: '2026-08-24T00:00:00.000Z',
+      },
+    },
+  }, null, 2)}\n`);
+
+  const script = path.join(repositoryRoot, 'scripts/validate-translations.mjs');
+  const result = await execFileAsync(process.execPath, [script, '--complete'], { cwd: root, encoding: 'utf8' });
+  assert.match(result.stdout, /Traducciones verificadas: 1\/1/);
+});
+
+test('translation validator still rejects structural drift outside the bilingual README', async () => {
+  const root = await temporaryDirectory('llmec-translation-structure-');
+  const source = '# Ruta\n\n## Módulo\n\nContenido.\n';
+  const translation = '# Path\n\nContent.\n';
+  const relative = 'RUTA_DE_APRENDIZAJE.md';
+  const target = path.join(root, 'translations/en', relative);
+  const manifest = path.join(root, 'translations/en/.translation-manifest.json');
+  await mkdir(path.dirname(target), { recursive: true });
+  await writeFile(path.join(root, relative), source);
+  await writeFile(target, translation);
+  await writeFile(manifest, `${JSON.stringify({
+    version: 1,
+    model: 'human-reviewed',
+    generatedAt: '2026-08-24T00:00:00.000Z',
+    files: {
+      [relative]: {
+        sourceHash: sha256(source),
+        translationHash: sha256(translation),
+        model: 'human-reviewed',
+        pipelineVersion: 2,
+        translatedAt: '2026-08-24T00:00:00.000Z',
+      },
+    },
+  }, null, 2)}\n`);
+
+  const script = path.join(repositoryRoot, 'scripts/validate-translations.mjs');
+  await assert.rejects(
+    execFileAsync(process.execPath, [script, '--complete'], { cwd: root, encoding: 'utf8' }),
+    (error) => {
+      assert.match(error.stderr, /cambió estructura Markdown/);
+      return true;
+    },
+  );
 });

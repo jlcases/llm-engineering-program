@@ -1,12 +1,38 @@
-# LLM Systems Engineering — an open field path
+# LLM Engineering Course: RAG, AI Agents, Evals, MCP & Production
 
-This repository does not try to turn a fast-moving technology into an academic title. It is a
-self-directed, public, versioned path for learning to build LLM systems that can be inspected,
-measured, stopped, recovered, and defended with evidence. Working practitioners maintain the
-content through pull requests; the history and authorship of every improvement remain visible.
+An open-source LLM engineering course for people who need to ship reliable AI systems, not just
+demos. Nine modules and executable Python labs cover model interfaces, prompt contracts,
+retrieval-augmented generation (RAG), AI agents, Model Context Protocol (MCP), agent harnesses,
+execution loops, knowledge graphs, LLM evaluation, security, and LLMOps.
 
-The unit of progress is not seat time or a credit: it is an executable artifact. Every module ends
-with proof of work that another person can review, reproduce, and challenge.
+Working practitioners maintain the curriculum through public pull requests. Every merged
+improvement keeps its author and review history visible.
+
+> **Build something useful in the first 40 minutes.** Start with an observable multi-provider LLM
+> client that measures tokens, latency, and failures.
+>
+> **[Start Module 01 →](https://llmengineerclub.com/learn/model-interfaces/)** ·
+> **[Measure your level →](https://llmengineerclub.com/quiz/)** ·
+> **[Run a live team challenge →](https://llmengineerclub.com/live/)**
+
+## The problem this course starts with
+
+The demo answers correctly on your laptop. Then the provider changes a model, retrieval misses the
+one passage that matters, a tool retries twice, and nobody can explain the resulting bill. The hard
+part of LLM engineering begins after the first successful response.
+
+This curriculum teaches you to build an LLM system that can be inspected, measured, stopped,
+recovered, and defended in a technical review. Progress is demonstrated with executable artifacts
+rather than time spent watching videos.
+
+## Choose your entry point
+
+| You want to… | Start here |
+|---|---|
+| Build your first measurable LLM application | **[Start the interactive course](https://llmengineerclub.com/)** |
+| Find the gaps in your current knowledge | **[Take the 20-question Club Quiz](https://llmengineerclub.com/quiz/)** |
+| Run the same timed challenge with a team | **[Create a Club Live room](https://llmengineerclub.com/live/)** |
+| Improve a lesson, lab, or example | **[Read the contribution guide](../../CONTRIBUTING.md)** |
 
 ## The path's thesis
 
