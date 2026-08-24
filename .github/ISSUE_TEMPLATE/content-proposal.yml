@@ -1,42 +1,42 @@
-name: Proponer contenido / Propose content
-description: Propón una unidad, lab, ejemplo o actualización basada en evidencia.
-title: "[Contenido] "
+name: Propose content / Proponer contenido
+description: Propose an evidence-based lesson, lab, example or update.
+title: "[Content] "
 labels: [content-proposal]
 body:
   - type: textarea
     id: gap
     attributes:
-      label: Problema educativo
-      description: Qué debe aprender la persona y qué carencia concreta existe hoy.
+      label: Learning problem / Problema educativo
+      description: What should a learner master, and what concrete gap exists today? / ¿Qué debe aprender y qué carencia existe?
     validations:
       required: true
   - type: textarea
     id: outcome
     attributes:
-      label: Resultado verificable
-      description: Qué podrá construir, explicar o medir al terminar.
+      label: Verifiable outcome / Resultado verificable
+      description: What will a learner be able to build, explain or measure? / ¿Qué podrá construir, explicar o medir?
     validations:
       required: true
   - type: textarea
     id: evidence
     attributes:
-      label: Fuentes primarias
-      description: Documentación oficial, paper o estándar, con enlaces directos.
+      label: Primary sources / Fuentes primarias
+      description: Official documentation, papers or standards with direct links. / Documentación oficial, papers o estándares.
     validations:
       required: true
   - type: textarea
     id: scope
     attributes:
-      label: Alcance propuesto
-      description: Rutas que añadirías o modificarías y cómo se evaluaría el aprendizaje.
+      label: Proposed scope / Alcance propuesto
+      description: Paths you would change and how learning would be evaluated. / Rutas que cambiarías y cómo evaluarías el aprendizaje.
     validations:
       required: true
   - type: checkboxes
     id: public-boundary
     attributes:
-      label: Límite público
+      label: Public boundary / Límite público
       options:
-        - label: La propuesta no publicará soluciones completas ni datos, prompts o credenciales privadas.
+        - label: The proposal contains no complete solutions, private data, prompts or credentials. / No contiene soluciones completas ni material privado.
           required: true
-        - label: Si la propuesta puede alimentar el Club Quiz, contiene solo un blueprint y ninguna pregunta activa ni clave de respuesta.
+        - label: Club Quiz proposals contain only a blueprint, never an active question or answer key. / Las propuestas del Quiz solo contienen un blueprint.
           required: true

@@ -1,7 +1,7 @@
 [project]
 name = "llm-engineering-program"
 version = "0.1.0"
-description = "Ruta abierta de Ingeniería de Sistemas LLM — labs y pruebas de trabajo"
+description = "Open, bilingual LLM engineering course with executable labs for RAG, AI agents, MCP, evals and production"
 requires-python = ">=3.12"
 dependencies = [
     # Base (módulos 1-2)

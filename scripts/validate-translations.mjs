@@ -189,10 +189,15 @@ for (const sourcePath of paths) {
       problems.push(`${sourcePath}: Python inválido (${error instanceof Error ? error.message : error})`);
     }
   } else {
-    const before = markdownArtifacts(source);
-    const after = markdownArtifacts(translation);
-    const changed = Object.keys(before).filter((key) => JSON.stringify(before[key]) !== JSON.stringify(after[key]));
-    if (changed.length) problems.push(`${sourcePath}: cambió estructura Markdown (${changed.join(', ')})`);
+    // The repository README is an English-first bilingual storefront for GitHub.
+    // Its English web edition deliberately contains one language, so headings and
+    // lists cannot have one-to-one structural parity with the source document.
+    if (sourcePath !== 'README.md') {
+      const before = markdownArtifacts(source);
+      const after = markdownArtifacts(translation);
+      const changed = Object.keys(before).filter((key) => JSON.stringify(before[key]) !== JSON.stringify(after[key]));
+      if (changed.length) problems.push(`${sourcePath}: cambió estructura Markdown (${changed.join(', ')})`);
+    }
     const qualityProblem = englishQualityProblem(translation);
     if (qualityProblem) problems.push(`${sourcePath}: traducción inglesa parcial (${qualityProblem})`);
   }

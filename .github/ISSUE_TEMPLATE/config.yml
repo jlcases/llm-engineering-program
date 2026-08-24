@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Preguntas de estudio / Learning questions
+  - name: Learning questions / Preguntas de estudio
     url: https://github.com/jlcases/llm-engineering-program/discussions
-    about: Usa Discussions para dudas; Issues queda reservado a cambios verificables del currículo.
+    about: Use Discussions for questions; Issues are reserved for verifiable curriculum changes. / Usa Discussions para dudas.

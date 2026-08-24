@@ -1,3 +1,108 @@
+# Contributing to the open LLM engineering curriculum
+
+<p align="center">
+  <a href="#contributing-in-english">English</a> · <a href="#contribuir-en-espanol">Español</a>
+</p>
+
+<a id="contributing-in-english"></a>
+
+This repository is the public knowledge source for
+[llmengineerclub.com](https://llmengineerclub.com). An approved and merged contribution may become
+a lesson, lab, example, correction or update on the platform.
+
+## How contributions are credited
+
+The website preserves provenance through the merged pull request:
+
+- **Created**: added a substantial new unit.
+- **Improved**: corrected or expanded existing material with educational impact.
+- **Reviewed**: gave a reasoned technical approval.
+- **Maintained**: updated models, SDKs, certifications or official links.
+
+Attribution includes the contributor's public name, username, avatar and GitHub profile, together
+with the pull-request number and link. Credit is based on educational impact, not lines changed or
+pull-request volume.
+
+## Before opening a pull request
+
+1. Explain the learning problem, who it blocks and why.
+2. Link primary sources: official documentation, a paper or a standard.
+3. Keep models and APIs configurable; do not introduce an obsolete model as a default.
+4. Give new labs an offline or mock mode whenever reasonable.
+5. Test a happy path and at least one meaningful failure.
+6. Never include credentials, private prompts, personal data or customer output.
+7. Run the validation commands in the README.
+
+Pull requests containing a `solutions` folder, complete solution material or an official answer
+marker are rejected automatically. Tests, rubrics, progressive hints and verifiable acceptance
+criteria are welcome.
+
+### Club Quiz proposals
+
+You may contribute an assessable objective, base scenario, difficulty, sources and ambiguity
+analysis. Never publish an active question or its exact statement, options, answer and explanation.
+After merge, the editorial team produces a private variant, keeps attribution to the source pull
+request and reviews it before activation. Retired questions may later be released as open practice.
+
+The complete contract is in
+[`docs/club-quiz-contributions.md`](docs/club-quiz-contributions.md).
+
+## Repository structure
+
+- Lessons: `modulo-NN-*/teoria/NN-title.md`.
+- Labs: `modulo-NN-*/labs/NN_name.py`.
+- Small fictional datasets: `modulo-NN-*/labs/data/`.
+- Exercises and acceptance criteria: `ejercicios.md`. Complete solutions are private and are not
+  accepted in this repository.
+- Certifications: `certificaciones/<code>/`. Tasks and distractors are public; answer sheets are
+  not. Coordinate reasoned keys with the maintainer outside the pull request.
+- Club Quiz: contribute public blueprints under `docs/club-quiz-contributions.md`; never add the
+  active question bank or its answers.
+- Learning-path metadata: `course.json`.
+- English editions: `translations/en/<matching-path>`, with hashes recorded in the translation
+  manifest.
+
+When translating manually, edit the matching path under `translations/en/` and record its
+integrity:
+
+```bash
+node scripts/record-human-translation.mjs --path modulo-02-prompt-engineering/README.md
+```
+
+You do not need a local translation model to contribute. CI checks that code, links, Markdown
+structure and Python lab ASTs remain equivalent.
+
+The platform derives titles, routes and reading times from these conventions. Renaming a published
+file changes its URL, so describe why that trade-off is worthwhile.
+
+## Model and certification updates
+
+An update must include:
+
+- Exact identifier or official name.
+- Status: current, legacy or historical.
+- Verification date.
+- Official source URL.
+- Impact on labs, datasets and questions. Coordinate any answer-key change outside public history.
+
+Automation may open a pull request, but a human expert must interpret the change before merge.
+
+## Executable code
+
+Public pull-request CI never receives secrets. Contributed code runs with mocks and fictional data.
+Tools intended for the web product need an additional `trusted-tool` review; course snippets are not
+executed directly in production.
+
+## License and publication
+
+By contributing, you confirm that you may publish the material under [LICENSE.md](LICENSE.md),
+including its appearance on llmengineerclub.com with permanent attribution to your pull request and
+public GitHub profile.
+
+---
+
+<a id="contribuir-en-espanol"></a>
+
 # Contribuir al currículo abierto
 
 Este repositorio es la fuente de conocimiento de [llmengineerclub.com](https://llmengineerclub.com).

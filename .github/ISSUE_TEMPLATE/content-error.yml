@@ -1,33 +1,33 @@
-name: Corregir contenido / Report content error
-description: Señala un dato, enlace, ejemplo o explicación que deba corregirse.
-title: "[Corrección] "
+name: Report content error / Corregir contenido
+description: Report a claim, link, example or explanation that needs correction.
+title: "[Content fix] "
 labels: [content-bug]
 body:
   - type: input
     id: path
     attributes:
-      label: Ruta afectada
+      label: Affected path / Ruta afectada
       placeholder: modulo-03-rag/teoria/...
     validations:
       required: true
   - type: textarea
     id: problem
     attributes:
-      label: Qué está mal o desactualizado
-      description: Incluye el fragmento mínimo necesario y el impacto educativo.
+      label: What is wrong or outdated / Qué está mal o desactualizado
+      description: Include the smallest useful excerpt and its educational impact. / Incluye el fragmento mínimo y su impacto educativo.
     validations:
       required: true
   - type: textarea
     id: evidence
     attributes:
-      label: Evidencia
-      description: Enlaza la fuente primaria o una reproducción mínima del fallo.
+      label: Evidence / Evidencia
+      description: Link a primary source or a minimal reproduction. / Enlaza una fuente primaria o una reproducción mínima.
     validations:
       required: true
   - type: textarea
     id: correction
     attributes:
-      label: Corrección propuesta
-      description: Explica el cambio esperado; puedes abrir directamente una PR si ya está claro.
+      label: Proposed correction / Corrección propuesta
+      description: Explain the expected change; open a PR directly when the fix is clear. / Explica el cambio esperado o abre una PR.
     validations:
       required: true

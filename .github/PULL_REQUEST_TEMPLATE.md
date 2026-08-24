@@ -1,27 +1,27 @@
-## Problema educativo
+## Learning problem / Problema educativo
 
-<!-- Qué bloquea hoy al alumno y cómo lo sabes. -->
+<!-- What blocks the learner today, and how do you know? / ¿Qué bloquea hoy al alumno y cómo lo sabes? -->
 
-## Cambio
+## Change / Cambio
 
-<!-- Qué añade, corrige, actualiza o elimina esta PR. -->
+<!-- What does this PR add, correct, update or remove? / ¿Qué añade, corrige, actualiza o elimina? -->
 
-## Evidencia y fuentes primarias
+## Evidence and primary sources / Evidencia y fuentes primarias
 
-<!-- Documentación oficial, papers, estándar o prueba reproducible. -->
+<!-- Official docs, papers, standards or reproducible evidence. / Documentación oficial, papers, estándares o prueba reproducible. -->
 
-## Atribución
+## Attribution / Atribución
 
-- [ ] Acepto que el cambio fusionado aparezca en llmengineerclub.com con enlace a esta PR y a mi perfil público de GitHub.
-- [ ] Si trabajo en nombre de otra persona, he incluido `Co-authored-by` o lo he explicado aquí.
+- [ ] I accept permanent attribution on llmengineerclub.com linking this PR and my public GitHub profile. / Acepto la atribución permanente.
+- [ ] I added `Co-authored-by` for anyone represented by this PR. / He incluido a las demás personas autoras.
 
-## Validación
+## Validation / Validación
 
-- [ ] No contiene secretos ni datos personales.
-- [ ] Los modelos, SDKs y servicios nuevos son configurables.
-- [ ] El lab funciona offline o documenta claramente el coste y las credenciales necesarias.
-- [ ] He probado el camino feliz y un fallo relevante.
-- [ ] Los enlaces y fuentes son accesibles.
-- [ ] He actualizado la traducción EN equivalente o he explicado por qué requiere apoyo editorial.
-- [ ] No contiene soluciones completas ni una carpeta de solucionarios.
-- [ ] Si propone contenido para el Club Quiz, no incluye ninguna pregunta activa ni su clave; solo un blueprint público.
+- [ ] No secrets or personal data. / Sin secretos ni datos personales.
+- [ ] New models, SDKs and services are configurable. / Los modelos, SDKs y servicios nuevos son configurables.
+- [ ] Labs work offline or document cost and required credentials. / Los labs funcionan offline o documentan coste y credenciales.
+- [ ] I tested a happy path and a meaningful failure. / He probado el camino feliz y un fallo relevante.
+- [ ] Links and sources are accessible. / Los enlaces y fuentes son accesibles.
+- [ ] I updated the matching English translation or requested editorial help. / He actualizado la traducción inglesa o solicitado ayuda.
+- [ ] No complete solutions or solution folders. / Sin soluciones completas ni carpetas de solucionarios.
+- [ ] Club Quiz content is a public blueprint, never an active question or answer key. / El contenido del Quiz es solo un blueprint público.

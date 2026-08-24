@@ -1,15 +1,15 @@
 {
   "version": 1,
   "model": "qwen3.6:35b-a3b-coding-nvfp4",
-  "generatedAt": "2026-08-24T15:47:26.059Z",
+  "generatedAt": "2026-08-24T16:35:27.956Z",
   "files": {
     "README.md": {
-      "sourceHash": "78f8eb107d67d2de744aa160a5b4fa62d714395f1a5f1d22c45373156b4eb291",
-      "translationHash": "97ce004f48fbed52a100f48c7fe5f8cb1926cc2a56e9f705623aba3e7b1421c9",
+      "sourceHash": "839bc0bf6d11fdab7796f0de16e621d09f49dbc84a167cdcebc32c3773827406",
+      "translationHash": "44712471355cb9b5a38378bea9892b7c0dd18765edf718da06823ab34cc7c072",
       "model": "human-reviewed",
       "editor": "jlcases",
       "pipelineVersion": 2,
-      "translatedAt": "2026-08-24T15:44:18.007Z"
+      "translatedAt": "2026-08-24T16:35:27.953Z"
     },
     "RUTA_DE_APRENDIZAJE.md": {
       "sourceHash": "404123d112d5d9a3b69d88f442785f8e9b9b0d86b76d6afbf3ba2c13111cb079",
