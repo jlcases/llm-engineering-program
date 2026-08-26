@@ -1,6 +1,6 @@
 # Entorno aislado: Instructor 1.15.x todavía requiere OpenAI SDK 2.x.
 instructor>=1.15.4,<2
-openai>=2,<3
+openai>=2,<4
 pydantic>=2.13,<3
 python-dotenv>=1.2,<2
 rich>=14,<15
